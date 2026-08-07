@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ChevronDown, Sparkles, Brain, Globe, Smartphone, Palette, Cloud } from "lucide-react";
 
 export const Navbar: React.FC = () => {
@@ -17,30 +18,16 @@ export const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#f4f6fa]/90 backdrop-blur-xl border-b border-slate-200/60 transition-all">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-        {/* Left Logo */}
-        <div className="flex items-center gap-2.5 cursor-pointer group">
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            {/* Stylized 'D' Icon Mark */}
-            <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8 text-[#11244e]">
-              <path
-                d="M8 4H16C22.6274 4 28 9.37258 28 16C28 22.6274 22.6274 28 16 28H8V4Z"
-                stroke="currentColor"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16 11V21"
-                stroke="currentColor"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span className="absolute bottom-1 right-0 w-2.5 h-2.5 rounded-full bg-orange-500 ring-2 ring-[#f4f6fa]" />
-          </div>
-          <span className="font-sans text-2xl font-extrabold tracking-tight text-[#11244e]">
-            Dexze
-          </span>
+        {/* Left Logo Image */}
+        <div className="flex items-center gap-3 cursor-pointer group">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={140}
+            height={40}
+            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            priority
+          />
         </div>
 
         {/* Center Menu Links */}
