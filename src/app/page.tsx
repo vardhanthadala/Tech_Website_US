@@ -6,12 +6,16 @@ import { motion } from "framer-motion";
 
 import { CardCarousel } from "@/components/CardCarousel";
 import { BrandMarquee } from "@/components/BrandMarquee";
+import Navbar from "@/components/Navbar";
+import GrowthStory from "@/components/GrowthStory";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-zinc-900 font-sans antialiased selection:bg-zinc-200 overflow-hidden relative">
+    <div className="flex flex-col min-h-screen text-zinc-900 font-sans antialiased selection:bg-zinc-200 overflow-hidden relative bg-[#f8fafc]">
+      <Navbar />
       
       {/* 3D Canvas Background - right side, 75% width */}
       <div className="absolute top-0 right-0 w-3/4 h-full z-0 pointer-events-none">
@@ -102,7 +106,14 @@ export default function Home() {
         <section className="w-full bg-white pt-48 pb-32 mt-16">
           <CardCarousel />
         </section>
+
+        {/* Remote Section: Growth Story */}
+        <section className="w-full">
+          <GrowthStory />
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
