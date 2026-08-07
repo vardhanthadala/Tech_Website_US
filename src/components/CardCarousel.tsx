@@ -84,12 +84,12 @@ export const CardCarousel = () => {
     <div className="w-full flex flex-col items-center">
       
       {/* Header Section */}
-      <div className="w-full max-w-7xl mx-auto px-12 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div>
-          <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 mb-1">
+          <h2 className="text-4xl font-normal tracking-tight text-slate-900 mb-1">
             Powering businesses of all sizes.
           </h2>
-          <p className="text-xl text-zinc-500 tracking-tight">
+          <p className="text-[15px] font-normal text-slate-400 leading-[1.85]">
             Run your business on a reliable <br className="hidden md:block"/> platform that adapts to your needs.
           </p>
         </div>
@@ -98,19 +98,19 @@ export const CardCarousel = () => {
             <button 
               onClick={prevCard}
               disabled={activeIndex === 0}
-              className="w-10 h-10 flex items-center justify-center border border-zinc-200 rounded-md hover:bg-zinc-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-10 h-10 flex items-center justify-center border border-slate-200 rounded-md hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button 
               onClick={nextCard}
               disabled={activeIndex === CARDS.length - 1}
-              className="w-10 h-10 flex items-center justify-center border border-zinc-200 rounded-md hover:bg-zinc-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-10 h-10 flex items-center justify-center border border-slate-200 rounded-md hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
           </div>
-          <button className="h-10 px-6 bg-zinc-900 text-white font-medium text-sm rounded-md hover:bg-zinc-800 transition-colors flex items-center gap-2">
+          <button className="h-10 px-6 bg-slate-900 text-white font-normal text-[13px] rounded-md hover:bg-slate-800 transition-colors flex items-center gap-2">
             For enterprises
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>

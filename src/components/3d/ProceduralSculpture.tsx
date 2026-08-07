@@ -90,7 +90,7 @@ export const ProceduralSculpture = () => {
 
     const radius = 1.0; // close to orb surface (orb is 0.8)
     const rings = [
-      { lat: 0, count: 16, tilt: 0 },                    // single flat ring
+      { lat: 0, count: 12, tilt: 0 },                    // single flat ring
     ];
 
     for (const ring of rings) {
@@ -130,17 +130,14 @@ export const ProceduralSculpture = () => {
     if (!groupRef.current) return;
     const time = state.clock.getElapsedTime();
 
-    // Continuous slow rotation like a fan
+    // Fixed forward tilt to match screenshot position
+    groupRef.current.rotation.x = 0.5;
+    // Original fan-like spin
     groupRef.current.rotation.y = time * 0.3;
-    // Subtle wobble
-    groupRef.current.rotation.x = Math.sin(time * 0.2) * 0.08;
-    groupRef.current.rotation.z = Math.cos(time * 0.15) * 0.05;
-    // Gentle float
-    groupRef.current.position.y = 2.2 + Math.sin(time * 0.4) * 0.1;
   });
 
   return (
-    <group ref={groupRef} scale={[0.45, 0.45, 0.45]}>
+    <group ref={groupRef} scale={[1.1, 1.1, 1.1]}>
       {/* Central glass sphere */}
       <mesh geometry={sphereGeo} material={glassMaterial} />
 

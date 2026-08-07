@@ -14,44 +14,25 @@ export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-zinc-900 font-sans antialiased selection:bg-zinc-200 overflow-hidden relative bg-[#f8fafc]">
+    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-slate-200 overflow-hidden relative bg-[#f8fafc]">
       <Navbar />
-      
-      {/* 3D Canvas Background - right side, 75% width */}
-      <div className="absolute top-0 right-0 w-3/4 h-full z-0 pointer-events-none">
-        <HeroCanvas />
-      </div>
-
-      {/* Navigation - Minimal and Spaced */}
-      <motion.header 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="w-full flex justify-between items-center px-12 py-10 max-w-7xl mx-auto z-10"
-      >
-        <div className="font-semibold text-2xl tracking-tighter">
-          TechUS.
-        </div>
-        <nav className="hidden md:flex gap-12 text-sm">
-          <a href="#" className="hover:text-zinc-500 transition-colors">Services</a>
-          <a href="#" className="hover:text-zinc-500 transition-colors">Work</a>
-          <a href="#" className="hover:text-zinc-500 transition-colors">About</a>
-          <a href="#" className="hover:text-zinc-500 transition-colors">Contact</a>
-        </nav>
-      </motion.header>
 
       <main className="flex flex-1 w-full flex-col z-10">
         {/* Hero Section */}
         <motion.section 
           style={{ opacity, y: yOffset }}
-          className="flex flex-col items-start justify-center px-12 pt-24 md:pt-32 max-w-7xl mx-auto w-full min-h-[80vh] relative"
+          className="flex flex-col items-start justify-center px-6 sm:px-8 lg:px-12 pt-32 md:pt-40 max-w-7xl mx-auto w-full min-h-[80vh] relative"
         >
+          {/* 3D Canvas Background - right side, 75% width */}
+          <div className="absolute top-0 right-0 w-3/4 h-full z-0 pointer-events-none">
+            <HeroCanvas />
+          </div>
           <div className="max-w-md">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.15] mb-6 text-zinc-900"
+              className="text-4xl md:text-5xl xl:text-6xl font-normal tracking-tight leading-[1.15] mb-6 text-slate-900"
             >
               Building digital <br/>experiences that matter.
             </motion.h1>
@@ -59,7 +40,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-              className="text-base md:text-lg text-zinc-500 mb-8 leading-relaxed"
+              className="text-[15px] font-normal text-slate-400 mb-8 leading-[1.85]"
             >
               We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
             </motion.p>
@@ -68,12 +49,12 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-4 text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-16"
+              className="flex items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-400 mb-16"
             >
               <span>Design</span>
-              <span className="w-1 h-1 rounded-full bg-zinc-300" />
+              <span className="w-1 h-1 rounded-full bg-slate-300" />
               <span>Strategy</span>
-              <span className="w-1 h-1 rounded-full bg-zinc-300" />
+              <span className="w-1 h-1 rounded-full bg-slate-300" />
               <span>Engineering</span>
             </motion.div>
 
@@ -85,13 +66,13 @@ export default function Home() {
             >
               <a
                 href="#"
-                className="flex items-center justify-center h-12 px-8 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-all text-sm"
+                className="flex items-center justify-center h-12 px-8 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all text-[13px] font-normal"
               >
                 Start a project
               </a>
               <a
                 href="#"
-                className="flex items-center justify-center h-12 px-8 rounded-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-all text-sm"
+                className="flex items-center justify-center h-12 px-8 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-all text-[13px] font-normal"
               >
                 Our work
               </a>
@@ -103,7 +84,7 @@ export default function Home() {
         </motion.section>
 
         {/* Carousel Section */}
-        <section className="w-full bg-white pt-48 pb-32 mt-16">
+        <section className="w-full bg-white py-24 border-t border-slate-100 mt-16">
           <CardCarousel />
         </section>
 
