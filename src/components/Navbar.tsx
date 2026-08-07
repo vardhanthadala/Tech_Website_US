@@ -1,51 +1,64 @@
 "use client";
 
 import React from "react";
-import { Brain, Cpu, Globe, Smartphone, Cloud, ArrowRight } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-stone-200/80 bg-white/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-stone-950 text-white shadow-md">
-            <Brain className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-orange-500 flex items-center justify-center text-white shadow-md font-bold text-xl">
+            D
           </div>
-          <div>
-            <span className="font-sans text-lg font-extrabold tracking-tight text-stone-950">
-              NEXUS TECH
-            </span>
-            <span className="ml-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-300">
-              SERVICES
-            </span>
-          </div>
+          <span className="font-sans text-2xl font-extrabold tracking-tight text-slate-900">
+            DianApps
+          </span>
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-xs font-mono font-medium text-stone-600">
-          <a href="#neural-network" className="hover:text-stone-950 transition-colors">
-            NEURAL_NETWORK
-          </a>
-          <a href="#services" className="hover:text-stone-950 transition-colors">
-            OUR_SERVICES
-          </a>
-          <a href="#tech-stack" className="hover:text-stone-950 transition-colors">
-            TECH_STACK
-          </a>
-          <a href="#contact" className="hover:text-stone-950 transition-colors">
-            CONTACT
-          </a>
+        <div className="hidden lg:flex items-center gap-8 text-sm font-sans font-medium text-slate-700">
+          <div className="flex items-center gap-1 cursor-pointer hover:text-orange-600 transition-colors">
+            <span className="text-orange-600 font-semibold flex items-center gap-1">
+              Let&apos;s Talk AI
+            </span>
+            <ChevronDown className="w-4 h-4 text-orange-600" />
+          </div>
+
+          <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors">
+            <span>Services</span>
+            <ChevronDown className="w-4 h-4 text-slate-400" />
+          </div>
+
+          <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors">
+            <span>Industries</span>
+            <ChevronDown className="w-4 h-4 text-slate-400" />
+          </div>
+
+          <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors">
+            <span>Portfolio</span>
+            <ChevronDown className="w-4 h-4 text-slate-400" />
+          </div>
+
+          <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors">
+            <span>Hire Resources</span>
+            <ChevronDown className="w-4 h-4 text-slate-400" />
+          </div>
+
+          <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition-colors">
+            <span>Learn</span>
+            <ChevronDown className="w-4 h-4 text-slate-400" />
+          </div>
         </div>
 
-        {/* CTA */}
+        {/* Right Action Pill Button */}
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="px-4 py-2 rounded-xl bg-stone-950 hover:bg-stone-800 text-white font-mono font-semibold text-xs transition-all shadow-md flex items-center gap-1.5"
+            className="px-6 py-2.5 rounded-full border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-sans font-semibold text-sm transition-all duration-200"
           >
-            <span>Get Started</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            Contact Us
           </a>
         </div>
       </div>

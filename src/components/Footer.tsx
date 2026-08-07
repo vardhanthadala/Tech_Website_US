@@ -1,30 +1,30 @@
 "use client";
 
 import React from "react";
-import { Brain, Code2 } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-t border-stone-200/80 bg-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-stone-500">
+    <footer className="w-full border-t border-slate-200/80 bg-white py-10 px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-sans text-xs text-slate-500">
         <div className="flex items-center gap-3">
-          <div className="p-1.5 rounded-lg bg-stone-950 text-white">
-            <Brain className="w-4 h-4" />
+          <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-blue-600 to-orange-500 text-white flex items-center justify-center font-bold text-sm">
+            D
           </div>
-          <span className="text-stone-900 font-bold">NEXUS TECH AGENCY</span>
-          <span>© 2026 AI Automation • Web • App • UI/UX • Cloud</span>
+          <span className="text-slate-900 font-bold text-sm">DianApps</span>
+          <span>© 2026 AI-First Digital Partner</span>
         </div>
 
-        <div className="flex items-center gap-6">
-          <span className="text-emerald-600 flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            ALL_SERVICES_ONLINE
+        <div className="flex items-center gap-6 font-mono">
+          <span className="text-emerald-600 flex items-center gap-1.5 font-sans font-medium">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            SYSTEM_ONLINE
           </span>
           <a
             href="https://github.com/vardhanthadala/Tech_Website_US.git"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-stone-900 flex items-center gap-1 transition-colors"
+            className="hover:text-slate-900 flex items-center gap-1 transition-colors"
           >
             <Code2 className="w-4 h-4" />
             <span>GitHub Repository</span>

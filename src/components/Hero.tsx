@@ -1,107 +1,60 @@
 "use client";
 
-import React, { useState } from "react";
-import DynamicServiceCanvas, { ServiceMode } from "./DynamicServiceCanvas";
-import { Brain, Globe, Smartphone, Palette, Cloud, ArrowRight, CheckCircle2 } from "lucide-react";
+import React from "react";
+import LiquidSphereCanvas from "./LiquidSphereCanvas";
+import { ArrowRight, Sparkles, MessageSquare } from "lucide-react";
 
 export const Hero: React.FC = () => {
-  const [currentMode, setCurrentMode] = useState<ServiceMode>("AI");
-
-  const serviceDetails = {
-    AI: {
-      title: "AI Automation",
-      tagline: "Autonomous Agents & AI Workflows",
-      desc: "Custom LLMs, Generative AI integration, automated decision pipelines, RAG engines, and autonomous agents designed to eliminate manual tasks and multiply efficiency.",
-      highlights: ["Autonomous AI Agents", "Custom LLM & RAG Engines", "Workflow Automation", "Natural Language Systems"],
-      icon: Brain,
-    },
-    Web: {
-      title: "Web Development",
-      tagline: "High-Performance Next.js Web Apps",
-      desc: "Blazing fast, scalable web applications built with Next.js, React, TypeScript, and modern CSS architecture optimized for conversion and search engines.",
-      highlights: ["Full-Stack Next.js Apps", "High SEO & Performance", "Interactive Web Visualizations", "Headless CMS & APIs"],
-      icon: Globe,
-    },
-    App: {
-      title: "App Development",
-      tagline: "Cross-Platform iOS & Android Apps",
-      desc: "Sleek, responsive native and React Native mobile applications delivering seamless user experiences, real-time data sync, and high performance.",
-      highlights: ["iOS & Android Mobile Apps", "React Native & Flutter", "Real-Time Push & Sync", "App Store Publishing"],
-      icon: Smartphone,
-    },
-    UiUx: {
-      title: "UI / UX Design",
-      tagline: "User-Centered Wireframes & Modern Interfaces",
-      desc: "Intuitive user interface (UI) and user experience (UX) design, interactive prototypes, design systems, and wireframe architecture for web and mobile.",
-      highlights: ["Interactive Wireframes", "Design Systems & Tokens", "User Research & Flows", "High-Fidelity UI Mockups"],
-      icon: Palette,
-    },
-    Cloud: {
-      title: "Cloud Services",
-      tagline: "AWS / Azure & DevOps Infrastructure",
-      desc: "Scalable cloud architecture, Kubernetes containerization, CI/CD automation pipelines, serverless setups, and 24/7 reliability engineering.",
-      highlights: ["AWS / Azure Architecture", "Kubernetes & Docker", "Automated CI/CD Pipelines", "Serverless Microservices"],
-      icon: Cloud,
-    },
-  };
-
-  const activeSvc = serviceDetails[currentMode];
-  const Icon = activeSvc.icon;
-
   return (
-    <section id="hero" className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center">
-      {/* Top Headline */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/80 border border-stone-300 text-xs font-mono text-stone-800">
-          <span>NEXT-GEN TECH & SERVICES AGENCY</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-stone-950 leading-tight font-sans">
-          AI Automation, Web, Mobile, UI/UX & Cloud Services
-        </h1>
-        <p className="text-stone-600 font-sans text-base sm:text-lg">
-          Click any service tab inside the canvas below to watch the 3D particle swarm morph into its signature technology model!
-        </p>
-      </div>
+    <section className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 sm:px-12 lg:px-16 overflow-hidden bg-gradient-to-br from-white via-indigo-50/40 to-blue-100/50">
+      {/* Background Soft Aura Lighting */}
+      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-orange-200/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/4 w-[650px] h-[650px] bg-blue-300/35 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Main Interactive 3D Particle Morphing Canvas Visualizer */}
-      <div className="w-full">
-        <DynamicServiceCanvas currentMode={currentMode} onSelectMode={setCurrentMode} />
-      </div>
-
-      {/* Active Service Detail Card */}
-      <div className="w-full mt-8 p-8 rounded-3xl bg-white border border-stone-200 shadow-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 transition-all animate-fadeIn">
-        <div className="flex items-start gap-5">
-          <div className="p-4 rounded-2xl bg-stone-950 text-white shadow-md shrink-0">
-            <Icon className="w-8 h-8" />
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <h3 className="text-2xl font-bold font-sans text-stone-950">{activeSvc.title}</h3>
-              <span className="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 text-xs font-mono">
-                {currentMode} Engine
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+        {/* Left Column: Headlines & CTA */}
+        <div className="lg:col-span-7 space-y-8 z-10">
+          <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 font-sans leading-[1.12]">
+            Transform Next-Gen IT Needs With{" "}
+            <span className="block mt-2 font-sans font-black">
+              <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent">
+                AI-First Digital
+              </span>{" "}
+              <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+                Partner
               </span>
-            </div>
-            <p className="text-xs font-mono text-stone-500">{activeSvc.tagline}</p>
-            <p className="text-sm text-stone-600 font-sans max-w-2xl leading-relaxed">{activeSvc.desc}</p>
+            </span>
+          </h1>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
-              {activeSvc.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-1.5 text-xs font-sans text-stone-800">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-stone-950 shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+          <p className="text-slate-600 font-sans text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
+            We are global IT disruptors leveraging AI-powered capabilities to build an ecosystem that takes innovation a step ahead.
+          </p>
+
+          <div className="pt-2">
+            <a
+              href="#audit"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1b365d] hover:bg-[#122440] text-white font-sans font-bold text-base transition-all duration-300 shadow-xl shadow-blue-900/20 hover:scale-[1.02] active:scale-95"
+            >
+              <span>Claim Free AI Audit</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
-        <a
-          href="#contact"
-          className="px-6 py-3.5 rounded-2xl bg-stone-950 hover:bg-stone-800 text-white font-mono text-xs font-semibold flex items-center gap-2 transition-all shadow-md shrink-0 self-stretch lg:self-auto justify-center"
+        {/* Right Column: 3D Organic Liquid Morphing Canvas Animation */}
+        <div className="lg:col-span-5 w-full flex items-center justify-center z-10">
+          <LiquidSphereCanvas />
+        </div>
+      </div>
+
+      {/* Floating Bottom Right Chat Widget Icon */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button
+          className="w-14 h-14 rounded-full bg-[#1b365d] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-200"
+          title="Chat with us"
         >
-          <span>Get Started with {activeSvc.title}</span>
-          <ArrowRight className="w-4 h-4" />
-        </a>
+          <MessageSquare className="w-6 h-6" />
+        </button>
       </div>
     </section>
   );
