@@ -1,68 +1,107 @@
-import Image from "next/image";
+'use client';
+
+import { HeroCanvas } from "@/components/3d/HeroCanvas";
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
+import { motion } from "framer-motion";
+
+import { CardCarousel } from "@/components/CardCarousel";
+import { BrandMarquee } from "@/components/BrandMarquee";
 
 export default function Home() {
+  const { opacity, yOffset } = useHeroAnimation();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen text-zinc-900 font-sans antialiased selection:bg-zinc-200 overflow-hidden relative">
+      
+      {/* 3D Canvas Background - right side, 75% width */}
+      <div className="absolute top-0 right-0 w-3/4 h-full z-0 pointer-events-none">
+        <HeroCanvas />
+      </div>
+
+      {/* Navigation - Minimal and Spaced */}
+      <motion.header 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="w-full flex justify-between items-center px-12 py-10 max-w-7xl mx-auto z-10"
+      >
+        <div className="font-semibold text-2xl tracking-tighter">
+          TechUS.
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        <nav className="hidden md:flex gap-12 text-sm">
+          <a href="#" className="hover:text-zinc-500 transition-colors">Services</a>
+          <a href="#" className="hover:text-zinc-500 transition-colors">Work</a>
+          <a href="#" className="hover:text-zinc-500 transition-colors">About</a>
+          <a href="#" className="hover:text-zinc-500 transition-colors">Contact</a>
+        </nav>
+      </motion.header>
+
+      <main className="flex flex-1 w-full flex-col z-10">
+        {/* Hero Section */}
+        <motion.section 
+          style={{ opacity, y: yOffset }}
+          className="flex flex-col items-start justify-center px-12 pt-24 md:pt-32 max-w-7xl mx-auto w-full min-h-[80vh] relative"
+        >
+          <div className="max-w-md">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+              className="text-4xl md:text-5xl xl:text-6xl tracking-tight leading-[1.15] mb-6 text-zinc-900"
+            >
+              Building digital <br/>experiences that matter.
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+              className="text-base md:text-lg text-zinc-500 mb-8 leading-relaxed"
+            >
+              We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+              className="flex items-center gap-4 text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-16"
+            >
+              <span>Design</span>
+              <span className="w-1 h-1 rounded-full bg-zinc-300" />
+              <span>Strategy</span>
+              <span className="w-1 h-1 rounded-full bg-zinc-300" />
+              <span>Engineering</span>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row gap-4 mb-12"
+            >
+              <a
+                href="#"
+                className="flex items-center justify-center h-12 px-8 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-all text-sm"
+              >
+                Start a project
+              </a>
+              <a
+                href="#"
+                className="flex items-center justify-center h-12 px-8 rounded-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-all text-sm"
+              >
+                Our work
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Brand Marquee positioned at bottom right */}
+          <BrandMarquee />
+        </motion.section>
+
+        {/* Carousel Section */}
+        <section className="w-full bg-white pt-48 pb-32 mt-16">
+          <CardCarousel />
+        </section>
       </main>
     </div>
   );

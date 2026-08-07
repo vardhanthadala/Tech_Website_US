@@ -1,0 +1,55 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const BRANDS = [
+  'Vercel',
+  'Stripe',
+  'Linear',
+  'Raycast',
+  'Figma',
+  'Arc',
+  'Loom'
+];
+
+export const BrandMarquee = () => {
+  return (
+    <div className="absolute bottom-12 right-12 md:right-[max(3rem,calc((100vw-80rem)/2+3rem))] z-20 w-[600px] max-w-[85vw] overflow-hidden">
+      <div className="flex items-center gap-4 mb-4">
+        <div className="h-px bg-zinc-200 flex-1" />
+        <span className="text-xs font-semibold text-zinc-400 uppercase tracking-widest whitespace-nowrap">
+          Trusted by innovative teams
+        </span>
+        <div className="h-px bg-zinc-200 flex-1" />
+      </div>
+
+      <div className="relative flex overflow-hidden group">
+        {/* Fading edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fafafa] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#fafafa] to-transparent z-10" />
+        
+        {/* Marquee Track */}
+        <motion.div
+          animate={{ x: [0, -1035] }} // Adjust value based on content width
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 25,
+          }}
+          className="flex items-center gap-16 whitespace-nowrap"
+        >
+          {/* Double the list to create a seamless loop */}
+          {[...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
+            <span
+              key={i}
+              className="text-2xl font-bold text-zinc-300 tracking-tighter"
+            >
+              {brand}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
