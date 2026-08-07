@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { Brain, Cpu, Globe, Smartphone, Cloud, Sparkles } from "lucide-react";
+import { Brain, Globe, Smartphone, Palette, Cloud, Sparkles } from "lucide-react";
 
-export type ServiceMode = "AI" | "ML" | "Web" | "App" | "Cloud";
+export type ServiceMode = "AI" | "Web" | "App" | "UiUx" | "Cloud";
 
 interface DynamicServiceCanvasProps {
   currentMode: ServiceMode;
@@ -11,11 +11,11 @@ interface DynamicServiceCanvasProps {
 }
 
 interface Particle {
-  // Target 3D coordinates for each service mode
+  // Target 3D coordinates for each of the 5 services
   xAI: number; yAI: number; zAI: number;
-  xML: number; yML: number; zML: number;
   xWeb: number; yWeb: number; zWeb: number;
   xApp: number; yApp: number; zApp: number;
+  xUiUx: number; yUiUx: number; zUiUx: number;
   xCloud: number; yCloud: number; zCloud: number;
 
   // Current interpolated coordinates
@@ -23,7 +23,7 @@ interface Particle {
   y: number;
   z: number;
 
-  // Interactive mouse displacement
+  // Mouse interaction physics
   dispX: number;
   dispY: number;
   dispZ: number;
@@ -62,10 +62,10 @@ export const DynamicServiceCanvas: React.FC<DynamicServiceCanvasProps> = ({
   });
 
   const services = [
-    { id: "AI" as ServiceMode, label: "Artificial Intelligence", icon: Brain },
-    { id: "ML" as ServiceMode, label: "Machine Learning", icon: Cpu },
+    { id: "AI" as ServiceMode, label: "AI Automation", icon: Brain },
     { id: "Web" as ServiceMode, label: "Web Development", icon: Globe },
     { id: "App" as ServiceMode, label: "App Development", icon: Smartphone },
+    { id: "UiUx" as ServiceMode, label: "UI / UX Design", icon: Palette },
     { id: "Cloud" as ServiceMode, label: "Cloud Services", icon: Cloud },
   ];
 
@@ -110,8 +110,8 @@ export const DynamicServiceCanvas: React.FC<DynamicServiceCanvasProps> = ({
     canvas.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
 
-    // Build 30,000 Volumetric Morphing Particles with High-Contrast Distinct Geometries
-    const TOTAL_PARTICLES = 30000;
+    // Build 32,000 Volumetric Morphing Particles with High-Contrast 3D Models
+    const TOTAL_PARTICLES = 32000;
     const particles: Particle[] = [];
 
     const gaussianRandom = () => {
@@ -122,119 +122,139 @@ export const DynamicServiceCanvas: React.FC<DynamicServiceCanvasProps> = ({
     };
 
     for (let i = 0; i < TOTAL_PARTICLES; i++) {
-      // 1. AI GEOMETRY: 3D Synaptic Brain Model (Two Lobe Ellipsoids + Firing Cortex Rings)
-      const isCortexRing = Math.random() < 0.25;
+      // 1. AI AUTOMATION GEOMETRY: 3D Neural Brain + Left/Right Server Rack Towers
+      const isServerRack = Math.random() < 0.28;
       let xAI = 0, yAI = 0, zAI = 0;
-      if (isCortexRing) {
-        const ringA = Math.random() * Math.PI * 2;
-        const ringR = 210 + gaussianRandom() * 8;
-        xAI = Math.cos(ringA) * ringR;
-        yAI = Math.sin(ringA) * ringR * 0.4;
-        zAI = gaussianRandom() * 20;
+      if (isServerRack) {
+        // Vertical Server Rack Pillars (Left at x = -210, Right at x = +210)
+        const isRight = Math.random() < 0.5;
+        xAI = (isRight ? 210 : -210) + gaussianRandom() * 6;
+        yAI = (Math.random() - 0.5) * 320;
+        zAI = (Math.random() - 0.5) * 60;
       } else {
-        const isLeft = Math.random() < 0.5 ? -1 : 1;
+        // Central Volumetric Neural Brain Lobe
+        const isLeftLobe = Math.random() < 0.5 ? -1 : 1;
         const u = Math.random();
         const v = Math.random();
         const theta = u * Math.PI * 2;
         const phi = Math.acos(2 * v - 1);
-        const r = 140 + gaussianRandom() * 14;
-        xAI = r * Math.sin(phi) * Math.cos(theta) * 0.9 + isLeft * 55;
+        const r = 135 + gaussianRandom() * 12;
+        xAI = r * Math.sin(phi) * Math.cos(theta) * 0.9 + isLeftLobe * 45;
         yAI = r * Math.sin(phi) * Math.sin(theta) * 0.75;
         zAI = r * Math.cos(phi) * 0.85;
       }
 
-      // 2. ML GEOMETRY: Multi-Layer Neural Network Matrix (Input -> Hidden -> Output Nodes)
-      const layer = Math.floor(Math.random() * 5); // 0, 1, 2, 3, 4
-      const xML = (layer - 2) * 110 + gaussianRandom() * 12;
-      const countInLayer = layer === 0 || layer === 4 ? 4 : 7;
-      const nodeInLayer = Math.floor(Math.random() * countInLayer);
-      const yML = (nodeInLayer - (countInLayer - 1) / 2) * 65 + gaussianRandom() * 12;
-      const zML = (Math.random() - 0.5) * 160 + gaussianRandom() * 12;
-
-      // 3. WEB GEOMETRY: 3D Wireframe Browser Window + Floating Code Lines
-      const isWindowBorder = Math.random() < 0.45;
+      // 2. WEB DEVELOPMENT GEOMETRY: 3D Developer Workstation & Monitor Screen + Code Stream
+      const isMonitor = Math.random() < 0.45;
       let xWeb = 0, yWeb = 0, zWeb = 0;
-      if (isWindowBorder) {
-        // Outer Rectangular Browser Window Frame (Width: 440, Height: 280)
-        const side = Math.floor(Math.random() * 4);
-        if (side === 0) { // Top bar
-          xWeb = (Math.random() - 0.5) * 440;
-          yWeb = -140 + gaussianRandom() * 5;
-        } else if (side === 1) { // Bottom bar
-          xWeb = (Math.random() - 0.5) * 440;
-          yWeb = 140 + gaussianRandom() * 5;
-        } else if (side === 2) { // Left bar
-          xWeb = -220 + gaussianRandom() * 5;
-          yWeb = (Math.random() - 0.5) * 280;
-        } else { // Right bar
-          xWeb = 220 + gaussianRandom() * 5;
-          yWeb = (Math.random() - 0.5) * 280;
-        }
-        zWeb = gaussianRandom() * 8;
+      if (isMonitor) {
+        // Curved Desktop Monitor Screen (Width: 380, Height: 240)
+        xWeb = (Math.random() - 0.5) * 380;
+        yWeb = -40 + (Math.random() - 0.5) * 240;
+        // Curve depth along Z axis
+        zWeb = -Math.pow(xWeb / 190, 2) * 40 + gaussianRandom() * 6;
       } else {
-        // Horizontal Code Lines Inside Browser
-        const lineIdx = Math.floor(Math.random() * 6);
-        yWeb = -90 + lineIdx * 35 + gaussianRandom() * 4;
-        const lineLength = 120 + Math.random() * 200;
-        xWeb = -180 + Math.random() * lineLength;
-        zWeb = (Math.random() - 0.5) * 40;
+        // Keyboard Desk Base & Code Stream Particles
+        const isDesk = Math.random() < 0.6;
+        if (isDesk) {
+          xWeb = (Math.random() - 0.5) * 420;
+          yWeb = 110 + gaussianRandom() * 8;
+          zWeb = (Math.random() - 0.5) * 120 + 40;
+        } else {
+          // Floating Code Particles (<dev>, {code})
+          xWeb = (Math.random() - 0.5) * 320;
+          yWeb = -160 + gaussianRandom() * 20;
+          zWeb = (Math.random() - 0.5) * 80;
+        }
       }
 
-      // 4. APP GEOMETRY: 3D Smartphone Frame + Grid of App Cards
-      const isAppPhoneBorder = Math.random() < 0.4;
+      // 3. APP DEVELOPMENT GEOMETRY: Smartphone with Orbiting App Icon Cards & Wireframe Threads
+      const isPhoneOutline = Math.random() < 0.4;
       let xApp = 0, yApp = 0, zApp = 0;
-      if (isAppPhoneBorder) {
-        // Vertical Smartphone Outline (Width: 220, Height: 400)
+      if (isPhoneOutline) {
+        // Central Smartphone Body (Width: 190, Height: 360)
         const side = Math.floor(Math.random() * 4);
         if (side === 0) { // Top
-          xApp = (Math.random() - 0.5) * 220;
-          yApp = -200 + gaussianRandom() * 5;
+          xApp = (Math.random() - 0.5) * 190;
+          yApp = -180 + gaussianRandom() * 4;
         } else if (side === 1) { // Bottom
-          xApp = (Math.random() - 0.5) * 220;
-          yApp = 200 + gaussianRandom() * 5;
+          xApp = (Math.random() - 0.5) * 190;
+          yApp = 180 + gaussianRandom() * 4;
         } else if (side === 2) { // Left
-          xApp = -110 + gaussianRandom() * 5;
-          yApp = (Math.random() - 0.5) * 400;
+          xApp = -95 + gaussianRandom() * 4;
+          yApp = (Math.random() - 0.5) * 360;
         } else { // Right
-          xApp = 110 + gaussianRandom() * 5;
-          yApp = (Math.random() - 0.5) * 400;
+          xApp = 95 + gaussianRandom() * 4;
+          yApp = (Math.random() - 0.5) * 360;
         }
-        zApp = gaussianRandom() * 8;
+        zApp = gaussianRandom() * 6;
       } else {
-        // 3D App Icon Grid Floating in 3D Stack
-        const col = Math.floor(Math.random() * 3) - 1; // -1, 0, 1
-        const row = Math.floor(Math.random() * 4) - 1.5;
-        xApp = col * 60 + gaussianRandom() * 10;
-        yApp = row * 70 + gaussianRandom() * 10;
+        // Orbiting App Nodes & Connecting Threads
+        const nodeIdx = Math.floor(Math.random() * 6);
+        const nodeAngles = [0, 1.05, 2.1, 3.14, 4.18, 5.23];
+        const angle = nodeAngles[nodeIdx] + gaussianRandom() * 0.1;
+        const radius = 175 + gaussianRandom() * 10;
+        xApp = Math.cos(angle) * radius;
+        yApp = Math.sin(angle) * radius * 0.8;
         zApp = (Math.random() - 0.5) * 60;
       }
 
-      // 5. CLOUD GEOMETRY: Volumetric Cloud Puffs + Orbiting Server Discs
-      const isServerDisc = Math.random() < 0.25;
-      let xCloud = 0, yCloud = 0, zCloud = 0;
-      if (isServerDisc) {
-        const discAngle = Math.random() * Math.PI * 2;
-        const discR = 240 + gaussianRandom() * 10;
-        xCloud = Math.cos(discAngle) * discR;
-        yCloud = Math.sin(discAngle) * discR * 0.35 + gaussianRandom() * 15;
-        zCloud = Math.sin(discAngle) * discR;
+      // 4. UI / UX DESIGN GEOMETRY: 3D Stacked Wireframe UI Layout & Component Layer Panels
+      const layerIdx = Math.floor(Math.random() * 3); // 3 Stacked Panels
+      const zOffsetUI = (layerIdx - 1) * 70;
+      const isCardBorder = Math.random() < 0.45;
+      let xUiUx = 0, yUiUx = 0, zUiUx = zOffsetUI;
+      if (isCardBorder) {
+        // Rectangular UI Card Borders (Width: 260, Height: 340)
+        const side = Math.floor(Math.random() * 4);
+        if (side === 0) {
+          xUiUx = (Math.random() - 0.5) * 260;
+          yUiUx = -170 + gaussianRandom() * 4;
+        } else if (side === 1) {
+          xUiUx = (Math.random() - 0.5) * 260;
+          yUiUx = 170 + gaussianRandom() * 4;
+        } else if (side === 2) {
+          xUiUx = -130 + gaussianRandom() * 4;
+          yUiUx = (Math.random() - 0.5) * 340;
+        } else {
+          xUiUx = 130 + gaussianRandom() * 4;
+          yUiUx = (Math.random() - 0.5) * 340;
+        }
+        zUiUx += gaussianRandom() * 4;
       } else {
-        // 3 Overlapping Volumetric Cloud Clusters
-        const cloudGroup = Math.floor(Math.random() * 3);
+        // Floating UI Buttons, Icons, and Text Skeleton Blocks
+        const blockRow = Math.floor(Math.random() * 5);
+        xUiUx = (Math.random() - 0.5) * 210;
+        yUiUx = -120 + blockRow * 50 + gaussianRandom() * 6;
+        zUiUx += (Math.random() - 0.5) * 25;
+      }
+
+      // 5. CLOUD SERVICES GEOMETRY: 3D Volumetric Cloud & Ascending Data Server Beams
+      const isAscendingBeam = Math.random() < 0.3;
+      let xCloud = 0, yCloud = 0, zCloud = 0;
+      if (isAscendingBeam) {
+        // Data Stream Columns Ascending from Server Workstations up into Cloud
+        const beamIdx = Math.floor(Math.random() * 4) - 1.5;
+        xCloud = beamIdx * 90 + gaussianRandom() * 12;
+        yCloud = 60 + Math.random() * 140; // 60 to 200 (bottom)
+        zCloud = (Math.random() - 0.5) * 60;
+      } else {
+        // 3 Large Volumetric Cloud Puff Clusters at top
+        const cloudCluster = Math.floor(Math.random() * 3);
         const centers = [
-          { cx: -110, cy: -20, cz: 0, r: 120 },
-          { cx: 20, cy: -40, cz: 30, r: 140 },
-          { cx: 110, cy: 20, cz: -20, r: 110 },
+          { cx: -110, cy: -60, cz: 0, r: 120 },
+          { cx: 20, cy: -80, cz: 30, r: 145 },
+          { cx: 110, cy: -40, cz: -20, r: 115 },
         ];
-        const c = centers[cloudGroup];
+        const c = centers[cloudCluster];
         const u = Math.random();
         const v = Math.random();
         const theta = u * Math.PI * 2;
         const phi = Math.acos(2 * v - 1);
         const r = (Math.random() * 0.85 + 0.15) * c.r;
-        xCloud = c.cx + r * Math.sin(phi) * Math.cos(theta) + gaussianRandom() * 10;
-        yCloud = c.cy + r * Math.sin(phi) * Math.sin(theta) + gaussianRandom() * 10;
-        zCloud = c.cz + r * Math.cos(phi) + gaussianRandom() * 10;
+        xCloud = c.cx + r * Math.sin(phi) * Math.cos(theta) + gaussianRandom() * 8;
+        yCloud = c.cy + r * Math.sin(phi) * Math.sin(theta) + gaussianRandom() * 8;
+        zCloud = c.cz + r * Math.cos(phi) + gaussianRandom() * 8;
       }
 
       const size = Math.random() < 0.85 ? Math.random() * 1.3 + 0.6 : Math.random() * 2.4 + 1.2;
@@ -243,9 +263,9 @@ export const DynamicServiceCanvas: React.FC<DynamicServiceCanvasProps> = ({
 
       particles.push({
         xAI, yAI, zAI,
-        xML, yML, zML,
         xWeb, yWeb, zWeb,
         xApp, yApp, zApp,
+        xUiUx, yUiUx, zUiUx,
         xCloud, yCloud, zCloud,
         x: xAI,
         y: yAI,
@@ -309,17 +329,17 @@ export const DynamicServiceCanvas: React.FC<DynamicServiceCanvasProps> = ({
 
         // Determine target coordinates based on activeMode
         let tx = p.xAI, ty = p.yAI, tz = p.zAI;
-        if (activeMode === "ML") {
-          tx = p.xML; ty = p.yML; tz = p.zML;
-        } else if (activeMode === "Web") {
+        if (activeMode === "Web") {
           tx = p.xWeb; ty = p.yWeb; tz = p.zWeb;
         } else if (activeMode === "App") {
           tx = p.xApp; ty = p.yApp; tz = p.zApp;
+        } else if (activeMode === "UiUx") {
+          tx = p.xUiUx; ty = p.yUiUx; tz = p.zUiUx;
         } else if (activeMode === "Cloud") {
           tx = p.xCloud; ty = p.yCloud; tz = p.zCloud;
         }
 
-        // Fast responsive particle morph interpolation (ease factor 0.09)
+        // Morph interpolation toward active service shape (ease factor 0.09)
         p.x += (tx - p.x) * 0.09;
         p.y += (ty - p.y) * 0.09;
         p.z += (tz - p.z) * 0.09;

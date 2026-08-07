@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
             <Brain className="w-4 h-4" />
           </div>
           <span className="text-stone-900 font-bold">NEXUS TECH AGENCY</span>
-          <span>© 2026 AI • ML • Web • App • Cloud</span>
+          <span>© 2026 AI Automation • Web • App • UI/UX • Cloud</span>
         </div>
 
         <div className="flex items-center gap-6">

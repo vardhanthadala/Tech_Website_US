@@ -1,25 +1,17 @@
 "use client";
 
 import React from "react";
-import { Brain, Cpu, Globe, Smartphone, Cloud, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { Brain, Globe, Smartphone, Palette, Cloud, CheckCircle2, ArrowUpRight } from "lucide-react";
 
 export const ServicesSection: React.FC = () => {
   const serviceList = [
     {
       icon: Brain,
-      title: "Artificial Intelligence (AI)",
-      subtitle: "Generative AI & Intelligent Agents",
+      title: "AI Automation",
+      subtitle: "Autonomous Agents & Workflow Automation",
       desc: "Custom LLM integrations, fine-tuned AI models, RAG systems, and autonomous agent workflows designed to automate and empower your business operations.",
-      features: ["Custom LLM & RAG Solutions", "Autonomous AI Agents", "Natural Language Processing", "Generative AI Workflows"],
-      badge: "Core AI",
-    },
-    {
-      icon: Cpu,
-      title: "Machine Learning (ML)",
-      subtitle: "Predictive Analytics & Computer Vision",
-      desc: "End-to-end Machine Learning pipelines from data preprocessing to model deployment (MLOps), predictive modeling, and real-time computer vision.",
-      features: ["Predictive Data Models", "Computer Vision & OCR", "MLOps & Model Pipelines", "Deep Learning Systems"],
-      badge: "Analytics",
+      features: ["Custom LLM & RAG Solutions", "Autonomous AI Agents", "Workflow & Process Automation", "Generative AI Systems"],
+      badge: "AI Tech",
     },
     {
       icon: Globe,
@@ -38,6 +30,14 @@ export const ServicesSection: React.FC = () => {
       badge: "Mobile",
     },
     {
+      icon: Palette,
+      title: "UI / UX Design",
+      subtitle: "User-Centered Wireframes & Interfaces",
+      desc: "Intuitive user interface (UI) and user experience (UX) design, interactive prototypes, design systems, and wireframe architecture for web and mobile.",
+      features: ["Interactive Wireframes", "Design Systems & Tokens", "User Research & Flows", "High-Fidelity UI Mockups"],
+      badge: "Design",
+    },
+    {
       icon: Cloud,
       title: "Cloud Services",
       subtitle: "AWS, Azure & DevOps Infrastructure",
@@ -52,13 +52,13 @@ export const ServicesSection: React.FC = () => {
       {/* Section Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/80 border border-stone-300 text-xs font-mono text-stone-900">
-          <span>WHAT WE BUILD</span>
+          <span>OUR CORE SERVICES</span>
         </div>
         <h2 className="text-4xl sm:text-5xl font-extrabold font-sans text-stone-950 tracking-tight">
-          Our Technology Services
+          Services We Provide
         </h2>
         <p className="text-stone-600 font-sans text-lg">
-          We transform ideas into high-impact digital solutions across AI, Machine Learning, Web, Mobile, and Cloud Architecture.
+          We engineer tailored solutions across AI Automation, Web Development, Mobile Apps, UI/UX Design, and Cloud Architecture.
         </p>
       </div>
 

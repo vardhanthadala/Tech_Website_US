@@ -2,39 +2,39 @@
 
 import React, { useState } from "react";
 import DynamicServiceCanvas, { ServiceMode } from "./DynamicServiceCanvas";
-import { Brain, Cpu, Globe, Smartphone, Cloud, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Brain, Globe, Smartphone, Palette, Cloud, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const Hero: React.FC = () => {
   const [currentMode, setCurrentMode] = useState<ServiceMode>("AI");
 
   const serviceDetails = {
     AI: {
-      title: "Artificial Intelligence (AI)",
-      tagline: "Autonomous Agents & Neural Intelligence",
-      desc: "Custom LLMs, Generative AI models, Retrieval-Augmented Generation (RAG), and autonomous decision agents designed to supercharge your business capabilities.",
-      highlights: ["Custom LLM Training", "Autonomous AI Agents", "RAG Knowledge Engines", "Natural Language Processing"],
+      title: "AI Automation",
+      tagline: "Autonomous Agents & AI Workflows",
+      desc: "Custom LLMs, Generative AI integration, automated decision pipelines, RAG engines, and autonomous agents designed to eliminate manual tasks and multiply efficiency.",
+      highlights: ["Autonomous AI Agents", "Custom LLM & RAG Engines", "Workflow Automation", "Natural Language Systems"],
       icon: Brain,
-    },
-    ML: {
-      title: "Machine Learning (ML)",
-      tagline: "Predictive Analytics & Deep Learning",
-      desc: "End-to-end Machine Learning pipelines from data preprocessing to real-time MLOps, computer vision, and predictive analytics models.",
-      highlights: ["Predictive Data Models", "Computer Vision & OCR", "MLOps Pipelines", "Real-Time Inference"],
-      icon: Cpu,
     },
     Web: {
       title: "Web Development",
       tagline: "High-Performance Next.js Web Apps",
-      desc: "Blazing fast, scalable web applications built with Next.js, React, TypeScript, and modern CSS architecture optimized for search engines and conversion.",
-      highlights: ["Full-Stack Next.js Apps", "High SEO & Lighthouse Scores", "Interactive Web Visualizations", "Headless CMS Integrations"],
+      desc: "Blazing fast, scalable web applications built with Next.js, React, TypeScript, and modern CSS architecture optimized for conversion and search engines.",
+      highlights: ["Full-Stack Next.js Apps", "High SEO & Performance", "Interactive Web Visualizations", "Headless CMS & APIs"],
       icon: Globe,
     },
     App: {
       title: "App Development",
       tagline: "Cross-Platform iOS & Android Apps",
-      desc: "Sleek, responsive native and React Native mobile applications delivering seamless user experiences, offline capabilities, and high performance.",
-      highlights: ["iOS & Android Mobile Apps", "React Native & Flutter", "Real-Time Data Sync", "App Store Publishing"],
+      desc: "Sleek, responsive native and React Native mobile applications delivering seamless user experiences, real-time data sync, and high performance.",
+      highlights: ["iOS & Android Mobile Apps", "React Native & Flutter", "Real-Time Push & Sync", "App Store Publishing"],
       icon: Smartphone,
+    },
+    UiUx: {
+      title: "UI / UX Design",
+      tagline: "User-Centered Wireframes & Modern Interfaces",
+      desc: "Intuitive user interface (UI) and user experience (UX) design, interactive prototypes, design systems, and wireframe architecture for web and mobile.",
+      highlights: ["Interactive Wireframes", "Design Systems & Tokens", "User Research & Flows", "High-Fidelity UI Mockups"],
+      icon: Palette,
     },
     Cloud: {
       title: "Cloud Services",
@@ -53,13 +53,13 @@ export const Hero: React.FC = () => {
       {/* Top Headline */}
       <div className="text-center space-y-4 max-w-3xl mx-auto mb-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/80 border border-stone-300 text-xs font-mono text-stone-800">
-          <span>NEXT-GEN TECH AGENCY</span>
+          <span>NEXT-GEN TECH & SERVICES AGENCY</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-stone-950 leading-tight font-sans">
-          Engineering the Future of AI, Web & Cloud
+          AI Automation, Web, Mobile, UI/UX & Cloud Services
         </h1>
         <p className="text-stone-600 font-sans text-base sm:text-lg">
-          Click any service tab inside the canvas below to watch the 3D particle swarm morph into its signature animation!
+          Click any service tab inside the canvas below to watch the 3D particle swarm morph into its signature technology model!
         </p>
       </div>
 
@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
           href="#contact"
           className="px-6 py-3.5 rounded-2xl bg-stone-950 hover:bg-stone-800 text-white font-mono text-xs font-semibold flex items-center gap-2 transition-all shadow-md shrink-0 self-stretch lg:self-auto justify-center"
         >
-          <span>Get Started with {currentMode}</span>
+          <span>Get Started with {activeSvc.title}</span>
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>
