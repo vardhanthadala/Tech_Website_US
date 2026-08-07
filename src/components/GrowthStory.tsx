@@ -148,12 +148,21 @@ export const GrowthStory: React.FC = () => {
 
   return (
     <section className="w-full bg-white py-24 border-t border-slate-100 font-sans">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section label */}
-        <p className="text-[11px] font-normal text-slate-400 uppercase tracking-[0.15em] mb-10">
-          Growth Story
-        </p>
+        {/* Section Header */}
+        <div className="mb-14">
+          <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block">
+            Growth Story
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
+            Engineered for growth,<br />
+            <span className="font-serif italic text-[#11244e]">built for enterprise scale</span>
+          </h2>
+          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+            Real-time metrics and proven performance across AI automation, web platforms, mobile apps, and cloud infrastructure.
+          </p>
+        </div>
 
         <div
           className="grid gap-4"

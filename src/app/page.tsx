@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import GrowthStory from "@/components/GrowthStory";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
 
       <main className="flex-1 pt-24 pb-16">
         <GrowthStory />
+        <Testimonials />
       </main>
 
       <Footer />

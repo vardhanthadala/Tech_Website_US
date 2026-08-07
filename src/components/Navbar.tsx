@@ -113,7 +113,7 @@ export const Navbar: React.FC = () => {
         : "bg-transparent border-b border-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Left Logo */}
         <div className="flex items-center gap-3 cursor-pointer group">
           <Image

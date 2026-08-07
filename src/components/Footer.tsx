@@ -6,14 +6,18 @@ import { ArrowUpRight } from "lucide-react";
 export const Footer: React.FC = () => {
   return (
     <footer id="contact" className="w-full bg-[#f4f5f8] text-slate-900 pt-24 pb-16 font-sans border-t border-slate-200/60">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Call To Action Banner */}
-        <div className="text-center max-w-2xl mx-auto mb-24">
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight">
-            Try Dexze today
+        <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
+          <span className="px-4 py-1.5 rounded-full bg-white text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs">
+            Get Started
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4">
+            Ready to build<br />
+            <span className="font-serif italic text-[#11244e]">your next product?</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg mt-4 font-normal">
-            No hassle, no legacy delays. Start building high-impact digital products instantly.
+          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+            No hassle, no legacy delays. Start building high-impact digital products instantly with Dexze.
           </p>
           <div className="mt-8 flex items-center justify-center">
             <a
