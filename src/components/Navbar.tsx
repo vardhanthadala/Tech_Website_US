@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, Sparkles, Brain, Globe, Smartphone, Palette, Cloud } from "lucide-react";
+import { ChevronDown, Brain, Globe, Smartphone, Palette, Cloud } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#f4f6fa]/90 backdrop-blur-xl border-b border-slate-200/60 transition-all">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-        {/* Left Logo Image */}
+        {/* Left Logo */}
         <div className="flex items-center gap-3 cursor-pointer group">
           <Image
             src="/logo.png"
@@ -30,38 +30,17 @@ export const Navbar: React.FC = () => {
           />
         </div>
 
-        {/* Center Menu Links */}
-        <div className="hidden lg:flex items-center gap-7 text-sm font-sans font-medium text-slate-700">
-          {/* Let's Talk AI */}
-          <div
-            className="relative py-6 cursor-pointer group"
-            onMouseEnter={() => setActiveDropdown("ai")}
-            onMouseLeave={() => setActiveDropdown(null)}
+        {/* Center Menu Links: Home, Services, Contact us */}
+        <div className="hidden md:flex items-center gap-8 text-base font-sans font-medium text-slate-700">
+          {/* Home */}
+          <a
+            href="/"
+            className="hover:text-[#11244e] font-semibold transition-colors py-6"
           >
-            <div className="flex items-center gap-1 text-[#e86629] font-semibold hover:text-[#d35319] transition-colors">
-              <span>Let&apos;s Talk AI</span>
-              <ChevronDown className="w-4 h-4 text-[#e86629] group-hover:rotate-180 transition-transform duration-200" />
-            </div>
+            Home
+          </a>
 
-            {/* Dropdown Menu */}
-            {activeDropdown === "ai" && (
-              <div className="absolute top-full left-0 w-80 p-4 rounded-2xl bg-white shadow-2xl border border-slate-100 animate-fadeIn space-y-2">
-                <div className="p-3 rounded-xl bg-orange-50 hover:bg-orange-100/70 transition-colors cursor-pointer">
-                  <div className="flex items-center gap-2 font-bold text-sm text-[#11244e]">
-                    <Sparkles className="w-4 h-4 text-orange-500" />
-                    <span>AI Consultation</span>
-                  </div>
-                  <p className="text-xs text-slate-500 mt-1">Free AI readiness audit & roadmap for your enterprise.</p>
-                </div>
-                <div className="p-3 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer">
-                  <div className="font-semibold text-sm text-slate-800">Generative AI & LLMs</div>
-                  <p className="text-xs text-slate-500 mt-0.5">Custom model fine-tuning & RAG architectures.</p>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Services */}
+          {/* Services with Mega Dropdown */}
           <div
             className="relative py-6 cursor-pointer group"
             onMouseEnter={() => setActiveDropdown("services")}
@@ -72,14 +51,15 @@ export const Navbar: React.FC = () => {
               <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#11244e] group-hover:rotate-180 transition-transform duration-200" />
             </div>
 
-            {/* Services Mega Dropdown */}
+            {/* Services Dropdown */}
             {activeDropdown === "services" && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-[420px] p-4 rounded-2xl bg-white shadow-2xl border border-slate-100 animate-fadeIn space-y-1">
                 {servicesList.map((s, idx) => {
                   const Icon = s.icon;
                   return (
-                    <div
+                    <a
                       key={idx}
+                      href="#services"
                       className="p-3 rounded-xl hover:bg-slate-50 transition-all flex items-start gap-3 cursor-pointer group/item"
                     >
                       <div className="p-2 rounded-lg bg-slate-100 text-[#11244e] group-hover/item:bg-[#11244e] group-hover/item:text-white transition-colors">
@@ -91,39 +71,23 @@ export const Navbar: React.FC = () => {
                         </div>
                         <p className="text-xs text-slate-500 mt-0.5">{s.desc}</p>
                       </div>
-                    </div>
+                    </a>
                   );
                 })}
               </div>
             )}
           </div>
 
-          {/* Industries */}
-          <div className="flex items-center gap-1 cursor-pointer hover:text-[#11244e] transition-colors py-6 group">
-            <span>Industries</span>
-            <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#11244e] transition-colors" />
-          </div>
-
-          {/* Portfolio */}
-          <div className="flex items-center gap-1 cursor-pointer hover:text-[#11244e] transition-colors py-6 group">
-            <span>Portfolio</span>
-            <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#11244e] transition-colors" />
-          </div>
-
-          {/* Hire Resources */}
-          <div className="flex items-center gap-1 cursor-pointer hover:text-[#11244e] transition-colors py-6 group">
-            <span>Hire Resources</span>
-            <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#11244e] transition-colors" />
-          </div>
-
-          {/* Learn */}
-          <div className="flex items-center gap-1 cursor-pointer hover:text-[#11244e] transition-colors py-6 group">
-            <span>Learn</span>
-            <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#11244e] transition-colors" />
-          </div>
+          {/* Contact us */}
+          <a
+            href="#contact"
+            className="hover:text-[#11244e] transition-colors py-6"
+          >
+            Contact us
+          </a>
         </div>
 
-        {/* Right CTA Button matching reference image gradient border */}
+        {/* Right Action Button */}
         <div className="flex items-center gap-4">
           <a
             href="#contact"
