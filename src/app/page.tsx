@@ -8,6 +8,7 @@ import { CardCarousel } from "@/components/CardCarousel";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import Navbar from "@/components/Navbar";
 import GrowthStory from "@/components/GrowthStory";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -91,6 +92,10 @@ export default function Home() {
         {/* Remote Section: Growth Story */}
         <section className="w-full">
           <GrowthStory />
+        </section>
+        
+        <section className="w-full">
+          <Testimonials />
         </section>
       </main>
 
