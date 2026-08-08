@@ -147,12 +147,12 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
+    <section className="w-full bg-[#f5f0eb] py-14 sm:py-20 border-t border-[#e8dfd5] font-sans">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-10 sm:mb-14">
-          <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block">
+          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block">
             Growth Story
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
@@ -249,7 +249,7 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Top stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group">
+          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group border border-[#e8dfd5]/60">
             <AnimatePresence mode="wait">
               <motion.div key={`top-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -282,7 +282,7 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Tall stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2">
+          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2 border border-[#e8dfd5]/60">
             <AnimatePresence mode="wait">
               <motion.div key={`tall-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -315,7 +315,7 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Featured card (with border) ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] border-2 border-slate-900/10 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
+          <div className="relative rounded-2xl bg-[#faf6f0] border-2 border-[#c2703e]/20 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
             <AnimatePresence mode="wait">
               <motion.div key={`feat-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -348,7 +348,7 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-left stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1">
+          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-[#e8dfd5]/60">
             <AnimatePresence mode="wait">
               <motion.div key={`botL-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -381,7 +381,7 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-right stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1">
+          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-[#e8dfd5]/60">
             <AnimatePresence mode="wait">
               <motion.div key={`botR-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -427,7 +427,7 @@ export const GrowthStory: React.FC = () => {
         </div>
 
         {/* Bottom copy row */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-slate-100">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-[#e8dfd5]">
           <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
             Building Quality AI Solutions<br />
             <span className="text-slate-400">for a Smarter Future</span>

@@ -5,11 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="w-full bg-[#f4f5f8] text-slate-900 pt-24 pb-16 font-sans border-t border-slate-200/60">
+    <footer id="contact" className="w-full bg-[#f2ece4] text-slate-900 pt-24 pb-16 font-sans border-t border-[#e2d7cb]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Call To Action Banner */}
         <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
-          <span className="px-4 py-1.5 rounded-full bg-white text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
             Get Started
           </span>
           <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4">
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
           <div className="mt-8 flex items-center justify-center">
             <a
               href="#contact"
-              className="px-8 py-3.5 rounded-full bg-[#111111] text-white font-normal text-base hover:bg-slate-800 transition-all shadow-md active:scale-95"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#11244e] via-[#9a3412] to-[#c2703e] text-white font-medium text-base hover:opacity-90 transition-all shadow-md shadow-amber-600/20 active:scale-95"
             >
               Get started for free
             </a>
