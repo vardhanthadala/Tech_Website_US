@@ -147,34 +147,28 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white py-24 border-t border-slate-100 font-sans">
+    <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-14">
+        <div className="mb-10 sm:mb-14">
           <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block">
             Growth Story
           </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
             Engineered for growth,<br />
             <span className="font-serif italic text-[#11244e]">built for enterprise scale</span>
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base lg:text-lg font-normal max-w-2xl leading-relaxed">
             Real-time metrics and proven performance across AI automation, web platforms, mobile apps, and cloud infrastructure.
           </p>
         </div>
 
-        <div
-          className="grid gap-4"
-          style={{ gridTemplateColumns: "1.15fr 1fr 1fr", gridTemplateRows: "auto auto auto" }}
-        >
-          {/* ── Mission Card (clean dark) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* ── Mission Card (clean dark) — full width on mobile, spans 2 rows on lg ── */}
           <div
-            className="relative rounded-2xl p-8 flex flex-col justify-between overflow-hidden"
-            style={{
-              gridColumn: "1", gridRow: "1 / 3",
-              background: "linear-gradient(160deg, #1c1c1c 0%, #2a2a2a 50%, #1c1c1c 100%)",
-            }}
+            className="relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden sm:col-span-2 lg:col-span-1 lg:row-span-2"
+            style={{ background: "linear-gradient(160deg, #1c1c1c 0%, #2a2a2a 50%, #1c1c1c 100%)" }}
           >
             {/* Subtle frosted dot texture */}
             <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -195,7 +189,7 @@ export const GrowthStory: React.FC = () => {
             </AnimatePresence>
 
             {/* Cycling service indicator pills */}
-            <div className="relative z-10 flex flex-wrap gap-2.5 mb-6">
+            <div className="relative z-10 flex flex-wrap gap-2 mb-5 sm:mb-6">
               {services.map((s, i) => (
                 <button
                   key={s.name}
@@ -254,9 +248,8 @@ export const GrowthStory: React.FC = () => {
             </div>
           </div>
 
-          {/* ── Col 2 Row 1: Top stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-7 flex flex-col justify-between min-h-[150px] overflow-hidden group"
-            style={{ gridColumn: "2", gridRow: "1" }}>
+          {/* ── Top stat card ── */}
+          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group">
             <AnimatePresence mode="wait">
               <motion.div key={`top-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -288,9 +281,8 @@ export const GrowthStory: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* ── Col 3 Row 1-2: Tall stat card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-7 flex flex-col justify-between overflow-hidden group"
-            style={{ gridColumn: "3", gridRow: "1 / 3" }}>
+          {/* ── Tall stat card ── */}
+          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2">
             <AnimatePresence mode="wait">
               <motion.div key={`tall-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -322,9 +314,8 @@ export const GrowthStory: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* ── Col 2 Row 2-3: Featured card (with border) ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] border-2 border-slate-900/10 p-7 flex flex-col justify-between overflow-hidden group"
-            style={{ gridColumn: "2", gridRow: "2 / 4" }}>
+          {/* ── Featured card (with border) ── */}
+          <div className="relative rounded-2xl bg-[#f4f5f7] border-2 border-slate-900/10 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
             <AnimatePresence mode="wait">
               <motion.div key={`feat-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -356,9 +347,8 @@ export const GrowthStory: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* ── Col 1 Row 3: Short bottom-left card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group"
-            style={{ gridColumn: "1", gridRow: "3" }}>
+          {/* ── Bottom-left stat card ── */}
+          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1">
             <AnimatePresence mode="wait">
               <motion.div key={`botL-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -390,9 +380,8 @@ export const GrowthStory: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* ── Col 3 Row 3: Short bottom-right card ── */}
-          <div className="relative rounded-2xl bg-[#f4f5f7] p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group"
-            style={{ gridColumn: "3", gridRow: "3" }}>
+          {/* ── Bottom-right stat card ── */}
+          <div className="relative rounded-2xl bg-[#f4f5f7] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1">
             <AnimatePresence mode="wait">
               <motion.div key={`botR-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
@@ -438,8 +427,8 @@ export const GrowthStory: React.FC = () => {
         </div>
 
         {/* Bottom copy row */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mt-14 pt-10 border-t border-slate-100">
-          <h3 className="text-[22px] sm:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-slate-100">
+          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
             Building Quality AI Solutions<br />
             <span className="text-slate-400">for a Smarter Future</span>
           </h3>

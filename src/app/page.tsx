@@ -8,7 +8,9 @@ import { CardCarousel } from "@/components/CardCarousel";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import Navbar from "@/components/Navbar";
 import GrowthStory from "@/components/GrowthStory";
+import EngineeringProcess from "@/components/EngineeringProcess";
 import Testimonials from "@/components/Testimonials";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -22,80 +24,106 @@ export default function Home() {
         {/* Hero Section */}
         <motion.section 
           style={{ opacity, y: yOffset }}
-          className="flex flex-col items-start justify-center px-6 sm:px-8 lg:px-12 pt-32 md:pt-40 max-w-7xl mx-auto w-full min-h-[80vh] relative"
+          className="w-full pt-32 pb-16 md:pt-40 min-h-[80vh] relative font-sans"
         >
           {/* 3D Canvas Background - right side, 75% width */}
           <div className="absolute top-0 right-0 w-3/4 h-full z-0 pointer-events-none">
             <HeroCanvas />
           </div>
-          <div className="max-w-md">
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="text-4xl md:text-5xl xl:text-6xl font-normal tracking-tight leading-[1.15] mb-6 text-slate-900"
-            >
-              Building digital <br/>experiences that matter.
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-              className="text-[15px] font-normal text-slate-400 mb-8 leading-[1.85]"
-            >
-              We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
-            </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-400 mb-16"
-            >
-              <span>Design</span>
-              <span className="w-1 h-1 rounded-full bg-slate-300" />
-              <span>Strategy</span>
-              <span className="w-1 h-1 rounded-full bg-slate-300" />
-              <span>Engineering</span>
-            </motion.div>
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-2xl">
+              {/* Section Pill Badge */}
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block"
+              >
+                Digital Engineering
+              </motion.span>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
-            >
-              <a
-                href="#"
-                className="flex items-center justify-center h-12 px-8 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all text-[13px] font-normal"
+              {/* Main Heading */}
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4 font-sans"
               >
-                Start a project
-              </a>
-              <a
-                href="#"
-                className="flex items-center justify-center h-12 px-8 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-all text-[13px] font-normal"
+                Building digital<br />
+                <span className="font-serif italic text-[#11244e]">experiences that matter.</span>
+              </motion.h1>
+
+              {/* Subtitle Paragraph */}
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="text-slate-500 text-base sm:text-lg font-normal max-w-xl leading-relaxed mb-8"
               >
-                Our work
-              </a>
-            </motion.div>
+                We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="flex items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-400 mb-10"
+              >
+                <span>Design</span>
+                <span className="w-1 h-1 rounded-full bg-slate-300" />
+                <span>Strategy</span>
+                <span className="w-1 h-1 rounded-full bg-slate-300" />
+                <span>Engineering</span>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col sm:flex-row gap-4 mb-12"
+              >
+                <a
+                  href="#"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#11244e] text-white hover:bg-slate-800 transition-all text-[13px] font-normal shadow-xs"
+                >
+                  Start a project
+                </a>
+                <a
+                  href="#"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#f4f5f7] text-slate-900 border border-slate-200/80 hover:bg-slate-200 transition-all text-[13px] font-normal"
+                >
+                  Our work
+                </a>
+              </motion.div>
+            </div>
           </div>
 
           {/* Brand Marquee positioned at bottom right */}
           <BrandMarquee />
         </motion.section>
 
-        {/* Carousel Section */}
-        <section className="w-full bg-white py-24 border-t border-slate-100 mt-16">
+        {/* Carousel Section (Hidden for now) */}
+        {/* <section className="w-full bg-white py-24 border-t border-slate-100 mt-16">
           <CardCarousel />
-        </section>
+        </section> */}
 
         {/* Remote Section: Growth Story */}
         <section className="w-full">
           <GrowthStory />
         </section>
         
+        {/* Process Section: How We Work */}
+        <section className="w-full">
+          <EngineeringProcess />
+        </section>
+        
         <section className="w-full">
           <Testimonials />
+        </section>
+
+        <section className="w-full">
+          <FaqSection />
         </section>
       </main>
 
