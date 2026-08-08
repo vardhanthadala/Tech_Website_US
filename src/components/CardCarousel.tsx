@@ -81,36 +81,43 @@ export const CardCarousel = () => {
   const prevCard = () => setActiveIndex((prev) => Math.max(prev - 1, 0));
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center font-sans">
       
       {/* Header Section */}
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
-          <h2 className="text-4xl font-normal tracking-tight text-slate-900 mb-1">
-            Powering businesses of all sizes.
+          <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs">
+            Case Studies
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
+            Powering ambitious<br />
+            <span className="font-serif italic text-[#11244e]">businesses of all sizes.</span>
           </h2>
-          <p className="text-[15px] font-normal text-slate-400 leading-[1.85]">
-            Run your business on a reliable <br className="hidden md:block"/> platform that adapts to your needs.
+          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+            Run your business on a reliable platform that adapts to your needs and scales effortlessly.
           </p>
         </div>
-        <div className="flex items-center gap-4 mt-6 md:mt-0">
+
+        <div className="flex items-center gap-4 shrink-0">
           <div className="flex gap-2">
             <button 
               onClick={prevCard}
               disabled={activeIndex === 0}
-              className="w-10 h-10 flex items-center justify-center border border-slate-200 rounded-md hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-10 h-10 flex items-center justify-center border border-slate-200/80 rounded-full bg-[#f4f5f7] hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
+              aria-label="Previous slide"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             <button 
               onClick={nextCard}
               disabled={activeIndex === CARDS.length - 1}
-              className="w-10 h-10 flex items-center justify-center border border-slate-200 rounded-md hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-10 h-10 flex items-center justify-center border border-slate-200/80 rounded-full bg-[#f4f5f7] hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
+              aria-label="Next slide"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
           </div>
-          <button className="h-10 px-6 bg-slate-900 text-white font-normal text-[13px] rounded-md hover:bg-slate-800 transition-colors flex items-center gap-2">
+          <button className="h-10 px-6 bg-[#11244e] text-white font-normal text-[13px] rounded-full hover:bg-slate-800 transition-colors flex items-center gap-2 shadow-2xs cursor-pointer">
             For enterprises
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
@@ -120,7 +127,7 @@ export const CardCarousel = () => {
       {/* Carousel Section */}
       <div className="w-full overflow-hidden pb-12 relative">
         <motion.div
-          className="flex gap-6 cursor-grab active:cursor-grabbing pl-[max(3rem,calc((100vw-80rem)/2+3rem))] pr-[max(3rem,calc((100vw-80rem)/2+3rem))]"
+          className="flex gap-6 cursor-grab active:cursor-grabbing pl-[max(1rem,calc((100vw-1400px)/2+1rem))] pr-[max(1rem,calc((100vw-1400px)/2+1rem))]"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.1}
