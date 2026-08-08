@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
           <div className="mt-8 flex items-center justify-center">
             <a
               href="#contact"
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e947f5] to-[#7a95e6] text-white font-medium text-base hover:opacity-90 transition-all shadow-md shadow-[#e947f5]/20 active:scale-95"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#fae8ff] via-[#f5d0fe] to-[#e0e7ff] text-slate-900 font-semibold text-base hover:opacity-95 transition-all shadow-md shadow-purple-500/10 active:scale-95"
             >
               Get started for free
             </a>

@@ -23,13 +23,13 @@ export default function Home() {
       <main className="flex flex-1 w-full flex-col z-10">
         {/* Hero Section */}
         <section className="w-full relative min-h-screen overflow-hidden bg-transparent">
-          <motion.div 
+          <motion.div
             style={{ opacity, y: yOffset }}
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center"
           >
             {/* Grainient Background */}
             <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
-              <FloatingLines 
+              <FloatingLines
                 enabledWaves={['top', 'middle', 'bottom']}
                 lineCount={[5, 7, 10]}
                 lineDistance={[8, 6, 4]}
@@ -58,7 +58,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-black text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
+                className="text-slate-300 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
               >
                 We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
               </motion.p>
@@ -83,14 +83,14 @@ export default function Home() {
                 className="flex flex-col sm:flex-row justify-center gap-4"
               >
                 <a
-                  href="#"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#11244e] text-white hover:bg-slate-800 transition-all text-[13px] font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  href="#contact"
+                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#fae8ff] via-[#f5d0fe] to-[#e0e7ff] text-slate-900 font-semibold text-base hover:opacity-95 transition-all shadow-md shadow-purple-500/10 active:scale-95 flex items-center justify-center font-sans"
                 >
                   Start a project
                 </a>
                 <a
-                  href="#"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-white/80 backdrop-blur-sm text-slate-900 border border-slate-200 hover:bg-white transition-all text-[13px] font-medium shadow-sm hover:shadow-md"
+                  href="#services"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/15 hover:bg-white/20 transition-all text-base font-medium shadow-sm"
                 >
                   Our work
                 </a>
