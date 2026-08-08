@@ -17,12 +17,12 @@ export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-slate-200 overflow-hidden relative bg-[#f8fafc]">
+    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-amber-100 overflow-hidden relative bg-[#faf8f5]">
       <Navbar />
 
       <main className="flex flex-1 w-full flex-col z-10">
         {/* Hero Section */}
-        <motion.section 
+        <motion.section
           style={{ opacity, y: yOffset }}
           className="w-full pt-32 pb-16 md:pt-40 min-h-[80vh] relative font-sans"
         >
@@ -34,17 +34,17 @@ export default function Home() {
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-2xl">
               {/* Section Pill Badge */}
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block"
+                className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs"
               >
                 Digital Engineering
               </motion.span>
 
               {/* Main Heading */}
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -55,7 +55,7 @@ export default function Home() {
               </motion.h1>
 
               {/* Subtitle Paragraph */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -77,7 +77,7 @@ export default function Home() {
                 <span>Engineering</span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -85,13 +85,13 @@ export default function Home() {
               >
                 <a
                   href="#"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#11244e] text-white hover:bg-slate-800 transition-all text-[13px] font-normal shadow-xs"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-gradient-to-r from-[#11244e] via-[#9a3412] to-[#c2703e] text-white hover:opacity-90 transition-all text-[13px] font-medium shadow-md shadow-amber-600/20"
                 >
                   Start a project
                 </a>
                 <a
                   href="#"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#f4f5f7] text-slate-900 border border-slate-200/80 hover:bg-slate-200 transition-all text-[13px] font-normal"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-[#f2ece4] text-[#11244e] border border-[#e2d7cb]/80 hover:bg-[#e7ded3] transition-all text-[13px] font-medium"
                 >
                   Our work
                 </a>
@@ -112,12 +112,12 @@ export default function Home() {
         <section className="w-full">
           <GrowthStory />
         </section>
-        
+
         {/* Process Section: How We Work */}
         <section className="w-full">
           <EngineeringProcess />
         </section>
-        
+
         <section className="w-full">
           <Testimonials />
         </section>

@@ -125,12 +125,12 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="w-full bg-[#fcfcfc] py-24 border-t border-slate-100 font-sans relative overflow-hidden">
+    <section className="w-full bg-[#faf8f5] py-24 border-t border-[#e8dfd5] font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Top Header */}
         <div className="mb-14">
-          <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
             Frequently Asked Questions
           </span>
           <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
@@ -156,7 +156,7 @@ export default function FaqSection() {
               </div>
 
               {/* Right Side: Accordion Question List */}
-              <div className="w-full md:w-2/3 divide-y divide-slate-200/70 border-t border-b border-slate-200/70">
+              <div className="w-full md:w-2/3 divide-y divide-[#e8dfd5] border-t border-b border-[#e8dfd5]">
                 {group.questions.map((item) => {
                   const isOpen = openId === item.id;
                   return (

@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled || isMobileMenuOpen
-        ? "bg-[#f4f5f7]/95 backdrop-blur-xl border-b border-slate-200/60 shadow-sm"
+        ? "bg-[#faf8f5]/95 backdrop-blur-xl border-b border-[#e8dfd5]/60 shadow-sm"
         : "bg-transparent border-b border-transparent"
         }`}
     >
@@ -259,7 +259,7 @@ export const Navbar: React.FC = () => {
             href="#contact"
             className="p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-sm pointer-events-auto"
           >
-            <div className="px-6 py-2 rounded-full bg-[#f4f6fa]">
+            <div className="px-6 py-2 rounded-full bg-[#eee6dc]">
               <span className="font-sans font-medium text-sm text-[#11244e]">
                 Contact Us
               </span>
@@ -271,7 +271,7 @@ export const Navbar: React.FC = () => {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-xl bg-slate-200/60 text-slate-800 hover:bg-slate-200 transition-colors focus:outline-none"
+            className="p-2 rounded-xl bg-[#eee6dc]/70 text-slate-800 hover:bg-[#e2d7cb] transition-colors focus:outline-none"
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -281,7 +281,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer / Overlay Menu (< 768px) */}
       {isMobileMenuOpen && (
-        <div className="md:hidden w-full bg-[#f4f5f7] border-b border-slate-200/80 px-6 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-xl animate-fadeIn">
+        <div className="md:hidden w-full bg-[#faf8f5] border-b border-[#e8dfd5]/80 px-6 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-xl animate-fadeIn">
           <a
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
