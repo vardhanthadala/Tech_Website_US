@@ -50,7 +50,7 @@ export default function Home() {
                 className="text-4xl sm:text-5xl lg:text-7xl font-normal text-white tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
               >
                 Building digital<br />
-                <span className="font-serif italic text-white whitespace-nowrap">experiences that matter.</span>
+                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] whitespace-nowrap">experiences that matter.</span>
               </motion.h1>
 
               {/* Subtitle Paragraph */}
