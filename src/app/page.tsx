@@ -58,7 +58,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-white/80 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
+                className="text-black text-base sm:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed mb-10"
               >
                 We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
               </motion.p>
