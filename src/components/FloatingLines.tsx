@@ -312,10 +312,19 @@ export default function FloatingLines({
     camera.position.z = 1;
 
     const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
+
+    let isVisible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(container);
 
     const uniforms = {
       iTime: { value: 0 },
@@ -444,6 +453,10 @@ export default function FloatingLines({
     let raf = 0;
     const renderLoop = () => {
       if (!active) return;
+      
+      raf = requestAnimationFrame(renderLoop);
+      
+      if (!isVisible) return;
 
       uniforms.iTime.value = clock.getElapsedTime();
 
@@ -461,13 +474,12 @@ export default function FloatingLines({
       }
 
       renderer.render(scene, camera);
-      raf = requestAnimationFrame(renderLoop);
     };
     renderLoop();
 
     return () => {
       active = false;
-
+      observer.disconnect();
       cancelAnimationFrame(raf);
 
       if (ro) ro.disconnect();

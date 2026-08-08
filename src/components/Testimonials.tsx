@@ -35,21 +35,21 @@ const getServiceIcon = (tag: string) => {
 
 const getServiceHoverStyle = (tag: string, featured?: boolean) => {
   if (featured) {
-    return "bg-gradient-to-br from-[#11244e] via-[#2c1d11] to-[#7c2d12] text-white border-white/10 hover:border-amber-400/50 shadow-xl shadow-amber-950/20";
+    return "bg-gradient-to-br from-[#1c1c1c] via-[#2a2a2a] to-[#1c1c1c] text-white border-[#e947f5]/40 shadow-xl shadow-[#e947f5]/20";
   }
   switch (tag) {
     case "AI Automation":
-      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-amber-500/60 hover:shadow-xl hover:shadow-amber-500/15";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-indigo-500/60 hover:shadow-xl hover:shadow-indigo-500/15";
     case "Web Development":
-      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
     case "App Development":
-      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
     case "UI / UX Design":
-      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
     case "Cloud Services":
-      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
     default:
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-[#11244e]/40 hover:shadow-xl hover:shadow-slate-200/60";
+      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-slate-500/40 hover:shadow-xl hover:shadow-slate-500/15";
   }
 };
 
@@ -245,9 +245,9 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-24 bg-[#f5f0eb] font-sans border-t border-[#e8dfd5] relative overflow-hidden">
+    <section className="py-24 bg-[#0a0a0a] font-sans border-t border-white/5 relative overflow-hidden">
       {/* Ambient Background Gradient Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-amber-100/50 via-orange-50/40 to-stone-100/30 blur-3xl opacity-80 pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-[#e947f5]/10 via-[#7a95e6]/10 to-transparent blur-3xl opacity-80 pointer-events-none rounded-full" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -264,15 +264,15 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.4 }}
-            className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs"
+            className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs"
           >
             Customer Stories
           </motion.span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight max-w-2xl leading-[1.15] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight max-w-2xl leading-[1.15] mb-4">
             Empowering teams to build<br />
-            <span className="font-serif italic text-[#11244e]">extraordinary software</span>
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">extraordinary software</span>
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             Here is how Dexze helps industry leaders ship AI, web, mobile, and cloud platforms at enterprise scale.
           </p>
         </motion.div>
@@ -318,7 +318,7 @@ export default function Testimonials() {
                   {/* Card Top: Company Name & Service Tag */}
                   <div className="flex items-center justify-between gap-4 mb-5 relative z-10">
                     <span
-                      className={`text-base font-semibold tracking-tight ${item.featured ? "text-white" : "text-[#11244e]"
+                      className={`text-base font-semibold tracking-tight ${item.featured ? "text-white" : "text-white"
                         }`}
                     >
                       {item.company}
@@ -326,7 +326,7 @@ export default function Testimonials() {
                     <span
                       className={`text-[11px] px-3 py-1 rounded-full font-medium border inline-flex items-center gap-1.5 transition-colors ${item.featured
                         ? "bg-white/10 text-slate-200 border-white/15 group-hover:bg-white/20"
-                        : "bg-[#eee6dc] text-slate-700 border-[#e2d7cb]/70 group-hover:bg-[#e2d7cb]/80"
+                        : "bg-white/5 text-slate-300 border-white/10 group-hover:bg-white/10"
                         }`}
                     >
                       {getServiceIcon(item.serviceTag)}
@@ -336,7 +336,7 @@ export default function Testimonials() {
 
                   {/* Card Middle: Editorial Quote */}
                   <p
-                    className={`text-sm font-normal leading-[1.75] mb-6 relative z-10 ${item.featured ? "text-slate-200" : "text-slate-600"
+                    className={`text-sm font-normal leading-[1.75] mb-6 relative z-10 ${item.featured ? "text-slate-200" : "text-slate-400"
                       }`}
                   >
                     &quot;{item.quote}&quot;
@@ -358,7 +358,7 @@ export default function Testimonials() {
                     </div>
                     <div>
                       <h4
-                        className={`text-xs sm:text-sm font-medium leading-tight ${item.featured ? "text-white" : "text-slate-900"
+                        className={`text-xs sm:text-sm font-medium leading-tight ${item.featured ? "text-white" : "text-slate-200"
                           }`}
                       >
                         {item.name}
@@ -383,7 +383,7 @@ export default function Testimonials() {
             <button
               key={idx}
               onClick={() => setActivePage(idx)}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activePage === idx ? "w-8 bg-[#11244e]" : "w-2 bg-slate-200 hover:bg-slate-300"
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activePage === idx ? "w-8 bg-white" : "w-2 bg-white/20 hover:bg-white/40"
                 }`}
               aria-label={`Go to page ${idx + 1}`}
             />

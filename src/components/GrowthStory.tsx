@@ -146,17 +146,17 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#f5f0eb] py-14 sm:py-20 border-t border-[#e8dfd5] font-sans">
+    <section className="w-full bg-[#0a0a0a] py-14 sm:py-20 border-t border-white/5 font-sans">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-10 sm:mb-14">
-          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block">
+          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block">
             Growth Story
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight leading-[1.15] max-w-2xl mb-4">
             Engineered for growth,<br />
-            <span className="font-serif italic text-[#11244e]">built for enterprise scale</span>
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">built for enterprise scale</span>
           </h2>
           <p className="text-slate-500 text-sm sm:text-base lg:text-lg font-normal max-w-2xl leading-relaxed">
             Real-time metrics and proven performance across AI automation, web platforms, mobile apps, and cloud infrastructure.
@@ -248,11 +248,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Top stat card ── */}
-          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group border border-[#e8dfd5]/60">
+          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group border border-white/5 hover:border-white/10 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`top-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
                     <Counter key={`top-v-${active}`} end={svc.cards.top.end} suffix={svc.cards.top.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -281,11 +281,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Tall stat card ── */}
-          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2 border border-[#e8dfd5]/60">
+          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2 border border-white/5 hover:border-white/10 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`tall-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
                     <Counter key={`tall-v-${active}`} end={svc.cards.tall.end} suffix={svc.cards.tall.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -314,11 +314,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Featured card (with border) ── */}
-          <div className="relative rounded-2xl bg-[#faf6f0] border-2 border-[#c2703e]/20 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
+          <div className="relative rounded-2xl bg-white/[0.02] border-2 border-[#e947f5]/20 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
             <AnimatePresence mode="wait">
               <motion.div key={`feat-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[48px] font-normal text-slate-900 tracking-tight leading-none">
+                  <div className="text-[48px] font-normal text-white tracking-tight leading-none">
                     <Counter key={`feat-v-${active}`} end={svc.cards.featured.end} suffix={svc.cards.featured.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -347,11 +347,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-left stat card ── */}
-          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-[#e8dfd5]/60">
+          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-white/5 hover:border-white/10 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`botL-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
                     <Counter key={`botL-v-${active}`} end={svc.cards.bottomL.end} suffix={svc.cards.bottomL.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -380,11 +380,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-right stat card ── */}
-          <div className="relative rounded-2xl bg-[#faf6f0] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-[#e8dfd5]/60">
+          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-white/5 hover:border-white/10 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`botR-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
                     <Counter key={`botR-v-${active}`} end={svc.cards.bottomR.end} suffix={svc.cards.bottomR.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -426,8 +426,8 @@ export const GrowthStory: React.FC = () => {
         </div>
 
         {/* Bottom copy row */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-[#e8dfd5]">
-          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-white/5">
+          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-white max-w-sm leading-[1.3] tracking-tight">
             Building Quality AI Solutions<br />
             <span className="text-slate-400">for a Smarter Future</span>
           </h3>

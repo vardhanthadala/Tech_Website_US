@@ -125,18 +125,18 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="w-full bg-[#faf8f5] py-24 border-t border-[#e8dfd5] font-sans relative overflow-hidden">
+    <section className="w-full bg-[#0a0a0a] py-24 border-t border-white/5 font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Top Header */}
         <div className="mb-14">
-          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs">
             Frequently Asked Questions
           </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
+          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
             Frequently asked questions
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             We&apos;re here to help with any questions you have about plans, pricing, and supported features.
           </p>
         </div>
@@ -150,13 +150,13 @@ export default function FaqSection() {
             >
               {/* Left Side: Category Heading */}
               <div className="w-full md:w-1/3 shrink-0">
-                <h3 className="text-2xl sm:text-3xl font-normal text-slate-900 tracking-tight font-sans">
+                <h3 className="text-2xl sm:text-3xl font-normal text-white tracking-tight font-sans">
                   {group.categoryTitle}
                 </h3>
               </div>
 
               {/* Right Side: Accordion Question List */}
-              <div className="w-full md:w-2/3 divide-y divide-[#e8dfd5] border-t border-b border-[#e8dfd5]">
+              <div className="w-full md:w-2/3 divide-y divide-white/5 border-t border-b border-white/5">
                 {group.questions.map((item) => {
                   const isOpen = openId === item.id;
                   return (
@@ -166,11 +166,11 @@ export default function FaqSection() {
                         className="w-full py-4 text-left flex items-center justify-between gap-4 cursor-pointer group"
                         aria-expanded={isOpen}
                       >
-                        <span className="text-base sm:text-lg font-normal text-slate-900 group-hover:text-[#11244e] transition-colors leading-snug font-sans">
+                        <span className="text-base sm:text-lg font-normal text-white group-hover:text-[#7a95e6] transition-colors leading-snug font-sans">
                           {item.question}
                         </span>
 
-                        <span className="text-slate-400 group-hover:text-slate-900 transition-colors shrink-0 pl-2">
+                        <span className="text-slate-400 group-hover:text-white transition-colors shrink-0 pl-2">
                           {isOpen ? (
                             <Minus className="w-4 h-4 stroke-[1.5]" />
                           ) : (
@@ -189,7 +189,7 @@ export default function FaqSection() {
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
                             className="overflow-hidden"
                           >
-                            <p className="text-slate-500 text-sm sm:text-base leading-[1.85] pb-5 pt-1 font-normal max-w-2xl">
+                            <p className="text-slate-400 text-sm sm:text-base leading-[1.85] pb-5 pt-1 font-normal max-w-2xl">
                               {item.answer}
                             </p>
                           </motion.div>

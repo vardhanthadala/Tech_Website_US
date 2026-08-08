@@ -48,17 +48,17 @@ const steps: ProcessStep[] = [
 
 export default function EngineeringProcess() {
   return (
-    <section className="w-full bg-[#faf8f5] py-16 sm:py-20 border-t border-[#e8dfd5] font-sans relative overflow-hidden">
+    <section className="w-full bg-[#0a0a0a] py-16 sm:py-20 border-t border-white/5 font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-14 sm:mb-16">
-          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs">
             How We Work
           </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
+          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
             Our engineering process,<br />
-            <span className="font-serif italic text-[#11244e]">from concept to enterprise scale.</span>
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">from concept to enterprise scale.</span>
           </h2>
           <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             A structured, 4-step agile workflow built for rapid iteration, transparent communication, and production reliability.
@@ -77,12 +77,12 @@ export default function EngineeringProcess() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className={`flex flex-col-reverse ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-4 lg:gap-0 py-6 sm:py-8 border-t border-[#e8dfd5] first:border-t-0`}
+                className={`flex flex-col-reverse ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-4 lg:gap-0 py-6 sm:py-8 border-t border-white/5 first:border-t-0`}
               >
                 {/* Text Content */}
                 <div className={`w-full lg:w-1/2 ${isEven ? "lg:pr-12 text-left" : "lg:pl-12 text-left lg:text-right"}`}>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight leading-tight mb-3 font-sans">
-                    {step.title} <span className="font-serif italic text-[#11244e] font-normal">{step.titleAccent}</span>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight mb-3 font-sans">
+                    {step.title} <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] font-normal">{step.titleAccent}</span>
                   </h3>
                   <p
                     className="text-slate-500 text-sm sm:text-[15px] leading-[1.9] font-normal max-w-lg"

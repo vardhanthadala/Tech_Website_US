@@ -5,24 +5,24 @@ import { ArrowUpRight } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="w-full bg-[#f2ece4] text-slate-900 pt-24 pb-16 font-sans border-t border-[#e2d7cb]">
+    <footer id="contact" className="w-full bg-[#0a0a0a] text-slate-200 pt-24 pb-16 font-sans border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Call To Action Banner */}
         <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
-          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs">
             Get Started
           </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight leading-[1.15] mb-4">
             Ready to build<br />
-            <span className="font-serif italic text-[#11244e]">your next product?</span>
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">your next product?</span>
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             No hassle, no legacy delays. Start building high-impact digital products instantly with Dexze.
           </p>
           <div className="mt-8 flex items-center justify-center">
             <a
               href="#contact"
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#11244e] via-[#9a3412] to-[#c2703e] text-white font-medium text-base hover:opacity-90 transition-all shadow-md shadow-amber-600/20 active:scale-95"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e947f5] to-[#7a95e6] text-white font-medium text-base hover:opacity-90 transition-all shadow-md shadow-[#e947f5]/20 active:scale-95"
             >
               Get started for free
             </a>
@@ -30,81 +30,81 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* 5-Column Navigation Grid matching standard system alignment */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12 lg:gap-16 pb-20 border-b border-slate-200/80 text-sm font-normal">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12 lg:gap-16 pb-20 border-b border-white/10 text-sm font-normal">
           {/* Column 1: Product / Services */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-slate-900 text-sm tracking-tight">
+            <h4 className="font-semibold text-white text-sm tracking-tight">
               Product
             </h4>
-            <ul className="space-y-3 text-slate-600 text-sm">
-              <li><a href="#services" className="hover:text-slate-900 transition-colors">AI Automation</a></li>
-              <li><a href="#services" className="hover:text-slate-900 transition-colors">Web Development</a></li>
-              <li><a href="#services" className="hover:text-slate-900 transition-colors">App Development</a></li>
-              <li><a href="#services" className="hover:text-slate-900 transition-colors">UI / UX Design</a></li>
-              <li><a href="#services" className="hover:text-slate-900 transition-colors">Cloud Services</a></li>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><a href="#services" className="hover:text-white transition-colors">AI Automation</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Web Development</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">App Development</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">UI / UX Design</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Cloud Services</a></li>
             </ul>
           </div>
 
           {/* Column 2: Solutions */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-slate-900 text-sm tracking-tight">
+            <h4 className="font-semibold text-white text-sm tracking-tight">
               Solutions
             </h4>
-            <ul className="space-y-3 text-slate-600 text-sm">
-              <li><a href="#solutions" className="hover:text-slate-900 transition-colors">Autonomous AI Agents</a></li>
-              <li><a href="#solutions" className="hover:text-slate-900 transition-colors">Full-Stack Next.js</a></li>
-              <li><a href="#solutions" className="hover:text-slate-900 transition-colors">iOS & Android Apps</a></li>
-              <li><a href="#solutions" className="hover:text-slate-900 transition-colors">Design Systems</a></li>
-              <li><a href="#solutions" className="hover:text-slate-900 transition-colors">DevOps & AWS</a></li>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><a href="#solutions" className="hover:text-white transition-colors">Autonomous AI Agents</a></li>
+              <li><a href="#solutions" className="hover:text-white transition-colors">Full-Stack Next.js</a></li>
+              <li><a href="#solutions" className="hover:text-white transition-colors">iOS & Android Apps</a></li>
+              <li><a href="#solutions" className="hover:text-white transition-colors">Design Systems</a></li>
+              <li><a href="#solutions" className="hover:text-white transition-colors">DevOps & AWS</a></li>
             </ul>
           </div>
 
           {/* Column 3: Resources */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-slate-900 text-sm tracking-tight">
+            <h4 className="font-semibold text-white text-sm tracking-tight">
               Resources
             </h4>
-            <ul className="space-y-3 text-slate-600 text-sm">
-              <li><a href="#pricing" className="hover:text-slate-900 transition-colors">Pricing</a></li>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
               <li>
-                <a href="https://discord.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
+                <a href="https://discord.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-white transition-colors">
                   <span>Join Our Discord</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
-                <a href="#docs" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
+                <a href="#docs" className="inline-flex items-center gap-1 hover:text-white transition-colors">
                   <span>Documentation</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
-                <a href="#tutorials" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
+                <a href="#tutorials" className="inline-flex items-center gap-1 hover:text-white transition-colors">
                   <span>Tutorials</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
               <li>
-                <a href="#hire" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
+                <a href="#hire" className="inline-flex items-center gap-1 hover:text-white transition-colors">
                   <span>Hire An Expert</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </li>
-              <li><a href="#changelog" className="hover:text-slate-900 transition-colors">Changelog</a></li>
+              <li><a href="#changelog" className="hover:text-white transition-colors">Changelog</a></li>
             </ul>
           </div>
 
           {/* Column 4: Company */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-slate-900 text-sm tracking-tight">
+            <h4 className="font-semibold text-white text-sm tracking-tight">
               Company
             </h4>
-            <ul className="space-y-3 text-slate-600 text-sm">
-              <li><a href="#customers" className="hover:text-slate-900 transition-colors">Customers</a></li>
-              <li><a href="#terms" className="hover:text-slate-900 transition-colors">Terms & Conditions</a></li>
-              <li><a href="#privacy" className="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><a href="#customers" className="hover:text-white transition-colors">Customers</a></li>
+              <li><a href="#terms" className="hover:text-white transition-colors">Terms & Conditions</a></li>
+              <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li>
-                <a href="#careers" className="inline-flex items-center gap-1 hover:text-slate-900 transition-colors">
+                <a href="#careers" className="inline-flex items-center gap-1 hover:text-white transition-colors">
                   <span>Careers</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
@@ -114,12 +114,12 @@ export const Footer: React.FC = () => {
 
           {/* Column 5: Connect */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-slate-900 text-sm tracking-tight">
+            <h4 className="font-semibold text-white text-sm tracking-tight">
               Connect
             </h4>
-            <ul className="space-y-3 text-slate-600 text-sm">
-              <li><a href="mailto:sales@dexze.com" className="hover:text-slate-900 transition-colors">Sales</a></li>
-              <li><a href="mailto:support@dexze.com" className="hover:text-slate-900 transition-colors">Support</a></li>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><a href="mailto:sales@dexze.com" className="hover:text-white transition-colors">Sales</a></li>
+              <li><a href="mailto:support@dexze.com" className="hover:text-white transition-colors">Support</a></li>
             </ul>
           </div>
         </div>

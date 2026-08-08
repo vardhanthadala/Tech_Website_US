@@ -17,12 +17,12 @@ export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-amber-100 overflow-hidden relative bg-[#faf8f5]">
+    <div className="flex flex-col min-h-screen text-slate-200 font-sans antialiased selection:bg-fuchsia-500/30 overflow-hidden relative bg-[#0a0a0a]">
       <Navbar />
 
       <main className="flex flex-1 w-full flex-col z-10">
         {/* Hero Section */}
-        <section className="w-full relative min-h-screen overflow-hidden bg-[#f8fafc]">
+        <section className="w-full relative min-h-screen overflow-hidden bg-transparent">
           <motion.div 
             style={{ opacity, y: yOffset }}
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center"
@@ -31,7 +31,7 @@ export default function Home() {
             <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
               <FloatingLines 
                 enabledWaves={['top', 'middle', 'bottom']}
-                lineCount={[10, 15, 20]}
+                lineCount={[5, 7, 10]}
                 lineDistance={[8, 6, 4]}
                 bendRadius={5.0}
                 bendStrength={-0.5}
@@ -100,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* Brand Marquee Section */}
-        <section className="w-full bg-white py-12 border-b border-slate-100 relative z-20">
+        <section className="w-full bg-[#0a0a0a] py-12 border-b border-white/5 relative z-20">
           <BrandMarquee />
         </section>
 
