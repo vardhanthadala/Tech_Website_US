@@ -37,7 +37,6 @@ export default function Home() {
                 bendStrength={-0.5}
                 interactive={true}
                 parallax={true}
-                mixBlendMode="screen"
               />
             </div>
 

@@ -311,7 +311,7 @@ export default function FloatingLines({
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
     camera.position.z = 1;
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: true }); // using alpha true for transparent bg
+    const renderer = new WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
@@ -507,9 +507,7 @@ export default function FloatingLines({
     <div
       ref={containerRef}
       className="w-full h-full relative overflow-hidden"
-      style={{
-        mixBlendMode: mixBlendMode
-      }}
+      style={{}}
     />
   );
 }
