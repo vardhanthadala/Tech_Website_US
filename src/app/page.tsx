@@ -1,11 +1,10 @@
 'use client';
 
-import { HeroCanvas } from "@/components/3d/HeroCanvas";
 import Grainient from "@/components/Grainient";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { motion } from "framer-motion";
 
-import { CardCarousel } from "@/components/CardCarousel";
+
 import { BrandMarquee } from "@/components/BrandMarquee";
 import Navbar from "@/components/Navbar";
 import GrowthStory from "@/components/GrowthStory";
