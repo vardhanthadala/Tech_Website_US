@@ -128,32 +128,36 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Center Menu Links (Desktop >= 768px) */}
-        <div className="hidden md:flex items-center gap-9 text-base font-sans font-medium text-slate-700">
+        <div className={`hidden md:flex items-center gap-9 text-base font-sans font-medium ${isScrolled ? "text-slate-700" : "text-white"}`}>
           {/* Home */}
           <Link
             href="/"
-            className="relative py-6 group text-slate-700 hover:text-[#11244e] transition-colors"
+            className={`relative py-6 group transition-colors ${isScrolled ? "text-slate-700 hover:text-[#11244e]" : "text-white/90 hover:text-white"}`}
           >
             <span>Home</span>
-            <span className="absolute bottom-4 left-0 w-0 h-0.5 bg-[#11244e] group-hover:w-full transition-all duration-300 rounded-full" />
+            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full ${isScrolled ? "bg-[#11244e]" : "bg-white"}`} />
           </Link>
 
           {/* Services Mega Dropdown Trigger */}
           <div
-            className="relative py-6 cursor-pointer group text-slate-700"
+            className={`relative py-6 cursor-pointer group ${isScrolled ? "text-slate-700" : "text-white/90"}`}
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <div className="flex items-center gap-1 hover:text-[#11244e] transition-colors">
+            <div className={`flex items-center gap-1 transition-colors ${isScrolled ? "hover:text-[#11244e]" : "hover:text-white"}`}>
               <span>Services</span>
               <ChevronDown
-                className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isServicesOpen ? "rotate-180 text-[#11244e]" : ""
-                  }`}
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isServicesOpen 
+                    ? `rotate-180 ${isScrolled ? "text-[#11244e]" : "text-white"}` 
+                    : isScrolled ? "text-slate-500" : "text-white/70"
+                }`}
               />
             </div>
             <span
-              className={`absolute bottom-4 left-0 h-0.5 bg-[#11244e] transition-all duration-300 rounded-full ${isServicesOpen ? "w-full" : "w-0 group-hover:w-full"
-                }`}
+              className={`absolute bottom-4 left-0 h-0.5 transition-all duration-300 rounded-full ${
+                isServicesOpen ? "w-full" : "w-0 group-hover:w-full"
+              } ${isScrolled ? "bg-[#11244e]" : "bg-white"}`}
             />
 
             {/* Clean Services Mega Dropdown Container */}
@@ -247,10 +251,10 @@ export const Navbar: React.FC = () => {
           {/* Contact us */}
           <a
             href="#contact"
-            className="relative py-6 group text-slate-700 hover:text-[#11244e] transition-colors"
+            className={`relative py-6 group transition-colors ${isScrolled ? "text-slate-700 hover:text-[#11244e]" : "text-white/90 hover:text-white"}`}
           >
             <span>Contact us</span>
-            <span className="absolute bottom-4 left-0 w-0 h-0.5 bg-[#11244e] group-hover:w-full transition-all duration-300 rounded-full" />
+            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full ${isScrolled ? "bg-[#11244e]" : "bg-white"}`} />
           </a>
         </div>
 
@@ -260,8 +264,8 @@ export const Navbar: React.FC = () => {
             href="#contact"
             className="p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-sm pointer-events-auto"
           >
-            <div className="px-6 py-2 rounded-full bg-[#eee6dc]">
-              <span className="font-sans font-medium text-sm text-[#11244e]">
+            <div className={`px-6 py-2 rounded-full ${isScrolled ? "bg-[#eee6dc]" : "bg-black/20 backdrop-blur-sm"}`}>
+              <span className={`font-sans font-medium text-sm ${isScrolled ? "text-[#11244e]" : "text-white"}`}>
                 Contact Us
               </span>
             </div>
@@ -272,7 +276,7 @@ export const Navbar: React.FC = () => {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-xl bg-[#eee6dc]/70 text-slate-800 hover:bg-[#e2d7cb] transition-colors focus:outline-none"
+            className={`p-2 rounded-xl transition-colors focus:outline-none ${isScrolled || isMobileMenuOpen ? "bg-[#eee6dc]/70 text-slate-800 hover:bg-[#e2d7cb]" : "bg-black/20 text-white hover:bg-black/40"}`}
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
