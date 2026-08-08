@@ -15,7 +15,7 @@ const BRANDS = [
 
 export const BrandMarquee = () => {
   return (
-    <div className="absolute bottom-12 right-12 md:right-[max(3rem,calc((100vw-80rem)/2+3rem))] z-20 w-[600px] max-w-[85vw] overflow-hidden">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-20 overflow-hidden">
       <div className="flex items-center gap-4 mb-4">
         <div className="h-px bg-zinc-200 flex-1" />
         <span className="text-xs font-semibold text-zinc-400 uppercase tracking-widest whitespace-nowrap">
@@ -26,8 +26,8 @@ export const BrandMarquee = () => {
 
       <div className="relative flex overflow-hidden group">
         {/* Fading edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fafafa] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#fafafa] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
         
         {/* Marquee Track */}
         <motion.div
