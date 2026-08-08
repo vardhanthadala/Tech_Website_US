@@ -1,6 +1,6 @@
 'use client';
 
-import Grainient from "@/components/Grainient";
+import FloatingLines from "@/components/FloatingLines";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { motion } from "framer-motion";
 
@@ -25,33 +25,19 @@ export default function Home() {
         <section className="w-full relative min-h-screen overflow-hidden bg-[#f8fafc]">
           <motion.div 
             style={{ opacity, y: yOffset }}
-            className="absolute inset-0 w-full h-full flex flex-col justify-center items-center pt-32 pb-24"
+            className="absolute inset-0 w-full h-full flex flex-col justify-center items-center"
           >
             {/* Grainient Background */}
-            <div className="absolute inset-0 z-0">
-              <Grainient
-                color1="#e1be7c"
-                color2="#eee9e0"
-                color3="#e1be7c"
-                timeSpeed={0.25}
-                colorBalance={0.0}
-                warpStrength={1.0}
-                warpFrequency={5.0}
-                warpSpeed={2.0}
-                warpAmplitude={50.0}
-                blendAngle={0.0}
-                blendSoftness={0.05}
-                rotationAmount={500.0}
-                noiseScale={2.0}
-                grainAmount={0.1}
-                grainScale={2.0}
-                grainAnimated={false}
-                contrast={1.5}
-                gamma={1.0}
-                saturation={1.0}
-                centerX={0.0}
-                centerY={0.0}
-                zoom={0.9}
+            <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
+              <FloatingLines 
+                enabledWaves={['top', 'middle', 'bottom']}
+                lineCount={[10, 15, 20]}
+                lineDistance={[8, 6, 4]}
+                bendRadius={5.0}
+                bendStrength={-0.5}
+                interactive={true}
+                parallax={true}
+                mixBlendMode="screen"
               />
             </div>
 
@@ -62,10 +48,10 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl lg:text-7xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
+                className="text-4xl sm:text-5xl lg:text-7xl font-normal text-white tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
               >
                 Building digital<br />
-                <span className="font-serif italic text-[#11244e] whitespace-nowrap">experiences that matter.</span>
+                <span className="font-serif italic text-white whitespace-nowrap">experiences that matter.</span>
               </motion.h1>
 
               {/* Subtitle Paragraph */}
@@ -73,7 +59,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-slate-700 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
+                className="text-white/80 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
               >
                 We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
               </motion.p>
@@ -82,12 +68,12 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="flex justify-center items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-600 mb-12"
+                className="flex justify-center items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-white/60 mb-12"
               >
                 <span>Design</span>
-                <span className="w-1 h-1 rounded-full bg-slate-400" />
+                <span className="w-1 h-1 rounded-full bg-white/40" />
                 <span>Strategy</span>
-                <span className="w-1 h-1 rounded-full bg-slate-400" />
+                <span className="w-1 h-1 rounded-full bg-white/40" />
                 <span>Engineering</span>
               </motion.div>
 
