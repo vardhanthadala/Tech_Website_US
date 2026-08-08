@@ -48,12 +48,12 @@ const steps: ProcessStep[] = [
 
 export default function EngineeringProcess() {
   return (
-    <section className="w-full bg-white py-16 sm:py-20 border-t border-slate-100 font-sans relative overflow-hidden">
+    <section className="w-full bg-[#faf8f5] py-16 sm:py-20 border-t border-[#e8dfd5] font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-14 sm:mb-16">
-          <span className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs">
+          <span className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs">
             How We Work
           </span>
           <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
@@ -77,7 +77,7 @@ export default function EngineeringProcess() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className={`flex flex-col-reverse ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-4 lg:gap-0 py-6 sm:py-8 border-t border-slate-100 first:border-t-0`}
+                className={`flex flex-col-reverse ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-4 lg:gap-0 py-6 sm:py-8 border-t border-[#e8dfd5] first:border-t-0`}
               >
                 {/* Text Content */}
                 <div className={`w-full lg:w-1/2 ${isEven ? "lg:pr-12 text-left" : "lg:pl-12 text-left lg:text-right"}`}>

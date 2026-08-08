@@ -34,19 +34,19 @@ const getServiceIcon = (tag: string) => {
 
 const getServiceHoverStyle = (tag: string, featured?: boolean) => {
   if (featured) {
-    return "bg-gradient-to-br from-[#11244e] via-[#1c1c1c] to-[#0d1b3a] text-white border-white/10 hover:border-indigo-400/50 shadow-xl shadow-[#11244e]/20";
+    return "bg-gradient-to-br from-[#11244e] via-[#2c1d11] to-[#7c2d12] text-white border-white/10 hover:border-amber-400/50 shadow-xl shadow-amber-950/20";
   }
   switch (tag) {
     case "AI Automation":
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-indigo-400/60 hover:shadow-xl hover:shadow-indigo-500/15";
+      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-amber-500/60 hover:shadow-xl hover:shadow-amber-500/15";
     case "Web Development":
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
+      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
     case "App Development":
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
+      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
     case "UI / UX Design":
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
+      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
     case "Cloud Services":
-      return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
+      return "bg-[#faf6f0]/90 backdrop-blur-sm text-slate-900 border-[#e8dfd5]/80 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
     default:
       return "bg-white/90 backdrop-blur-sm text-slate-900 border-slate-200/80 hover:border-[#11244e]/40 hover:shadow-xl hover:shadow-slate-200/60";
   }
@@ -244,9 +244,9 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-24 bg-white font-sans border-t border-slate-100 relative overflow-hidden">
+    <section className="py-24 bg-[#f5f0eb] font-sans border-t border-[#e8dfd5] relative overflow-hidden">
       {/* Ambient Background Gradient Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-blue-50/60 via-indigo-50/40 to-slate-50/20 blur-3xl opacity-70 pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-amber-100/50 via-orange-50/40 to-stone-100/30 blur-3xl opacity-80 pointer-events-none rounded-full" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -263,7 +263,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.4 }}
-            className="px-4 py-1.5 rounded-full bg-[#f4f5f7] text-[#11244e] text-xs font-medium tracking-wide border border-slate-200/80 mb-4 inline-block shadow-2xs"
+            className="px-4 py-1.5 rounded-full bg-[#eee6dc] text-[#11244e] text-xs font-medium tracking-wide border border-[#e2d7cb]/80 mb-4 inline-block shadow-2xs"
           >
             Customer Stories
           </motion.span>
@@ -304,13 +304,13 @@ export default function Testimonials() {
                     y: { type: "spring", stiffness: 300, damping: 25 },
                   }}
                   className={`rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden transition-all duration-300 group border shadow-xs ${getServiceHoverStyle(
-                  item.serviceTag,
-                  item.featured
-                )}`}
+                    item.serviceTag,
+                    item.featured
+                  )}`}
                 >
                   {/* Decorative Quote Icon Watermark */}
                   <Quote
-                    className={`absolute top-6 right-6 w-12 h-12 pointer-events-none stroke-[1] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${item.featured ? "text-white/10 group-hover:text-white/20" : "text-slate-100 group-hover:text-slate-200"
+                    className={`absolute top-6 right-6 w-12 h-12 pointer-events-none stroke-[1] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${item.featured ? "text-white/10 group-hover:text-white/20" : "text-slate-900/10 group-hover:text-slate-900/20"
                       }`}
                   />
 
@@ -324,8 +324,8 @@ export default function Testimonials() {
                     </span>
                     <span
                       className={`text-[11px] px-3 py-1 rounded-full font-medium border inline-flex items-center gap-1.5 transition-colors ${item.featured
-                          ? "bg-white/10 text-slate-200 border-white/15 group-hover:bg-white/20"
-                          : "bg-[#f4f5f7] text-slate-700 border-slate-200/70 group-hover:bg-slate-200/70"
+                        ? "bg-white/10 text-slate-200 border-white/15 group-hover:bg-white/20"
+                        : "bg-[#eee6dc] text-slate-700 border-[#e2d7cb]/70 group-hover:bg-[#e2d7cb]/80"
                         }`}
                     >
                       {getServiceIcon(item.serviceTag)}

@@ -18,7 +18,7 @@ export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-slate-200 overflow-hidden relative bg-[#f8fafc]">
+    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-amber-100 overflow-hidden relative bg-[#faf8f5]">
       <Navbar />
 
       <main className="flex flex-1 w-full flex-col z-10">
@@ -58,9 +58,8 @@ export default function Home() {
 
             <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
 
-
               {/* Main Heading */}
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -71,7 +70,7 @@ export default function Home() {
               </motion.h1>
 
               {/* Subtitle Paragraph */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -93,7 +92,7 @@ export default function Home() {
                 <span>Engineering</span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -130,12 +129,12 @@ export default function Home() {
         <section className="w-full">
           <GrowthStory />
         </section>
-        
+
         {/* Process Section: How We Work */}
         <section className="w-full">
           <EngineeringProcess />
         </section>
-        
+
         <section className="w-full">
           <Testimonials />
         </section>
