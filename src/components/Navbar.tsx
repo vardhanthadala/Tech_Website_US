@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChevronDown,
   Brain,
@@ -129,13 +130,13 @@ export const Navbar: React.FC = () => {
         {/* Center Menu Links (Desktop >= 768px) */}
         <div className="hidden md:flex items-center gap-9 text-base font-sans font-medium text-slate-700">
           {/* Home */}
-          <a
+          <Link
             href="/"
             className="relative py-6 group text-slate-700 hover:text-[#11244e] transition-colors"
           >
             <span>Home</span>
             <span className="absolute bottom-4 left-0 w-0 h-0.5 bg-[#11244e] group-hover:w-full transition-all duration-300 rounded-full" />
-          </a>
+          </Link>
 
           {/* Services Mega Dropdown Trigger */}
           <div
@@ -282,13 +283,13 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer / Overlay Menu (< 768px) */}
       {isMobileMenuOpen && (
         <div className="md:hidden w-full bg-[#faf8f5] border-b border-[#e8dfd5]/80 px-6 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-xl animate-fadeIn">
-          <a
+          <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block py-2.5 text-base font-medium text-slate-800 hover:text-[#11244e] border-b border-slate-200/50"
           >
             Home
-          </a>
+          </Link>
 
           {/* Collapsible Mobile Services */}
           <div className="border-b border-slate-200/50 pb-2">

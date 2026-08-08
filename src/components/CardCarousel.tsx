@@ -64,7 +64,7 @@ const CARDS = [
 export const CardCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleDragEnd = (e: any, info: PanInfo) => {
+  const handleDragEnd = (e: unknown, info: PanInfo) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
