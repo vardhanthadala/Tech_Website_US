@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Bot, Code2, Smartphone, Palette, Cloud } from "lucide-react";
 
@@ -347,9 +348,11 @@ export default function Testimonials() {
                       }`}
                   >
                     <div className="overflow-hidden rounded-full border border-slate-200/80 shadow-2xs shrink-0">
-                      <img
+                      <Image
                         src={item.avatar}
                         alt={item.name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>

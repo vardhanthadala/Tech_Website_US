@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import {
-  Star,
   Bot,
   Cpu,
   Workflow,
@@ -34,7 +33,7 @@ import {
 /* ── Spring counter that re-triggers when value changes ── */
 const Counter: React.FC<{ end: number; suffix?: string; key?: string | number }> = ({ end, suffix = "" }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-40px" });
+
   const mv = useMotionValue(0);
   const spring = useSpring(mv, { damping: 28, stiffness: 50 });
   const [val, setVal] = useState(0);
