@@ -1,117 +1,160 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
+import { Compass, Code2, Rocket } from "lucide-react";
 
-interface ProcessStep {
-  number: string;
-  title: string;
-  titleAccent: string;
-  description: string;
-  image: string;
-}
-
-const steps: ProcessStep[] = [
+const pillars = [
   {
-    number: "01",
-    title: "Research",
-    titleAccent: "& Analyze",
-    description:
-      "Deep-dive audit of your existing systems, AI automation feasibility analysis, and technical architecture blueprint. We map every data flow, identify bottlenecks, and align sprint milestones to your business KPIs.",
-    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80",
+    title: "Discovery & Design",
+    subtitle: "STRATEGIC ARCHITECTURE",
+    description: "We audit your systems for AI feasibility and craft high-fidelity Figma prototypes. Every data flow is mapped and validated with usability testing for faster developer handoff.",
+    icon: Compass,
+    images: [
+      "/images/engineering/discovery.png"
+    ]
   },
   {
-    number: "02",
-    title: "Concept",
-    titleAccent: "& Sketch",
-    description:
-      "High-fidelity Figma design systems, interactive prototypes, and component token libraries engineered for 35% higher user retention and 3× faster developer handoff. Every flow is validated with usability testing.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
+    title: "Full-Stack Engineering",
+    subtitle: "AGILE DEVELOPMENT",
+    description: "We build enterprise-grade platforms using Next.js, Flutter, and custom LLM agentic pipelines. Benefit from bi-weekly demo builds and automated end-to-end test coverage.",
+    icon: Code2,
+    images: [
+      "/images/engineering/fullstack.png"
+    ]
   },
   {
-    number: "03",
-    title: "Design",
-    titleAccent: "& Build",
-    description:
-      "Full-stack development with Next.js, Flutter, and custom LLM agentic pipelines. Bi-weekly demo builds, continuous staging deployments, automated end-to-end test coverage, and transparent sprint retrospectives.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    number: "04",
-    title: "Launch",
-    titleAccent: "& Scale",
-    description:
-      "Zero-downtime deployment to multi-region AWS/GCP/Azure with Docker, Kubernetes, automated load balancing, and 30-day post-launch hypercare with 24/7 SLA monitoring. We don't just ship — we stay until it scales.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-  },
+    title: "Deployment & Scale",
+    subtitle: "ZERO-DOWNTIME LAUNCH",
+    description: "Multi-region deployments on AWS, GCP, or Azure with Kubernetes and automated load balancing. We provide 30-day post-launch hypercare, because we stay until it scales.",
+    icon: Rocket,
+    images: [
+      "/images/engineering/deployment.png"
+    ]
+  }
 ];
 
 export default function EngineeringProcess() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
   return (
-    <section className="w-full bg-[#0a0a0a] py-16 sm:py-20 border-t border-white/5 font-sans relative overflow-hidden">
+    <section className="w-full bg-white py-24 border-t border-slate-100 font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-14 sm:mb-16">
-          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs">
+        <div className="mb-14 sm:mb-20">
+          <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block shadow-2xs">
             How We Work
           </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
-            Our engineering process,<br />
-            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">from concept to enterprise scale.</span>
+          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4 font-sans">
+            A seamless process for <br className="hidden md:block" />
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">extraordinary results</span>
           </h2>
           <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
-            A structured, 4-step agile workflow built for rapid iteration, transparent communication, and production reliability.
+            A seamless, transparent engineering process designed to scale your vision into reality.
           </p>
         </div>
 
-        {/* Process Steps — Alternating Image-Filled Numbers */}
-        <div className="space-y-4 sm:space-y-6">
-          {steps.map((step, idx) => {
-            const isEven = idx % 2 === 0;
+        {/* Timeline Container */}
+        <div className="relative max-w-6xl mx-auto" ref={containerRef}>
 
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className={`flex flex-col-reverse ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-4 lg:gap-0 py-6 sm:py-8 border-t border-white/5 first:border-t-0`}
-              >
-                {/* Text Content */}
-                <div className={`w-full lg:w-1/2 ${isEven ? "lg:pr-12 text-left" : "lg:pl-12 text-left lg:text-right"}`}>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight mb-3 font-sans">
-                    {step.title} <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] font-normal">{step.titleAccent}</span>
-                  </h3>
-                  <p
-                    className="text-slate-500 text-sm sm:text-[15px] leading-[1.9] font-normal max-w-lg"
-                    style={!isEven ? { marginLeft: "auto" } : {}}
-                  >
-                    {step.description}
-                  </p>
-                </div>
+          {/* Curved Wave Connecting SVG Path (Desktop) */}
+          <div className="absolute inset-0 pointer-events-none hidden lg:block overflow-visible z-0">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1000 1000"
+              preserveAspectRatio="none"
+            >
+              {/* Background Light Curved Path */}
+              <path
+                d="M 500,60 C 200,220 800,420 500,560 C 200,700 800,880 500,980"
+                fill="none"
+                stroke="#f1f5f9"
+                strokeWidth="4"
+                strokeDasharray="8 8"
+              />
+              {/* Animated Gradient Path */}
+              <motion.path
+                d="M 500,60 C 200,220 800,420 500,560 C 200,700 800,880 500,980"
+                fill="none"
+                stroke="url(#curved-wave-gradient)"
+                strokeWidth="4"
+                style={{ pathLength: scrollYProgress }}
+              />
+              <defs>
+                <linearGradient id="curved-wave-gradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#e947f5" />
+                  <stop offset="50%" stopColor="#7a95e6" />
+                  <stop offset="100%" stopColor="#38bdf8" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
 
-                {/* Giant Number with Image Fill */}
-                <div className={`w-full lg:w-1/2 flex items-center justify-start ${isEven ? "lg:justify-end" : "lg:justify-start"} select-none mb-2 lg:mb-0`}>
-                  <div
-                    className="text-[120px] sm:text-[150px] lg:text-[190px] font-black leading-none tracking-tighter"
-                    style={{
-                      backgroundImage: `url(${step.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      color: "transparent",
-                    }}
+          <div className="space-y-20 lg:space-y-32 relative z-10">
+            {pillars.map((pillar, idx) => {
+              const isEven = idx % 2 === 0;
+              const IconComponent = pillar.icon;
+
+              return (
+                <div key={idx} className={`relative flex flex-col lg:flex-row items-center gap-10 lg:gap-24 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+
+                  {/* Image Half */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full lg:w-1/2 relative"
                   >
-                    {step.number}
-                  </div>
+                    <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 group border border-slate-100">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img src={pillar.images[0]} alt={pillar.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+
+                      {/* Floating Phase Pill Badge on Image */}
+                      <div className="absolute top-4 left-4 z-20 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/50 shadow-md flex items-center gap-2">
+                        <IconComponent className="w-3.5 h-3.5 text-slate-700" />
+                        <span className="text-xs font-semibold text-slate-800 tracking-wide">PHASE 0{idx + 1}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Text Half */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? 40 : -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className={`w-full lg:w-1/2 flex flex-col ${isEven ? 'lg:pl-12' : 'lg:pr-12'}`}
+                  >
+                    <div className="relative">
+                      {/* Giant Background Number */}
+                      <div className="absolute -top-12 -left-4 lg:-left-12 text-[140px] lg:text-[180px] font-black text-slate-100/60 leading-none select-none z-0 pointer-events-none tracking-tighter">
+                        0{idx + 1}
+                      </div>
+
+                      <div className="relative z-10 pt-4">
+                        <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-3">
+                          {pillar.subtitle}
+                        </p>
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-900 mb-4 tracking-tight">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-slate-500 text-base sm:text-lg font-normal leading-relaxed">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+
                 </div>
-              </motion.div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
       </div>

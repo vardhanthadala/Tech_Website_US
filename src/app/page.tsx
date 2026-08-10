@@ -17,7 +17,7 @@ export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
 
   return (
-    <div className="flex flex-col min-h-screen text-slate-200 font-sans antialiased selection:bg-fuchsia-500/30 overflow-hidden relative bg-[#0a0a0a]">
+    <div className="flex flex-col min-h-screen text-slate-900 font-sans antialiased selection:bg-slate-200 overflow-hidden relative bg-white">
       <Navbar />
 
       <main className="flex flex-1 w-full flex-col z-10">
@@ -28,7 +28,7 @@ export default function Home() {
             className="absolute inset-0 w-full h-full flex flex-col justify-center items-center"
           >
             {/* Grainient Background */}
-            <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
+            <div className="absolute inset-0 z-0 bg-white">
               <FloatingLines
                 enabledWaves={['top', 'middle', 'bottom']}
                 lineCount={[5, 7, 10]}
@@ -47,7 +47,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl lg:text-7xl font-normal text-white tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
+                className="text-4xl sm:text-5xl lg:text-7xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
               >
                 Building digital<br />
                 <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] whitespace-nowrap">experiences that matter.</span>
@@ -58,7 +58,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-slate-300 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
+                className="text-slate-500 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
               >
                 We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
               </motion.p>
@@ -67,12 +67,12 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="flex justify-center items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-white/60 mb-12"
+                className="flex justify-center items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-500 mb-12"
               >
                 <span>Design</span>
-                <span className="w-1 h-1 rounded-full bg-white/40" />
+                <span className="w-1 h-1 rounded-full bg-slate-900/40" />
                 <span>Strategy</span>
-                <span className="w-1 h-1 rounded-full bg-white/40" />
+                <span className="w-1 h-1 rounded-full bg-slate-900/40" />
                 <span>Engineering</span>
               </motion.div>
 
@@ -84,13 +84,13 @@ export default function Home() {
               >
                 <a
                   href="#contact"
-                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#fae8ff] via-[#f5d0fe] to-[#e0e7ff] text-slate-900 font-semibold text-base hover:opacity-95 transition-all shadow-md shadow-purple-500/10 active:scale-95 flex items-center justify-center font-sans"
+                  className="px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium text-base hover:opacity-95 transition-all shadow-md active:scale-95 flex items-center justify-center font-sans"
                 >
                   Start a project
                 </a>
                 <a
                   href="#services"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/15 hover:bg-white/20 transition-all text-base font-medium shadow-sm"
+                  className="flex items-center justify-center h-12 px-8 rounded-full bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 transition-all text-base font-medium shadow-sm"
                 >
                   Our work
                 </a>
@@ -100,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* Brand Marquee Section */}
-        <section className="w-full bg-[#0a0a0a] py-12 border-b border-white/5 relative z-20">
+        <section className="w-full bg-white py-12 border-b border-slate-100 relative z-20">
           <BrandMarquee />
         </section>
 

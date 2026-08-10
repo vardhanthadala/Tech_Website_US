@@ -146,15 +146,15 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#0a0a0a] py-14 sm:py-20 border-t border-white/5 font-sans">
+    <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-10 sm:mb-14">
-          <span className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block">
+          <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block">
             Growth Story
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight leading-[1.15] max-w-2xl mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] max-w-2xl mb-4">
             Engineered for growth,<br />
             <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">built for enterprise scale</span>
           </h2>
@@ -167,7 +167,7 @@ export const GrowthStory: React.FC = () => {
           {/* ── Mission Card (clean dark) — full width on mobile, spans 2 rows on lg ── */}
           <div
             className="relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden sm:col-span-2 lg:col-span-1 lg:row-span-2"
-            style={{ background: "linear-gradient(160deg, #1c1c1c 0%, #2a2a2a 50%, #1c1c1c 100%)" }}
+            style={{ background: "linear-gradient(160deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%)" }}
           >
             {/* Subtle frosted dot texture */}
             <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -181,7 +181,7 @@ export const GrowthStory: React.FC = () => {
                 animate={{ opacity: 0.05, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.1 }}
                 transition={{ duration: 0.4 }}
-                className="absolute right-[-20px] bottom-[-20px] pointer-events-none text-white"
+                className="absolute right-[-20px] bottom-[-20px] pointer-events-none text-slate-900"
               >
                 {React.createElement(svc.cards.featured.icon, { className: "w-56 h-56 stroke-[0.8]" })}
               </motion.div>
@@ -194,8 +194,8 @@ export const GrowthStory: React.FC = () => {
                   key={s.name}
                   onClick={() => handleSelectService(i)}
                   className={`text-[12px] font-normal px-4 py-1.5 rounded-full border transition-all duration-300 ${i === active
-                    ? "bg-white/10 text-white border-white/40 shadow-xs"
-                    : "bg-transparent text-slate-400 border-white/10 hover:border-white/30 hover:text-slate-200"
+                    ? "bg-white text-slate-900 border-slate-300 shadow-sm"
+                    : "bg-transparent text-slate-500 border-slate-200 hover:border-slate-300 hover:text-slate-800"
                     }`}
                 >
                   {s.name}
@@ -207,12 +207,12 @@ export const GrowthStory: React.FC = () => {
             <div className="relative z-10 flex-1 min-h-[90px]">
               <AnimatePresence mode="wait">
                 <motion.div key={active} {...fadeSlide}>
-                  <p className="text-slate-300 text-[15px] font-normal leading-[1.85]">
+                  <p className="text-slate-700 text-[15px] font-normal leading-[1.85]">
                     {svc.description}
                   </p>
 
                   {/* Tagline Highlight */}
-                  <p className="mt-5 text-slate-400 text-[13px] italic font-normal border-l-2 border-slate-700/60 pl-3.5 leading-relaxed">
+                  <p className="mt-5 text-slate-500 text-[13px] italic font-normal border-l-2 border-slate-300/60 pl-3.5 leading-relaxed">
                     &ldquo;{svc.tagline}&rdquo;
                   </p>
                 </motion.div>
@@ -220,7 +220,7 @@ export const GrowthStory: React.FC = () => {
             </div>
 
             {/* Bottom: Scrolling Tech Marquee */}
-            <div className="relative z-10 mt-8 border-t border-white/5 pt-5">
+            <div className="relative z-10 mt-8 border-t border-slate-200 pt-5">
               <p className="text-slate-500 text-[10px] font-normal uppercase tracking-[0.15em] mb-4">Tech Stack</p>
               <div className="relative overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
                 <AnimatePresence mode="wait">
@@ -236,7 +236,7 @@ export const GrowthStory: React.FC = () => {
                     {[...svc.techIcons, ...svc.techIcons].map((tech, i) => (
                       <span
                         key={`${tech}-${i}`}
-                        className="inline-flex items-center shrink-0 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] font-medium tracking-wide whitespace-nowrap"
+                        className="inline-flex items-center shrink-0 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-medium tracking-wide whitespace-nowrap"
                       >
                         {tech}
                       </span>
@@ -248,11 +248,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Top stat card ── */}
-          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group border border-white/5 hover:border-white/10 transition-colors">
+          <div className="relative rounded-2xl bg-slate-50 p-5 sm:p-7 flex flex-col justify-between min-h-[140px] overflow-hidden group border border-slate-200 hover:border-slate-300 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`top-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
                     <Counter key={`top-v-${active}`} end={svc.cards.top.end} suffix={svc.cards.top.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -281,11 +281,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Tall stat card ── */}
-          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2 border border-white/5 hover:border-white/10 transition-colors">
+          <div className="relative rounded-2xl bg-slate-50 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:row-span-2 lg:row-span-2 border border-slate-200 hover:border-slate-300 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`tall-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
                     <Counter key={`tall-v-${active}`} end={svc.cards.tall.end} suffix={svc.cards.tall.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -314,11 +314,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Featured card (with border) ── */}
-          <div className="relative rounded-2xl bg-white/[0.02] border-2 border-[#e947f5]/20 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
+          <div className="relative rounded-2xl bg-slate-50 border-2 border-[#e947f5]/20 p-5 sm:p-7 flex flex-col justify-between overflow-hidden group sm:col-span-1 lg:row-span-2">
             <AnimatePresence mode="wait">
               <motion.div key={`feat-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[48px] font-normal text-white tracking-tight leading-none">
+                  <div className="text-[48px] font-normal text-slate-900 tracking-tight leading-none">
                     <Counter key={`feat-v-${active}`} end={svc.cards.featured.end} suffix={svc.cards.featured.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -347,11 +347,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-left stat card ── */}
-          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-white/5 hover:border-white/10 transition-colors">
+          <div className="relative rounded-2xl bg-slate-50 p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-slate-200 hover:border-slate-300 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`botL-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
                     <Counter key={`botL-v-${active}`} end={svc.cards.bottomL.end} suffix={svc.cards.bottomL.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -380,11 +380,11 @@ export const GrowthStory: React.FC = () => {
           </div>
 
           {/* ── Bottom-right stat card ── */}
-          <div className="relative rounded-2xl bg-white/[0.02] p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-white/5 hover:border-white/10 transition-colors">
+          <div className="relative rounded-2xl bg-slate-50 p-5 sm:p-7 flex flex-col justify-between min-h-[130px] overflow-hidden group sm:col-span-1 border border-slate-200 hover:border-slate-300 transition-colors">
             <AnimatePresence mode="wait">
               <motion.div key={`botR-${active}`} {...fadeSlide} className="flex flex-col justify-between h-full relative z-10">
                 <div className="flex items-start justify-between">
-                  <div className="text-[42px] font-normal text-white tracking-tight leading-none">
+                  <div className="text-[42px] font-normal text-slate-900 tracking-tight leading-none">
                     <Counter key={`botR-v-${active}`} end={svc.cards.bottomR.end} suffix={svc.cards.bottomR.suffix} />
                   </div>
                   {/* Technology Icon */}
@@ -425,11 +425,12 @@ export const GrowthStory: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom copy row */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-white/5">
-          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-white max-w-sm leading-[1.3] tracking-tight">
+        {/* Bottom copy row - Commented Out */}
+        {/* 
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-slate-100">
+          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
             Building Quality AI Solutions<br />
-            <span className="text-slate-400">for a Smarter Future</span>
+            <span className="text-slate-500">for a Smarter Future</span>
           </h3>
           <p className="text-slate-500 text-sm max-w-xl leading-[1.85] font-normal">
             At Dexze, we don&apos;t just use AI in our operations — we tailor its usability for our customers.
@@ -437,6 +438,7 @@ export const GrowthStory: React.FC = () => {
             No tech expertise required, just a vision. We&apos;ll handle the rest.
           </p>
         </div>
+        */}
 
       </div>
     </section>

@@ -35,21 +35,21 @@ const getServiceIcon = (tag: string) => {
 
 const getServiceHoverStyle = (tag: string, featured?: boolean) => {
   if (featured) {
-    return "bg-gradient-to-br from-[#1c1c1c] via-[#2a2a2a] to-[#1c1c1c] text-white border-[#e947f5]/40 shadow-xl shadow-[#e947f5]/20";
+    return "bg-gradient-to-br from-indigo-50 via-purple-50 to-white text-slate-900 border-[#e947f5]/40 shadow-xl shadow-[#e947f5]/10";
   }
   switch (tag) {
     case "AI Automation":
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-indigo-500/60 hover:shadow-xl hover:shadow-indigo-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-indigo-500/60 hover:shadow-xl hover:shadow-indigo-500/15";
     case "Web Development":
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-blue-400/60 hover:shadow-xl hover:shadow-blue-500/15";
     case "App Development":
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/15";
     case "UI / UX Design":
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/15";
     case "Cloud Services":
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-sky-400/60 hover:shadow-xl hover:shadow-sky-500/15";
     default:
-      return "bg-white/[0.02] backdrop-blur-sm text-slate-200 border-white/5 hover:border-slate-500/40 hover:shadow-xl hover:shadow-slate-500/15";
+      return "bg-slate-50 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-slate-400 hover:shadow-xl hover:shadow-slate-500/15";
   }
 };
 
@@ -245,7 +245,7 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-24 bg-[#0a0a0a] font-sans border-t border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-white font-sans border-t border-slate-100 relative overflow-hidden">
       {/* Ambient Background Gradient Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-[#e947f5]/10 via-[#7a95e6]/10 to-transparent blur-3xl opacity-80 pointer-events-none rounded-full" />
 
@@ -264,15 +264,15 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.4 }}
-            className="px-4 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs font-medium tracking-wide border border-white/10 mb-4 inline-block shadow-2xs"
+            className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block shadow-2xs"
           >
             Customer Stories
           </motion.span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-white tracking-tight max-w-2xl leading-[1.15] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight max-w-2xl leading-[1.15] mb-4">
             Empowering teams to build<br />
             <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">extraordinary software</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
+          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             Here is how Dexze helps industry leaders ship AI, web, mobile, and cloud platforms at enterprise scale.
           </p>
         </motion.div>
@@ -311,22 +311,20 @@ export default function Testimonials() {
                 >
                   {/* Decorative Quote Icon Watermark */}
                   <Quote
-                    className={`absolute top-6 right-6 w-12 h-12 pointer-events-none stroke-[1] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${item.featured ? "text-white/10 group-hover:text-white/20" : "text-slate-900/10 group-hover:text-slate-900/20"
-                      }`}
+                    className={`absolute top-6 right-6 w-12 h-12 pointer-events-none stroke-[1] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 text-slate-900/10 group-hover:text-slate-900/20`}
                   />
 
                   {/* Card Top: Company Name & Service Tag */}
                   <div className="flex items-center justify-between gap-4 mb-5 relative z-10">
                     <span
-                      className={`text-base font-semibold tracking-tight ${item.featured ? "text-white" : "text-white"
-                        }`}
+                      className={`text-base font-semibold tracking-tight text-slate-900`}
                     >
                       {item.company}
                     </span>
                     <span
                       className={`text-[11px] px-3 py-1 rounded-full font-medium border inline-flex items-center gap-1.5 transition-colors ${item.featured
-                        ? "bg-white/10 text-slate-200 border-white/15 group-hover:bg-white/20"
-                        : "bg-white/5 text-slate-300 border-white/10 group-hover:bg-white/10"
+                        ? "bg-slate-100 text-slate-900 border-slate-200 group-hover:bg-slate-200"
+                        : "bg-white text-slate-600 border-slate-200 group-hover:bg-slate-50"
                         }`}
                     >
                       {getServiceIcon(item.serviceTag)}
@@ -336,15 +334,14 @@ export default function Testimonials() {
 
                   {/* Card Middle: Editorial Quote */}
                   <p
-                    className={`text-sm font-normal leading-[1.75] mb-6 relative z-10 ${item.featured ? "text-slate-200" : "text-slate-400"
-                      }`}
+                    className={`text-sm font-normal leading-[1.75] mb-6 relative z-10 ${item.featured ? "text-slate-700" : "text-slate-500"}`}
                   >
                     &quot;{item.quote}&quot;
                   </p>
 
                   {/* Card Bottom: Author Info */}
                   <div
-                    className={`flex items-center gap-3 pt-5 border-t relative z-10 ${item.featured ? "border-white/10" : "border-slate-100"
+                    className={`flex items-center gap-3 pt-5 border-t relative z-10 ${item.featured ? "border-slate-900/10" : "border-slate-200"
                       }`}
                   >
                     <div className="overflow-hidden rounded-full border border-slate-200/80 shadow-2xs shrink-0">
@@ -358,14 +355,12 @@ export default function Testimonials() {
                     </div>
                     <div>
                       <h4
-                        className={`text-xs sm:text-sm font-medium leading-tight ${item.featured ? "text-white" : "text-slate-200"
-                          }`}
+                        className={`text-xs sm:text-sm font-medium leading-tight ${item.featured ? "text-slate-900" : "text-slate-700"}`}
                       >
                         {item.name}
                       </h4>
                       <p
-                        className={`text-[11px] font-normal mt-0.5 ${item.featured ? "text-slate-400" : "text-slate-500"
-                          }`}
+                        className={`text-[11px] font-normal mt-0.5 ${item.featured ? "text-slate-500" : "text-slate-400"}`}
                       >
                         {item.role}
                       </p>
@@ -383,8 +378,7 @@ export default function Testimonials() {
             <button
               key={idx}
               onClick={() => setActivePage(idx)}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activePage === idx ? "w-8 bg-white" : "w-2 bg-white/20 hover:bg-white/40"
-                }`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activePage === idx ? "w-8 bg-slate-900" : "w-2 bg-slate-300 hover:bg-slate-400"}`}
               aria-label={`Go to page ${idx + 1}`}
             />
           ))}

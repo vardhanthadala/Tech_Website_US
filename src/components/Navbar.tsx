@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled || isMobileMenuOpen
-        ? "bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/10 shadow-sm"
+        ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-sm"
         : "bg-transparent border-b border-transparent"
         }`}
     >
@@ -128,27 +128,27 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Center Menu Links (Desktop >= 768px) */}
-        <div className={`hidden md:flex items-center gap-9 text-base font-sans font-medium text-white`}>
+        <div className={`hidden md:flex items-center gap-9 text-base font-sans font-medium text-slate-900`}>
           {/* Home */}
           <Link
             href="/"
-            className={`relative py-6 group transition-colors text-white/90 hover:text-white`}
+            className={`relative py-6 group transition-colors text-slate-700 hover:text-slate-900`}
           >
             <span>Home</span>
-            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full bg-white`} />
+            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full bg-slate-900`} />
           </Link>
 
           {/* Services Mega Dropdown Trigger */}
           <div
-            className={`relative py-6 cursor-pointer group text-white/90`}
+            className={`relative py-6 cursor-pointer group text-slate-700`}
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <div className={`flex items-center gap-1 transition-colors hover:text-white`}>
+            <div className={`flex items-center gap-1 transition-colors hover:text-slate-900`}>
               <span>Services</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  isServicesOpen ? "rotate-180 text-white" : "text-white/70"
+                  isServicesOpen ? "rotate-180 text-slate-900" : "text-slate-500"
                 }`}
               />
             </div>
@@ -176,13 +176,13 @@ export const Navbar: React.FC = () => {
                           onClick={() => setSelectedCategory(cat.id)}
                           onMouseEnter={() => setSelectedCategory(cat.id)}
                           className={`w-full flex items-center gap-3.5 px-3.5 py-3 rounded-xl font-sans text-xs text-left transition-all ${isSelected
-                            ? "bg-white text-[#11244e] shadow-sm font-semibold scale-[1.01]"
+                            ? "bg-white text-slate-900 shadow-sm font-semibold scale-[1.01]"
                             : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 font-normal"
                             }`}
                         >
                           <div
                             className={`p-1.5 rounded-lg flex items-center justify-center ${isSelected
-                              ? "bg-zinc-100 text-[#11244e]"
+                              ? "bg-zinc-100 text-slate-900"
                               : "bg-zinc-200/70 text-zinc-500"
                               }`}
                           >
@@ -198,7 +198,7 @@ export const Navbar: React.FC = () => {
                   <div className="flex-1 p-5.5 space-y-6 bg-white overflow-y-auto max-h-[520px]">
                     {/* Featured Header Banner */}
                     <div className="p-4 rounded-2xl bg-[#f4f5f8] border border-zinc-200/60 flex items-center gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-white text-[#11244e] flex items-center justify-center shadow-xs shrink-0 border border-zinc-200/60">
+                      <div className="w-11 h-11 rounded-xl bg-white text-slate-900 flex items-center justify-center shadow-xs shrink-0 border border-zinc-200/60">
                         <ActiveCatIcon className="w-5 h-5" />
                       </div>
                       <div>
@@ -249,10 +249,10 @@ export const Navbar: React.FC = () => {
           {/* Contact us */}
           <a
             href="#contact"
-            className={`relative py-6 group transition-colors text-white/90 hover:text-white`}
+            className={`relative py-6 group transition-colors text-slate-700 hover:text-slate-900`}
           >
             <span>Contact us</span>
-            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full bg-white`} />
+            <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full bg-slate-900`} />
           </a>
         </div>
 
@@ -262,8 +262,8 @@ export const Navbar: React.FC = () => {
             href="#contact"
             className="p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-sm pointer-events-auto"
           >
-            <div className={`px-6 py-2 rounded-full bg-black/20 backdrop-blur-sm`}>
-              <span className={`font-sans font-medium text-sm text-white`}>
+            <div className={`px-6 py-2 rounded-full bg-white backdrop-blur-sm`}>
+              <span className={`font-sans font-medium text-sm text-slate-900`}>
                 Contact Us
               </span>
             </div>
@@ -274,7 +274,7 @@ export const Navbar: React.FC = () => {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 rounded-xl transition-colors focus:outline-none bg-black/20 text-white hover:bg-black/40`}
+            className={`p-2 rounded-xl transition-colors focus:outline-none bg-slate-100 text-slate-800 hover:bg-slate-200`}
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
