@@ -51,7 +51,7 @@ export default function ExpandableVideo() {
           playsInline
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
         >
-          <source src="/videos/8762946-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/ditzm1vpo/video/upload/v1786463795/8762946-uhd_3840_2160_25fps_yolo9p.mp4" type="video/mp4" />
         </video>
 
       </motion.div>
