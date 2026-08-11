@@ -1,6 +1,7 @@
 'use client';
 
-import FloatingLines from "@/components/FloatingLines";
+import CloudSky from "@/components/CloudSky";
+import ExpandableVideo from "@/components/ExpandableVideo";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { motion } from "framer-motion";
 
@@ -29,15 +30,7 @@ export default function Home() {
           >
             {/* Grainient Background */}
             <div className="absolute inset-0 z-0 bg-white">
-              <FloatingLines
-                enabledWaves={['top', 'middle', 'bottom']}
-                lineCount={[5, 7, 10]}
-                lineDistance={[8, 6, 4]}
-                bendRadius={5.0}
-                bendStrength={-0.5}
-                interactive={true}
-                parallax={true}
-              />
+              <CloudSky />
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
@@ -98,6 +91,9 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
+
+        {/* Scroll-Expanding Video Section */}
+        <ExpandableVideo />
 
         {/* Brand Marquee Section */}
         <section className="w-full bg-white py-12 border-b border-slate-100 relative z-20">
