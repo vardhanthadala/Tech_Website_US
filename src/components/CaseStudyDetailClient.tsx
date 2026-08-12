@@ -38,7 +38,7 @@ const slideLeftToRight = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] as const },
   },
 };
 
@@ -47,7 +47,7 @@ const slideRightToLeft = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] as const },
   },
 };
 
@@ -56,7 +56,7 @@ const slideTopToBottom = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] as const },
   },
 };
 
@@ -65,7 +65,7 @@ const slideBottomToTop = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] as const },
   },
 };
 
