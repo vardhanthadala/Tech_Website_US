@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Left Logo */}
-        <div className="flex items-center gap-3 cursor-pointer group">
+        <Link href="/" suppressHydrationWarning className="flex items-center gap-3 cursor-pointer group">
           <Image
             src="/logo.png"
             alt="Logo"
@@ -125,10 +125,10 @@ export const Navbar: React.FC = () => {
             className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
-        </div>
+        </Link>
 
-        {/* Center Menu Links (Desktop >= 768px) */}
-        <div className={`hidden md:flex items-center gap-9 text-base font-sans font-medium text-slate-900`}>
+        {/* Center Menu Links (Desktop >= 1024px) */}
+        <div className={`hidden lg:flex items-center gap-9 text-base font-sans font-medium text-slate-900`}>
           {/* Home */}
           <Link
             href="/"
@@ -229,9 +229,12 @@ export const Navbar: React.FC = () => {
                               <span className={isHovered ? "text-[#11244e]" : ""}>
                                 {sub.name}
                               </span>
-                              {isHovered && (
-                                <ArrowRight className="w-3.5 h-3.5 text-[#11244e]" />
-                              )}
+                              <ArrowRight
+                                className={`w-3.5 h-3.5 transition-all ${isHovered
+                                  ? "opacity-100 translate-x-0 text-slate-900"
+                                  : "opacity-0 -translate-x-2"
+                                  }`}
+                              />
                             </div>
                             <p className="text-xs text-zinc-500 mt-1 leading-relaxed font-sans font-normal">
                               {sub.desc}
@@ -246,118 +249,152 @@ export const Navbar: React.FC = () => {
             )}
           </div>
 
-          {/* Contact us */}
-          <a
-            href="#contact"
+          {/* Projects */}
+          <Link
+            href="/projects"
             className={`relative py-6 group transition-colors text-slate-700 hover:text-slate-900`}
           >
-            <span>Contact us</span>
+            <span>Projects</span>
             <span className={`absolute bottom-4 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 rounded-full bg-slate-900`} />
-          </a>
+          </Link>
         </div>
 
-        {/* Right Action Button (Desktop >= 768px) */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#contact"
-            className="p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-sm pointer-events-auto"
+        {/* Right CTA Button (Desktop >= 1024px) */}
+        <div className="hidden lg:flex items-center gap-4">
+          <Link
+            href="/contact"
+            className="p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-xs hover:shadow-md transition-all active:scale-95 group cursor-pointer"
           >
-            <div className={`px-6 py-2 rounded-full bg-white backdrop-blur-sm`}>
-              <span className={`font-sans font-medium text-sm text-slate-900`}>
+            <div className="px-6 py-2.5 rounded-full bg-white group-hover:bg-slate-50 transition-colors">
+              <span className="font-sans font-medium text-sm text-slate-900">
                 Contact Us
               </span>
             </div>
-          </a>
+          </Link>
         </div>
 
-        {/* Mobile Hamburger Toggle Button (< 768px) */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile & Tablet Hamburger Toggle Button (< 1024px) */}
+        <div className="flex lg:hidden items-center gap-3">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 rounded-xl transition-colors focus:outline-none bg-slate-100 text-slate-800 hover:bg-slate-200`}
-            aria-label="Toggle Menu"
+            className="w-10 h-10 rounded-full bg-slate-100/90 hover:bg-slate-900 text-slate-800 hover:text-white transition-all duration-300 flex items-center justify-center border border-slate-200/80 shadow-2xs cursor-pointer focus:outline-none"
+            aria-label="Toggle Navigation Menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5 transition-transform rotate-90" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer / Overlay Menu (< 768px) */}
+      {/* Full Screen Mobile & Tablet Overlay Menu (< 1024px) */}
       {isMobileMenuOpen && (
-        <div className="md:hidden w-full bg-[#faf8f5] border-b border-[#e8dfd5]/80 px-6 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto shadow-xl animate-fadeIn">
-          <Link
-            href="/"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-[#11244e] border-b border-slate-200/50"
-          >
-            Home
-          </Link>
-
-          {/* Collapsible Mobile Services */}
-          <div className="border-b border-slate-200/50 pb-2">
-            <button
-              onClick={() => setMobileServicesAccordion(!mobileServicesAccordion)}
-              className="w-full flex items-center justify-between py-2.5 text-base font-medium text-slate-800 hover:text-[#11244e]"
-            >
-              <span>Services</span>
-              <ChevronDown
-                className={`w-5 h-5 text-slate-500 transition-transform duration-200 ${mobileServicesAccordion ? "rotate-180 text-[#11244e]" : ""
-                  }`}
+        <div className="fixed inset-0 z-[100] w-full h-screen bg-white text-slate-900 flex flex-col justify-between px-6 py-6 sm:px-10 sm:py-8 overflow-y-auto font-sans animate-fadeIn">
+          
+          {/* Header Row: Logo & Close Button */}
+          <div className="flex items-center justify-between w-full pb-6 border-b border-slate-100 shrink-0">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={140}
+                height={40}
+                className="h-9 sm:h-10 w-auto object-contain"
+                priority
               />
-            </button>
+            </Link>
 
-            {mobileServicesAccordion && (
-              <div className="mt-2 pl-3 space-y-4 border-l-2 border-slate-300">
-                {categories.map((cat) => {
-                  const Icon = cat.icon;
-                  return (
-                    <div key={cat.id} className="space-y-1.5 pt-1">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#11244e]">
-                        <div className="p-1 rounded-md bg-zinc-200/80 text-zinc-500 flex items-center justify-center">
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
-                        <span>{cat.title}</span>
-                      </div>
-                      <div className="pl-6 space-y-1">
-                        {cat.subServices.map((sub, sIdx) => (
-                          <a
-                            key={sIdx}
-                            href="#contact"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block py-1 text-xs text-slate-600 hover:text-[#11244e]"
-                          >
-                            {sub.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-
-          <a
-            href="#contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-[#11244e] border-b border-slate-200/50"
-          >
-            Contact us
-          </a>
-
-          <div className="pt-3">
-            <a
-              href="#contact"
+            <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full p-[1.25px] rounded-full bg-gradient-to-r from-violet-600/70 via-rose-500/70 to-amber-500/70 inline-block shadow-sm text-center"
+              className="w-11 h-11 rounded-full bg-slate-100 hover:bg-slate-900 text-slate-800 hover:text-white transition-all duration-300 flex items-center justify-center border border-slate-200/80 shadow-2xs cursor-pointer"
+              aria-label="Close Navigation Menu"
             >
-              <div className="w-full py-3 rounded-full bg-[#f4f6fa] text-center">
-                <span className="font-sans font-medium text-sm text-[#11244e]">
-                  Contact Us
-                </span>
-              </div>
-            </a>
+              <X className="w-5 h-5" />
+            </button>
           </div>
+
+          {/* Center Main Navigation Links */}
+          <div className="my-auto py-8 space-y-6">
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-3xl sm:text-4xl font-normal text-slate-900 hover:text-blue-600 tracking-tight transition-colors font-sans"
+            >
+              Home
+            </Link>
+
+            {/* Services Accordion */}
+            <div className="space-y-3">
+              <button
+                onClick={() => setMobileServicesAccordion(!mobileServicesAccordion)}
+                className="w-full flex items-center justify-between text-3xl sm:text-4xl font-normal text-slate-900 hover:text-blue-600 tracking-tight transition-colors font-sans"
+              >
+                <span>Services</span>
+                <ChevronDown
+                  className={`w-7 h-7 text-slate-400 transition-transform duration-300 ${
+                    mobileServicesAccordion ? "rotate-180 text-slate-900" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileServicesAccordion && (
+                <div className="pt-2 pl-4 space-y-6 border-l-2 border-slate-200">
+                  {categories.map((cat) => {
+                    const Icon = cat.icon;
+                    return (
+                      <div key={cat.id} className="space-y-2">
+                        <div className="flex items-center gap-2.5 text-base font-semibold text-slate-900">
+                          <div className="p-1.5 rounded-lg bg-slate-100 text-slate-700">
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <span>{cat.title}</span>
+                        </div>
+                        <div className="pl-8 space-y-1.5">
+                          {cat.subServices.map((sub, sIdx) => (
+                            <a
+                              key={sIdx}
+                              href="#contact"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block text-sm font-normal text-slate-500 hover:text-slate-900 transition-colors"
+                            >
+                              {sub.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/projects"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-3xl sm:text-4xl font-normal text-slate-900 hover:text-blue-600 tracking-tight transition-colors font-sans"
+            >
+              Projects
+            </Link>
+          </div>
+
+          {/* Footer Info & Contact CTA */}
+          <div className="pt-6 border-t border-slate-100 flex flex-col space-y-6 shrink-0">
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full py-4 rounded-full bg-slate-900 text-white text-center font-semibold text-base hover:bg-slate-800 transition-colors shadow-md"
+            >
+              Contact Us
+            </Link>
+
+            <div className="flex items-center justify-between text-xs text-slate-400 font-medium font-sans">
+              <span>© {new Date().getFullYear()} Dexze Inc.</span>
+              <span>hello@dexze.com</span>
+            </div>
+          </div>
+
         </div>
       )}
     </nav>
