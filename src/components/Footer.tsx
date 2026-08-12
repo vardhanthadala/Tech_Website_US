@@ -1,33 +1,69 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  hideCta?: boolean;
+}
+
+export const Footer: React.FC<FooterProps> = ({ hideCta = false }) => {
   return (
-    <footer id="contact" className="w-full bg-white text-slate-600 pt-24 pb-16 font-sans border-t border-slate-100">
+    <footer id="contact" className={`w-full bg-white text-slate-600 ${hideCta ? 'pt-16' : 'pt-24'} pb-16 font-sans border-t border-slate-100 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Call To Action Banner */}
-        <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
-          <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block shadow-2xs">
-            Get Started
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4">
-            Ready to build<br />
-            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">your next product?</span>
-          </h2>
-          <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
-            No hassle, no legacy delays. Start building high-impact digital products instantly with Dexze.
-          </p>
-          <div className="mt-8 flex items-center justify-center">
-            <a
-              href="#contact"
-              className="px-8 py-3.5 rounded-full bg-slate-900 text-white font-semibold text-base hover:opacity-95 transition-all shadow-md active:scale-95"
+        {/* Call To Action Banner with Entrance Animations */}
+        {!hideCta && (
+          <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
+            <motion.span
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block shadow-2xs"
             >
-              Get started for free
-            </a>
+              Get Started
+            </motion.span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-4"
+            >
+              Ready to build<br />
+              <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">your next product?</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed"
+            >
+              No hassle, no legacy delays. Start building high-impact digital products instantly with Dexze.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="mt-8 flex items-center justify-center"
+            >
+              <Link
+                href="/contact"
+                className="px-8 py-3.5 rounded-full bg-slate-900 text-white font-semibold text-base hover:opacity-95 transition-all shadow-md active:scale-95"
+              >
+                Get started for free
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        )}
 
         {/* 5-Column Navigation Grid matching standard system alignment */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12 lg:gap-16 pb-20 border-b border-slate-100 text-sm font-normal">
@@ -126,8 +162,17 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Socials & Copyright Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-normal">
-          <div>
-            © Dexze {new Date().getFullYear()}. All rights reserved
+          <div className="flex items-center gap-3">
+            <Link href="/" suppressHydrationWarning className="group flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Dexze Logo"
+                width={100}
+                height={30}
+                className="h-6 w-auto object-contain transition-transform group-hover:scale-105 opacity-85 hover:opacity-100"
+              />
+            </Link>
+            <span>© Dexze {new Date().getFullYear()}. All rights reserved</span>
           </div>
 
           {/* Social Icons */}

@@ -45,8 +45,14 @@ export default function EngineeringProcess() {
     <section className="w-full bg-white py-24 border-t border-slate-100 font-sans relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
-        <div className="mb-14 sm:mb-20">
+        {/* Section Header with Multi-Directional Entrance Animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="mb-14 sm:mb-20"
+        >
           <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block shadow-2xs">
             How We Work
           </span>
@@ -57,7 +63,7 @@ export default function EngineeringProcess() {
           <p className="text-slate-500 text-base sm:text-lg font-normal max-w-2xl leading-relaxed">
             A seamless, transparent engineering process designed to scale your vision into reality.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline Container */}
         <div className="relative max-w-6xl mx-auto" ref={containerRef}>

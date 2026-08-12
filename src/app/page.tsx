@@ -23,27 +23,29 @@ export default function Home() {
 
       <main className="flex flex-1 w-full flex-col z-10">
         {/* Hero Section */}
-        <section className="w-full relative min-h-screen overflow-hidden bg-transparent">
+        <section className="w-full relative min-h-[85vh] sm:min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 flex items-center justify-center overflow-hidden bg-white">
+          {/* CloudSky Sky Background (Flows seamlessly from top-0 under transparent navbar) */}
+          <div className="absolute inset-0 z-0 w-full h-full">
+            <CloudSky />
+          </div>
+
           <motion.div
             style={{ opacity, y: yOffset }}
-            className="absolute inset-0 w-full h-full flex flex-col justify-center items-center"
+            className="w-full flex flex-col justify-center items-center relative z-10"
           >
-            {/* Grainient Background */}
-            <div className="absolute inset-0 z-0 bg-white">
-              <CloudSky />
-            </div>
-
-            <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+            <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-4xl mx-auto w-full">
 
               {/* Main Heading */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl lg:text-7xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
+                className="text-3xl sm:text-5xl lg:text-7xl font-normal text-slate-900 tracking-tight leading-[1.18] sm:leading-[1.15] mb-6 font-sans text-center max-w-4xl mx-auto"
               >
                 Building digital<br />
-                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] whitespace-nowrap">experiences that matter.</span>
+                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] sm:whitespace-nowrap">
+                  experiences that matter.
+                </span>
               </motion.h1>
 
               {/* Subtitle Paragraph */}
@@ -51,7 +53,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-slate-500 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-10"
+                className="text-slate-500 text-sm sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed mb-8 sm:mb-10 px-2"
               >
                 We partner with visionary brands to create stunning, high-performance web and mobile applications that drive real impact.
               </motion.p>
@@ -60,7 +62,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="flex justify-center items-center gap-4 text-[11px] font-normal uppercase tracking-[0.15em] text-slate-500 mb-12"
+                className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 text-[10px] sm:text-[11px] font-normal uppercase tracking-[0.15em] text-slate-500 mb-8 sm:mb-12"
               >
                 <span>Design</span>
                 <span className="w-1 h-1 rounded-full bg-slate-900/40" />
@@ -73,17 +75,17 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col sm:flex-row justify-center gap-4"
+                className="flex flex-col sm:flex-row justify-center gap-3.5 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
               >
                 <a
                   href="#contact"
-                  className="px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium text-base hover:opacity-95 transition-all shadow-md active:scale-95 flex items-center justify-center font-sans"
+                  className="w-full sm:w-auto px-7 sm:px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium text-sm sm:text-base hover:opacity-95 transition-all shadow-md active:scale-95 flex items-center justify-center font-sans"
                 >
                   Start a project
                 </a>
                 <a
                   href="#services"
-                  className="flex items-center justify-center h-12 px-8 rounded-full bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 transition-all text-base font-medium shadow-sm"
+                  className="w-full sm:w-auto flex items-center justify-center h-12 px-7 sm:px-8 rounded-full bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 transition-all text-sm sm:text-base font-medium shadow-sm"
                 >
                   Our work
                 </a>
@@ -109,8 +111,6 @@ export default function Home() {
         <section className="w-full">
           <GrowthStory />
         </section>
-
-        {/* Process Section: How We Work */}
         <section className="w-full">
           <EngineeringProcess />
         </section>

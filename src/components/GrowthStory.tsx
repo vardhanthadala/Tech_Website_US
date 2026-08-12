@@ -149,8 +149,14 @@ export const GrowthStory: React.FC = () => {
     <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
-        <div className="mb-10 sm:mb-14">
+        {/* Section Header with Multi-Directional Entrance Animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="mb-10 sm:mb-14"
+        >
           <span className="px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium tracking-wide border border-slate-200 mb-4 inline-block">
             Growth Story
           </span>
@@ -161,9 +167,15 @@ export const GrowthStory: React.FC = () => {
           <p className="text-slate-500 text-sm sm:text-base lg:text-lg font-normal max-w-2xl leading-relaxed">
             Real-time metrics and proven performance across AI automation, web platforms, mobile apps, and cloud infrastructure.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
           {/* ── Mission Card (clean dark) — full width on mobile, spans 2 rows on lg ── */}
           <div
             className="relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden sm:col-span-2 lg:col-span-1 lg:row-span-2"
@@ -411,7 +423,7 @@ export const GrowthStory: React.FC = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
 
         {/* Active service progress dots */}
         <div className="flex gap-2 mt-5">
@@ -424,21 +436,6 @@ export const GrowthStory: React.FC = () => {
             />
           ))}
         </div>
-
-        {/* Bottom copy row - Commented Out */}
-        {/* 
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-slate-100">
-          <h3 className="text-xl sm:text-[22px] lg:text-[28px] font-normal text-slate-900 max-w-sm leading-[1.3] tracking-tight">
-            Building Quality AI Solutions<br />
-            <span className="text-slate-500">for a Smarter Future</span>
-          </h3>
-          <p className="text-slate-500 text-sm max-w-xl leading-[1.85] font-normal">
-            At Dexze, we don&apos;t just use AI in our operations — we tailor its usability for our customers.
-            Our solutions are designed for everyone, adapting to any industry&apos;s unique needs.
-            No tech expertise required, just a vision. We&apos;ll handle the rest.
-          </p>
-        </div>
-        */}
 
       </div>
     </section>

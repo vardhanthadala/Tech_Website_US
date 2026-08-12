@@ -15,7 +15,13 @@ const BRANDS = [
 
 export const BrandMarquee = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-20 overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-20 overflow-hidden"
+    >
       <div className="flex items-center gap-4 mb-4">
         <div className="h-px bg-slate-200 flex-1" />
         <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">
@@ -50,6 +56,6 @@ export const BrandMarquee = () => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
