@@ -26,7 +26,7 @@ export default function ContactPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveQuoteIndex((prev) => (prev + 1) % DEXZE_QUOTES.length);
-    }, 30000); // 30 seconds
+    }, 5000); // 5 seconds
 
     return () => clearInterval(timer);
   }, []);
