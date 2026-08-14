@@ -116,12 +116,9 @@ export const WebDevelopmentCTA: React.FC<WebDevelopmentCTAProps> = ({ category }
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.3),transparent_50%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(192,132,252,0.35),transparent_60%)] pointer-events-none" />
 
-          {/* Main Elegant Title strictly in one line with screenshot font style */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-white mb-3 max-w-full mx-auto leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
-            <span>{currentCta.title.split(" ").slice(0, -1).join(" ")}{" "}</span>
-            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">
-              {currentCta.title.split(" ").slice(-1).join(" ")}
-            </span>
+          {/* Main Elegant Title strictly in one line in pure white cursive style */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight text-white mb-3 max-w-full mx-auto leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+            {currentCta.title}
           </h2>
 
           {/* Subtitle Description strictly in 1 line */}
