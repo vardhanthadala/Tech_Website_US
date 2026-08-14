@@ -109,48 +109,31 @@ export const CloudServicesCTA: React.FC<CloudServicesCTAProps> = ({ category }) 
     <section className="w-full bg-[#fcfcfd] py-16 lg:py-24 font-sans border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main CTA Black & White Banner matching UI/UX design page CTA */}
-        <div className="relative w-full rounded-[2.5rem] overflow-hidden bg-black p-8 sm:p-12 lg:p-16 text-center text-white border border-zinc-800 shadow-2xl mb-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.06),transparent_60%)] pointer-events-none" />
+        {/* Main CTA Light Combination Styled Banner */}
+        <div className="relative w-full rounded-[2.5rem] overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100/80 p-8 sm:p-12 lg:p-16 text-center text-slate-900 border border-slate-200/90 shadow-xl shadow-slate-200/50">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(147,51,234,0.06),transparent_70%)] pointer-events-none" />
 
-          <div className="mx-auto w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 backdrop-blur-md mb-6">
-            <Sparkles className="w-5 h-5 text-white" />
+          <div className="mx-auto w-12 h-12 rounded-full bg-slate-100/80 flex items-center justify-center border border-slate-200/90 shadow-2xs backdrop-blur-md mb-6">
+            <Sparkles className="w-5 h-5 text-slate-800" />
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] mb-4 max-w-3xl mx-auto leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-slate-900 mb-4 max-w-3xl mx-auto leading-tight">
             {currentCta.title}
           </h2>
 
-          <p className="text-zinc-400 text-sm sm:text-base font-normal max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base font-normal max-w-xl mx-auto mb-10 leading-relaxed">
             {currentCta.subtitle}
           </p>
 
           <div className="flex justify-center">
             <a
-              href="#contact"
-              className="group px-8 py-3.5 rounded-full bg-white text-zinc-950 hover:bg-gradient-to-r hover:from-[#e947f5] hover:to-[#7a95e6] hover:text-white font-serif italic font-semibold text-base transition-all duration-300 shadow-md active:scale-95 flex items-center gap-2 border border-zinc-200 hover:border-transparent"
+              href="/contact"
+              className="group px-8 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-900 font-sans font-semibold text-base transition-all duration-300 shadow-md active:scale-95 flex items-center gap-2.5"
             >
               <span>Get Started</span>
-              <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-white transition-colors duration-300" />
+              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
-        </div>
-
-        {/* Three Step Workflow Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {currentCta.steps.map((step, idx) => (
-            <div key={idx} className="bg-zinc-950 border border-zinc-850/80 rounded-2xl p-6 text-left shadow-sm">
-              <h3 className="font-sans font-bold text-sm text-white mb-2">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6] font-bold mr-1.5 font-mono">
-                  {step.num}
-                </span>{" "}
-                {step.title}
-              </h3>
-              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                {step.desc}
-              </p>
-            </div>
-          ))}
         </div>
 
       </div>
