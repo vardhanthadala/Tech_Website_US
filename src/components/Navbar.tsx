@@ -49,10 +49,10 @@ export const Navbar: React.FC = () => {
       subtitle: "AI Automation & Autonomous Agentic Systems",
       desc: "Revolutionize your workflows with Agentic AI, Autonomous Agents, Custom LLMs, and Generative AI solutions.",
       subServices: [
-        { name: "Autonomous AI Agents", desc: "Intelligent agents that plan, execute, and automate multi-step complex tasks." },
-        { name: "Agentic AI Systems", desc: "Self-governing AI architectures designed for enterprise decision making." },
-        { name: "Generative AI & LLMs", desc: "Custom fine-tuned AI models trained on your proprietary enterprise data." },
-        { name: "RAG Knowledge Engines", desc: "Retrieve accurate, real-time insights from internal documentation." },
+        { name: "Autonomous AI Agents", slug: "/services/ai-automation/autonomous-ai-agents", desc: "Intelligent agents that plan, execute, and automate multi-step complex tasks." },
+        { name: "Agentic AI Systems", slug: "/services/ai-automation/agentic-ai-systems", desc: "Self-governing AI architectures designed for enterprise decision making." },
+        { name: "Generative AI & LLMs", slug: "/services/ai-automation/generative-ai-llms", desc: "Custom fine-tuned AI models trained on your proprietary enterprise data." },
+        { name: "RAG Knowledge Engines", slug: "/services/ai-automation/rag-knowledge-engines", desc: "Retrieve accurate, real-time insights from internal documentation." },
       ],
     },
     {
@@ -62,10 +62,10 @@ export const Navbar: React.FC = () => {
       subtitle: "Full-Stack Web Engineering & Modern CMS",
       desc: "Blazing fast Next.js & React web applications designed to convert and scale effortlessly.",
       subServices: [
-        { name: "Full-Stack Next.js Apps", desc: "Scalable server-rendered web applications with high performance." },
-        { name: "Headless CMS & E-Commerce", desc: "Flexible content and e-commerce platforms powered by modern APIs." },
-        { name: "Progressive Web Apps (PWA)", desc: "Fast web applications that look, feel, and function like native apps." },
-        { name: "Interactive 3D Web & WebGL", desc: "Custom WebGL visualizers and interactive 3D canvas experiences." },
+        { name: "Full-Stack Next.js Apps", slug: "/services/web-development/full-stack-nextjs-apps", desc: "Scalable server-rendered web applications with high performance." },
+        { name: "Headless CMS & E-Commerce", slug: "/services/web-development/headless-cms-ecommerce", desc: "Flexible content and e-commerce platforms powered by modern APIs." },
+        { name: "Progressive Web Apps (PWA)", slug: "/services/web-development/progressive-web-apps", desc: "Fast web applications that look, feel, and function like native apps." },
+        { name: "Interactive 3D Web & WebGL", slug: "/services/web-development/interactive-3d-webgl", desc: "Custom WebGL visualizers and interactive 3D canvas experiences." },
       ],
     },
     {
@@ -75,10 +75,10 @@ export const Navbar: React.FC = () => {
       subtitle: "Mobile App Development Services",
       desc: "Build scalable, high-performing native and cross-platform apps for iOS and Android.",
       subServices: [
-        { name: "iOS & Android App Development", desc: "High-performance native iOS and Android apps tailored for seamless user experiences." },
-        { name: "Flutter Cross-Platform Apps", desc: "Fast, single-codebase cross-platform apps using Flutter technology." },
-        { name: "React Native Apps", desc: "Flexible, native-like mobile apps using the React Native framework." },
-        { name: "Super App Architecture", desc: "Multi-service super apps combining payments, chat, and booking." },
+        { name: "iOS & Swift Apps", slug: "/services/app-development/ios-native-swift", desc: "Native iOS 18 apps built with SwiftUI, Metal GPU shaders, and CoreData." },
+        { name: "Android & Kotlin Apps", slug: "/services/app-development/android-kotlin", desc: "Modern Android apps powered by Jetpack Compose UI & Kotlin Coroutines." },
+        { name: "Cross-Platform Mobile Apps", slug: "/services/app-development/cross-platform-flutter-react-native", desc: "Single-codebase Flutter & React Native apps with native C++ bridges." },
+        { name: "Enterprise Mobile Suites", slug: "/services/app-development/enterprise-mobile-solutions", desc: "Mission-critical enterprise mobile platforms with Okta SSO & Intune MDM." },
       ],
     },
     {
@@ -88,10 +88,10 @@ export const Navbar: React.FC = () => {
       subtitle: "User-Centered Design & Interactive UI",
       desc: "Crafting intuitive user interfaces, interactive wireframes, and modern design systems.",
       subServices: [
-        { name: "Interactive Wireframing", desc: "Map user journeys and interactive click-through prototypes before coding." },
-        { name: "Design Systems & Tokens", desc: "Consistent component design libraries for web and mobile apps." },
-        { name: "Mobile & Web UI Design", desc: "Pixel-perfect visual interfaces tailored for maximum engagement." },
-        { name: "Data-Driven UX Audits", desc: "Usability research and funnel audits to maximize conversion rates." },
+        { name: "Web Application UI/UX", slug: "/services/ui-ux-design/web-application-design", desc: "Intuitive data-dense SaaS dashboards and web application interfaces." },
+        { name: "Mobile App UI/UX Design", slug: "/services/ui-ux-design/mobile-app-ui-ux", desc: "Engaging iOS & Android mobile screens with liquid micro-interactions." },
+        { name: "Design Systems & Tokens", slug: "/services/ui-ux-design/design-systems-component-libraries", desc: "Enterprise Figma libraries & reusable code-synced design tokens." },
+        { name: "UX Audit & Conversion Growth", slug: "/services/ui-ux-design/ux-audit-conversion-optimization", desc: "Data-driven usability research and conversion rate optimization." },
       ],
     },
     {
@@ -101,10 +101,10 @@ export const Navbar: React.FC = () => {
       subtitle: "Cloud Infrastructure & DevOps Automation",
       desc: "Enterprise cloud architecture, containerization, microservices, and CI/CD pipelines.",
       subServices: [
-        { name: "AWS & Azure Infrastructure", desc: "Seamless cloud migration and architecture optimization on AWS & Azure." },
-        { name: "Kubernetes & Docker", desc: "Container orchestration for zero-downtime microservice deployments." },
-        { name: "CI/CD Pipeline Automation", desc: "Automated testing, building, and deployment release workflows." },
-        { name: "Serverless Architecture", desc: "Cost-effective serverless APIs with automatic instant scaling." },
+        { name: "AWS & Azure Infrastructure", slug: "/services/cloud-services/aws-azure-infrastructure", desc: "Seamless cloud migration and architecture optimization on AWS & Azure." },
+        { name: "Kubernetes & Docker", slug: "/services/cloud-services/kubernetes-docker", desc: "Container orchestration for zero-downtime microservice deployments." },
+        { name: "CI/CD Pipeline Automation", slug: "/services/cloud-services/cicd-pipeline-automation", desc: "Automated testing, building, and deployment release workflows." },
+        { name: "Serverless Architecture", slug: "/services/cloud-services/serverless-architecture", desc: "Cost-effective serverless APIs with automatic instant scaling." },
       ],
     },
   ];
@@ -227,9 +227,11 @@ export const Navbar: React.FC = () => {
                             {/* Sub-services Grid */}
                             <div className="grid grid-cols-2 gap-2">
                               {activeCat.subServices.map((sub, sIdx) => (
-                                <div
+                                <Link
                                   key={sIdx}
-                                  className="group/sub p-3 rounded-xl cursor-pointer hover:bg-slate-50 transition-all duration-200"
+                                  href={sub.slug}
+                                  onClick={() => setIsServicesOpen(false)}
+                                  className="group/sub p-3 rounded-xl cursor-pointer hover:bg-slate-50 transition-all duration-200 block"
                                 >
                                   <div className="flex items-center justify-between">
                                     <span className="text-[13px] font-medium text-slate-700 group-hover/sub:text-slate-900 transition-colors">
@@ -240,7 +242,7 @@ export const Navbar: React.FC = () => {
                                   <p className="text-[11.5px] text-slate-400 mt-1 leading-relaxed group-hover/sub:text-slate-500 transition-colors">
                                     {sub.desc}
                                   </p>
-                                </div>
+                                </Link>
                               ))}
                             </div>
                           </div>
@@ -356,14 +358,14 @@ export const Navbar: React.FC = () => {
                         </div>
                         <div className="pl-9 space-y-1.5">
                           {cat.subServices.map((sub, sIdx) => (
-                            <a
+                            <Link
                               key={sIdx}
-                              href="#contact"
+                              href={sub.slug}
                               onClick={() => setIsMobileMenuOpen(false)}
                               className="block text-[13.5px] text-slate-500 hover:text-slate-900 transition-colors py-0.5"
                             >
                               {sub.name}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>

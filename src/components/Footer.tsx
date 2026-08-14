@@ -7,15 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface FooterProps {
+  hideCTA?: boolean;
   hideCta?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ hideCta = false }) => {
+export const Footer: React.FC<FooterProps> = ({ hideCTA = false, hideCta = false }) => {
+  const showBanner = !hideCTA && !hideCta;
+  const isTopPadded = showBanner ? 'pt-24' : 'pt-16';
+
   return (
-    <footer id="contact" className={`w-full bg-white text-slate-600 ${hideCta ? 'pt-16' : 'pt-24'} pb-16 font-sans border-t border-slate-100 overflow-hidden`}>
+    <footer id="contact" className={`w-full bg-white text-slate-600 ${isTopPadded} pb-16 font-sans border-t border-slate-100 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Call To Action Banner with Entrance Animations */}
-        {!hideCta && (
+        {showBanner && (
           <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
             <motion.span
               initial={{ opacity: 0, y: -30 }}
