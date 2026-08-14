@@ -120,10 +120,7 @@ export const CloudServicesCTA: React.FC<CloudServicesCTAProps> = ({ category }) 
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-100/40 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="relative z-10">
-            {/* Centered Premium Glowing Icon Badge */}
-            <div className="mx-auto w-14 h-14 rounded-2xl bg-white flex items-center justify-center border border-slate-200 shadow-sm mb-8 group hover:scale-105 transition-transform">
-              <Sparkles className="w-6 h-6 text-slate-700" />
-            </div>
+
 
             {/* Main Elegant Title strictly in one line in cursive style */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight text-slate-900 mb-3 max-w-full mx-auto leading-tight whitespace-nowrap overflow-hidden text-ellipsis drop-shadow-sm">
