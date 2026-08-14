@@ -7,7 +7,7 @@ import { AppDevelopmentHero } from "@/components/services/AppDevelopmentHero";
 import { AppDevelopmentWorkflow } from "@/components/services/AppDevelopmentWorkflow";
 import { AppDevelopmentSimulator } from "@/components/services/AppDevelopmentSimulator";
 import { AppDevelopmentFeatures } from "@/components/services/AppDevelopmentFeatures";
-import { AppDevelopmentCTA } from "@/components/services/AppDevelopmentCTA";
+
 import { appDevelopmentCategories } from "@/data/appDevelopmentData";
 
 interface PageProps {
@@ -64,12 +64,10 @@ export default async function AppDevelopmentSlugPage({ params }: PageProps) {
         {/* Mobile Agency Features Grid with Glowing Border Lines */}
         <AppDevelopmentFeatures category={category} />
 
-        {/* Category-Specific Black & White CTA Banner */}
-        <AppDevelopmentCTA category={category} />
       </main>
 
       {/* Footer */}
-      <Footer hideCTA />
+      <Footer />
     </div>
   );
 }

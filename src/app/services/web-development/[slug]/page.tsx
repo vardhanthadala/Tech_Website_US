@@ -7,7 +7,7 @@ import { WebDevelopmentHero } from "@/components/services/WebDevelopmentHero";
 import { WebDevelopmentStages } from "@/components/services/WebDevelopmentStages";
 import { WebDevelopmentFeatures } from "@/components/services/WebDevelopmentFeatures";
 import { WebDevelopmentProcess } from "@/components/services/WebDevelopmentProcess";
-import { WebDevelopmentCTA } from "@/components/services/WebDevelopmentCTA";
+
 import { webDevelopmentCategories } from "@/data/webDevelopmentData";
 
 interface PageProps {
@@ -64,12 +64,10 @@ export default async function WebDevelopmentSlugPage({ params }: PageProps) {
         {/* Process Steps Section */}
         <WebDevelopmentProcess category={category} />
 
-        {/* Category-Specific Black & White CTA Banner */}
-        <WebDevelopmentCTA category={category} />
       </main>
 
       {/* Existing Footer */}
-      <Footer hideCTA />
+      <Footer />
     </div>
   );
 }

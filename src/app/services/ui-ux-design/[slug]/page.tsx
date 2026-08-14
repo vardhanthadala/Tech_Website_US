@@ -7,7 +7,7 @@ import { UiUxHero } from "@/components/services/UiUxHero";
 import { UiUxWorkflow } from "@/components/services/UiUxWorkflow";
 import { UiUxUseCases } from "@/components/services/UiUxUseCases";
 import { EngineeredForGrowth } from "@/components/services/EngineeredForGrowth";
-import { AppDevelopmentCTA } from "@/components/services/AppDevelopmentCTA";
+
 import { uiUxCategories } from "@/data/uiUxData";
 
 interface PageProps {
@@ -86,12 +86,10 @@ export default async function UiUxDesignSlugPage({ params }: PageProps) {
         {/* Engineered for Growth Features Grid matching Voiceflow reference screenshot */}
         <EngineeredForGrowth category={appCategoryAdapter} />
 
-        {/* Category CTA Banner */}
-        <AppDevelopmentCTA category={appCategoryAdapter} />
       </main>
 
       {/* Footer */}
-      <Footer hideCTA />
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AiAutomationHero } from "@/components/services/AiAutomationHero";
 import { AiAutomationDetails } from "@/components/services/AiAutomationDetails";
-import { AiAutomationCTA } from "@/components/services/AiAutomationCTA";
+
 import { aiAutomationCategories } from "@/data/aiAutomationData";
 
 interface PageProps {
@@ -56,12 +56,10 @@ export default async function AiAutomationSlugPage({ params }: PageProps) {
         {/* Technical Details, Stats & Features */}
         <AiAutomationDetails category={category} />
 
-        {/* CTA section matching reference screenshot */}
-        <AiAutomationCTA category={category} />
       </main>
 
       {/* Existing Footer */}
-      <Footer hideCTA />
+      <Footer />
     </div>
   );
 }

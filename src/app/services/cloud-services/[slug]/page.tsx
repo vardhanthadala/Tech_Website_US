@@ -7,7 +7,7 @@ import { CloudServicesHero } from "@/components/services/CloudServicesHero";
 import { CloudServicesInsights } from "@/components/services/CloudServicesInsights";
 import { CloudServicesUseCases } from "@/components/services/CloudServicesUseCases";
 import { CloudServicesFeatures } from "@/components/services/CloudServicesFeatures";
-import { CloudServicesCTA } from "@/components/services/CloudServicesCTA";
+
 import { cloudServicesCategories } from "@/data/cloudServicesData";
 
 interface PageProps {
@@ -82,12 +82,10 @@ export default async function CloudServicesSlugPage({ params }: PageProps) {
           features={category.features}
         />
 
-        {/* Category CTA Banner matching UI/UX design page CTA */}
-        <CloudServicesCTA category={category} />
       </main>
 
       {/* Footer */}
-      <Footer hideCTA />
+      <Footer />
     </div>
   );
 }
