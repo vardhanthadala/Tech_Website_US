@@ -116,19 +116,27 @@ export const WebDevelopmentCTA: React.FC<WebDevelopmentCTAProps> = ({ category }
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.3),transparent_50%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(192,132,252,0.35),transparent_60%)] pointer-events-none" />
 
-          {/* Main Elegant Title strictly in one line */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight text-white mb-8 max-w-full mx-auto leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
-            {currentCta.title}
+          {/* Main Elegant Title strictly in one line with screenshot font style */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-white mb-3 max-w-full mx-auto leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+            <span>{currentCta.title.split(" ").slice(0, -1).join(" ")}{" "}</span>
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#e947f5] to-[#7a95e6]">
+              {currentCta.title.split(" ").slice(-1).join(" ")}
+            </span>
           </h2>
 
-          {/* Action CTA White Button with Hover Background Color Change */}
+          {/* Subtitle Description strictly in 1 line */}
+          <p className="text-white/90 text-sm sm:text-base font-normal max-w-2xl mx-auto mb-8 leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+            {currentCta.subtitle}
+          </p>
+
+          {/* Action CTA White Button with Gradient Background Change on Hover */}
           <div className="flex justify-center">
             <a
               href="/contact"
-              className="group px-8 py-3.5 rounded-full bg-white text-purple-950 hover:bg-slate-950 hover:text-white font-sans font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2 cursor-pointer border border-white/40"
+              className="group px-8 py-3.5 rounded-full bg-white text-slate-900 hover:bg-gradient-to-r hover:from-[#e947f5] hover:to-[#7a95e6] hover:text-white font-sans font-semibold text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2 cursor-pointer border border-white/40"
             >
               <span>Get Started</span>
-              <ArrowRight className="w-4 h-4 text-purple-950 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+              <ArrowRight className="w-4 h-4 text-slate-900 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
             </a>
           </div>
         </div>
