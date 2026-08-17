@@ -104,7 +104,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'A holistic digital health app connecting wearable data with real-time AI biofeedback.',
     service: 'Mobile Apps',
     industry: 'Healthcare',
-    image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', // Mobile health app & analytics
     layout: 'full',
     imageAspect: 'aspect-[16/9] sm:aspect-[21/9]',
 
@@ -133,7 +133,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Autonomous ECG waveform classification for preventative cardiology.',
     service: 'AI Automation',
     industry: 'Healthcare',
-    image: 'https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop', // AI medical diagnostics interface
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -161,7 +161,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Streamlining clinical workflows and lab results for hospital networks.',
     service: 'Web Development',
     industry: 'Healthcare',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop', // Modern healthcare web application
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -191,7 +191,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'A corporate-card startup grows into a worldwide spend-management platform.',
     service: 'Mobile Apps',
     industry: 'FinTech',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop', // Fintech card & mobile app UI
     layout: 'full',
     imageAspect: 'aspect-[16/9] sm:aspect-[21/9]',
 
@@ -225,7 +225,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Frictionless international health and travel insurance for digital nomads.',
     service: 'Web Development',
     industry: 'FinTech',
-    image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2000&auto=format&fit=crop', // Modern web SaaS platform
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -280,7 +280,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'An immersive WebGL web experience demonstrating real-time cryptographic verification.',
     service: 'Web Development',
     industry: 'FinTech',
-    image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2070&auto=format&fit=crop', // 3D WebGL interactive platform
     layout: 'full',
     imageAspect: 'aspect-[16/9] sm:aspect-[21/9]',
 
@@ -336,7 +336,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'High-end luxury e-commerce experience with sub-second page loads and 3D product previews.',
     service: 'Web Development',
     industry: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', // Headless storefront web UI
     layout: 'full',
     imageAspect: 'aspect-[16/9] sm:aspect-[21/9]',
 
@@ -364,7 +364,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Real-time contextual shopping recommendations powered by machine learning.',
     service: 'AI Automation',
     industry: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop', // AI recommendation neural engine
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -391,7 +391,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'High-volume bulk ordering and international trade logistics dashboard.',
     service: 'Web Development',
     industry: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2000&auto=format&fit=crop', // B2B wholesale portal analytics
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -445,7 +445,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Sub-second mobile checkout reducing cart abandonment.',
     service: 'Mobile Apps',
     industry: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop', // Mobile smartphone ecommerce experience
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -474,7 +474,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Autonomous AI code reviews and automated refactoring pipelines.',
     service: 'AI Automation',
     industry: 'Consumer Tech',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop', // AI Code reviews & developer IDE
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -501,7 +501,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Real-time robot fleet health monitoring and predictive maintenance alerts.',
     service: 'AI Automation',
     industry: 'Consumer Tech',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop', // Autonomous robotics computing & circuits
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
@@ -528,7 +528,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Ultra-low latency spatial UI framework built for wearable AR hardware.',
     service: 'Mobile Apps',
     industry: 'Consumer Tech',
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=2000&auto=format&fit=crop', // AR spatial computing & app UI
     layout: 'full',
     imageAspect: 'aspect-[16/9] sm:aspect-[21/9]',
 
@@ -555,7 +555,7 @@ export const PROJECTS_DATA: ProjectData[] = [
     description: 'Self-healing cloud infrastructure powered by AI agent swarms.',
     service: 'AI Automation',
     industry: 'Consumer Tech',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop', // AI automation terminal & agent swarm
     layout: 'half',
     imageAspect: 'aspect-[4/3] sm:aspect-[16/11]',
 
