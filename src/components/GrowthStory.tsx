@@ -122,6 +122,33 @@ export const GrowthStory: React.FC = () => {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Hash navigation listener to activate service tab dynamically (e.g., #service-ai, #service-web, #services)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("ai") || hash.includes("automation")) {
+        setActive(0);
+        setIsPaused(true);
+      } else if (hash.includes("web")) {
+        setActive(1);
+        setIsPaused(true);
+      } else if (hash.includes("app") || hash.includes("mobile")) {
+        setActive(2);
+        setIsPaused(true);
+      } else if (hash.includes("ui") || hash.includes("ux") || hash.includes("design")) {
+        setActive(3);
+        setIsPaused(true);
+      } else if (hash.includes("cloud") || hash.includes("devops")) {
+        setActive(4);
+        setIsPaused(true);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   // Auto-cycle every 8 seconds (unless user manually selected a service)
   useEffect(() => {
     if (isPaused) return;
@@ -146,7 +173,7 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
+    <section id="services" className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans scroll-mt-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header with Multi-Directional Entrance Animation */}
@@ -168,6 +195,36 @@ export const GrowthStory: React.FC = () => {
             Real-time metrics and proven performance across AI automation, web platforms, mobile apps, and cloud infrastructure.
           </p>
         </motion.div>
+
+        {/* Global Tabs above the grid */}
+        <div className="flex justify-start sm:justify-center mb-10 sm:mb-14 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1 py-2">
+          <div className="flex p-1.5 bg-slate-100/60 backdrop-blur-xl border border-slate-200/60 rounded-2xl gap-1 sm:gap-2 shadow-[inset_0_1px_3px_rgba(0,0,0,0.03)] w-max mx-auto sm:mx-0">
+            {services.map((s, i) => {
+              const isActive = i === active;
+              return (
+                <button
+                  key={s.name}
+                  onClick={() => handleSelectService(i)}
+                  className={`relative whitespace-nowrap text-[13px] sm:text-[14px] font-medium px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl transition-colors duration-300 ${
+                    isActive
+                      ? "text-slate-900"
+                      : "text-slate-500 hover:text-slate-700 hover:bg-slate-200/40"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute inset-0 bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/60"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative z-10">{s.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -198,22 +255,6 @@ export const GrowthStory: React.FC = () => {
                 {React.createElement(svc.cards.featured.icon, { className: "w-56 h-56 stroke-[0.8]" })}
               </motion.div>
             </AnimatePresence>
-
-            {/* Cycling service indicator pills */}
-            <div className="relative z-10 flex flex-wrap gap-2 mb-5 sm:mb-6">
-              {services.map((s, i) => (
-                <button
-                  key={s.name}
-                  onClick={() => handleSelectService(i)}
-                  className={`text-[12px] font-normal px-4 py-1.5 rounded-full border transition-all duration-300 ${i === active
-                    ? "bg-white text-slate-900 border-slate-300 shadow-sm"
-                    : "bg-transparent text-slate-500 border-slate-200 hover:border-slate-300 hover:text-slate-800"
-                    }`}
-                >
-                  {s.name}
-                </button>
-              ))}
-            </div>
 
             {/* Service description (animated) */}
             <div className="relative z-10 flex-1 min-h-[90px]">

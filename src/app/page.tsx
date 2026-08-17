@@ -4,15 +4,19 @@ import CloudSky from "@/components/CloudSky";
 import ExpandableVideo from "@/components/ExpandableVideo";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 import { BrandMarquee } from "@/components/BrandMarquee";
 import Navbar from "@/components/Navbar";
 import GrowthStory from "@/components/GrowthStory";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import TechStack from "@/components/TechStack";
 import EngineeringProcess from "@/components/EngineeringProcess";
 import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
+import OurHistory from "@/components/OurHistory";
 
 export default function Home() {
   const { opacity, yOffset } = useHeroAnimation();
@@ -77,18 +81,18 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col sm:flex-row justify-center gap-3.5 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
               >
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="w-full sm:w-auto px-7 sm:px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium text-sm sm:text-base hover:opacity-95 transition-all shadow-md active:scale-95 flex items-center justify-center font-sans"
                 >
                   Start a project
-                </a>
-                <a
-                  href="#services"
+                </Link>
+                <Link
+                  href="/projects"
                   className="w-full sm:w-auto flex items-center justify-center h-12 px-7 sm:px-8 rounded-full bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 transition-all text-sm sm:text-base font-medium shadow-sm"
                 >
                   Our work
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
@@ -111,6 +115,13 @@ export default function Home() {
         <section className="w-full">
           <GrowthStory />
         </section>
+        
+        {/* <FeaturedProjects /> */}
+        
+        {/* <TechStack /> */}
+
+        <OurHistory />
+
         <section className="w-full">
           <EngineeringProcess />
         </section>

@@ -178,12 +178,12 @@ export const Navbar: React.FC = () => {
                   {/* ─── Services Mega Dropdown ─── */}
                   {isServicesOpen && (
                     <div
-                      className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[720px] z-50"
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[720px] z-50"
                       onMouseEnter={handleServicesEnter}
                       onMouseLeave={handleServicesLeave}
                     >
                       {/* Subtle connector arrow */}
-                      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-slate-200/80 rounded-[2px]" />
+                      <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-slate-200/80 rounded-[2px]" />
 
                       <div className="rounded-[20px] bg-white border border-slate-200/80 shadow-2xl shadow-black/[0.12] overflow-hidden animate-fadeIn">
                         <div className="flex">
