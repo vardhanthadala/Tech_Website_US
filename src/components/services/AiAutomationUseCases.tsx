@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 import { AiCategoryData } from "@/data/aiAutomationData";
 
 interface AiAutomationUseCasesProps {
@@ -80,18 +79,9 @@ export const AiAutomationUseCases: React.FC<AiAutomationUseCasesProps> = ({ cate
                 {category.bottomUseCase.title}
               </h3>
               
-              <p className="text-slate-600 text-base leading-relaxed mb-8">
+              <p className="text-slate-600 text-base leading-relaxed">
                 {category.bottomUseCase.description}
               </p>
-
-              {/* Red/Purple link with trailing arrow matching layout references */}
-              <a
-                href="#contact"
-                className="text-purple-600 font-semibold hover:text-purple-700 transition-colors inline-flex items-center gap-1.5 text-base"
-              >
-                <span>Learn more</span>
-                <ChevronRight className="w-4 h-4 mt-0.5" />
-              </a>
             </div>
 
             {/* Right Image Column - Real Life Image */}

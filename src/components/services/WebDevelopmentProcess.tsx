@@ -12,7 +12,7 @@ interface WebDevelopmentProcessProps {
 
 export const WebDevelopmentProcess: React.FC<WebDevelopmentProcessProps> = ({ category }) => {
   return (
-    <section className="w-full bg-white text-slate-900 py-24 sm:py-32 relative overflow-hidden font-sans border-b border-slate-200">
+    <section id="workflow" className="w-full bg-white text-slate-900 py-24 sm:py-32 relative overflow-hidden font-sans border-b border-slate-200">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         

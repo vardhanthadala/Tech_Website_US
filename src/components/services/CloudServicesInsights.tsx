@@ -25,7 +25,7 @@ export const CloudServicesInsights: React.FC<CloudServicesInsightsProps> = ({
   const activeTopic = topics[activeIndex] || topics[0];
 
   return (
-    <section className="w-full bg-[#fcfcfd] text-slate-900 py-20 sm:py-28 font-sans border-b border-slate-200/80">
+    <section id="overview" className="w-full bg-[#fcfcfd] text-slate-900 py-20 sm:py-28 font-sans border-b border-slate-200/80">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Centered Section Header matching standard design typography across all pages */}

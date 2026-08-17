@@ -92,7 +92,7 @@ export const UiUxHero: React.FC<UiUxHeroProps> = ({ currentCategory }) => {
               </a>
 
               <a
-                href="#features"
+                href="#workflow"
                 className="px-6 py-3 rounded-full bg-white text-slate-800 hover:bg-slate-100 font-sans font-medium text-xs sm:text-sm border border-slate-200/90 transition-all shadow-2xs active:scale-95 flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <span>View Details</span>

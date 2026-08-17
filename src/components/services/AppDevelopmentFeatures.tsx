@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { AppCategoryData } from "@/data/appDevelopmentData";
 
 interface AppDevelopmentFeaturesProps {
@@ -91,7 +90,7 @@ export const AppDevelopmentFeatures: React.FC<AppDevelopmentFeaturesProps> = ({ 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[380px] shadow-2xs hover:shadow-md transition-all duration-300 group cursor-pointer relative overflow-hidden"
+              className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[380px] shadow-2xs hover:shadow-md transition-all duration-300 group relative overflow-hidden"
             >
               {/* Card Header Title with low bold / medium font weight */}
               <div>
@@ -111,14 +110,11 @@ export const AppDevelopmentFeatures: React.FC<AppDevelopmentFeaturesProps> = ({ 
                 />
               </div>
 
-              {/* Bottom Description & Right Arrow */}
-              <div className="pt-4 border-t border-slate-100 flex items-end justify-between gap-3">
-                <p className="text-xs sm:text-sm font-normal text-slate-600 leading-relaxed max-w-[85%]">
+              {/* Bottom Description */}
+              <div className="pt-4 border-t border-slate-100">
+                <p className="text-xs sm:text-sm font-normal text-slate-600 leading-relaxed">
                   {card.description}
                 </p>
-                <div className="text-slate-900 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0 pb-0.5">
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
             </motion.div>
           ))}

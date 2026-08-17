@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ArrowRight, Brain, Zap, Shield, Lock } from "lucide-react";
+import { CheckCircle2, Brain, Zap, Shield, Lock } from "lucide-react";
 import { AiCategoryData, TopicDetail } from "@/data/aiAutomationData";
 
 interface AiAutomationInteractiveFeaturesProps {
@@ -93,7 +93,7 @@ export const AiAutomationInteractiveFeatures: React.FC<AiAutomationInteractiveFe
               </p>
 
               {/* Bullet Points */}
-              <div className="space-y-3 mb-8 w-full">
+              <div className="space-y-3 w-full">
                 {activeTopic.points.map((pt, pIdx) => (
                   <div key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
@@ -101,17 +101,6 @@ export const AiAutomationInteractiveFeatures: React.FC<AiAutomationInteractiveFe
                   </div>
                 ))}
               </div>
-
-              {/* CTA Action Button */}
-              <a
-                href="#contact"
-                className="px-6 py-3 rounded-full bg-slate-900 text-white hover:bg-slate-800 font-sans font-medium text-xs sm:text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 group"
-              >
-                <span>{activeTopic.ctaText}</span>
-                <span className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                  <ArrowRight className="w-3 h-3" />
-                </span>
-              </a>
             </div>
 
             {/* Right Monitor / Laptop Frame - Styled matching screenshot reference */}

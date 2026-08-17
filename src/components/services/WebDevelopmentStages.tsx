@@ -143,10 +143,10 @@ export const WebDevelopmentStages: React.FC<WebDevelopmentStagesProps> = ({ cate
               {/* Bottom Exploration Link */}
               <div className="pt-5 border-t border-slate-100 lg:block hidden">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="text-slate-800 font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm sm:text-base cursor-pointer group"
                 >
-                  <span>Explore our process</span>
+                  <span>Get started</span>
                   <ArrowRight className="w-4 h-4 mt-0.5 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </div>

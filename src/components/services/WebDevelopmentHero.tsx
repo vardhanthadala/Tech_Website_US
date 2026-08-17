@@ -81,21 +81,21 @@ export const WebDevelopmentHero: React.FC<WebDevelopmentHeroProps> = ({ currentC
         >
           <a
             href="/contact"
-            className="px-7 py-3.5 sm:px-8 sm:py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-900 font-sans font-semibold text-sm sm:text-base transition-all shadow-md active:scale-95 flex items-center justify-center gap-2.5 group"
+            className="px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-slate-950 text-white hover:bg-slate-900 font-sans font-semibold text-xs sm:text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 group"
           >
             <span>{currentCategory.ctaText}</span>
-            <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:rotate-45 transition-transform">
-              <Sparkles className="w-3 h-3" />
+            <span className="w-4 h-4 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:rotate-45 transition-transform">
+              <Sparkles className="w-2.5 h-2.5" />
             </span>
           </a>
 
           <a
             href="#workflow"
-            className="px-7 py-3.5 sm:px-8 sm:py-3.5 rounded-full bg-white text-slate-800 hover:bg-slate-50 border border-slate-200/80 font-sans font-semibold text-sm sm:text-base transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2.5 group"
+            className="px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-white text-slate-800 hover:bg-slate-50 border border-slate-200/80 font-sans font-semibold text-xs sm:text-sm transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2 group"
           >
             <span>View details</span>
-            <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-              <ArrowRight className="w-3 h-3" />
+            <span className="w-4 h-4 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+              <ArrowRight className="w-2.5 h-2.5" />
             </span>
           </a>
         </motion.div>
