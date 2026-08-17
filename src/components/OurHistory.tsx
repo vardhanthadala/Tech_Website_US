@@ -21,7 +21,7 @@ export default function OurHistory() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="w-full bg-white py-14 sm:py-20 font-sans relative z-10 border-t border-slate-100 overflow-hidden">
+    <section id="projects" className="w-full bg-white py-14 sm:py-20 font-sans relative z-10 border-t border-slate-100 overflow-hidden scroll-mt-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
