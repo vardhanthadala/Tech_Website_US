@@ -16,19 +16,11 @@ export const Footer: React.FC<FooterProps> = ({ hideCTA = false, hideCta = false
   const isTopPadded = showBanner ? 'pt-24' : 'pt-16';
 
   return (
-<<<<<<< HEAD
-    <footer id="contact" className={`w-full bg-white text-slate-600 ${isTopPadded} pb-16 font-sans border-t border-slate-100 overflow-hidden`}>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Call To Action Banner with Entrance Animations */}
-        {showBanner && (
-          <div className="text-center max-w-2xl mx-auto mb-24 flex flex-col items-center">
-=======
-    <footer id="contact" className={`w-full bg-white text-slate-600 ${hideCta ? 'pt-16' : 'pt-24'} pb-14 font-sans border-t border-slate-100 overflow-hidden`}>
+    <footer id="contact" className={`w-full bg-white text-slate-600 ${isTopPadded} pb-14 font-sans border-t border-slate-100 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Call To Action Banner */}
-        {!hideCta && (
+        {showBanner && (
           <div className="text-center max-w-2xl mx-auto mb-20 sm:mb-24 flex flex-col items-center">
->>>>>>> navbar-new
             <motion.span
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -129,11 +121,11 @@ export const Footer: React.FC<FooterProps> = ({ hideCTA = false, hideCta = false
                 Services
               </h4>
               <ul className="space-y-3 text-slate-500 text-sm">
-                <li><Link href="/projects" className="hover:text-slate-900 transition-colors">AI Automation</Link></li>
-                <li><Link href="/projects" className="hover:text-slate-900 transition-colors">Web Development</Link></li>
-                <li><Link href="/projects" className="hover:text-slate-900 transition-colors">App Development</Link></li>
-                <li><Link href="/projects" className="hover:text-slate-900 transition-colors">UI / UX Design</Link></li>
-                <li><Link href="/projects" className="hover:text-slate-900 transition-colors">Cloud & DevOps</Link></li>
+                <li><Link href="/#service-ai" className="hover:text-slate-900 transition-colors">AI Automation</Link></li>
+                <li><Link href="/#service-web" className="hover:text-slate-900 transition-colors">Web Development</Link></li>
+                <li><Link href="/#service-app" className="hover:text-slate-900 transition-colors">App Development</Link></li>
+                <li><Link href="/#service-uiux" className="hover:text-slate-900 transition-colors">UI / UX Design</Link></li>
+                <li><Link href="/#service-cloud" className="hover:text-slate-900 transition-colors">Cloud & DevOps</Link></li>
               </ul>
             </div>
 

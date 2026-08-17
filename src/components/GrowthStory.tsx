@@ -122,6 +122,33 @@ export const GrowthStory: React.FC = () => {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Hash navigation listener to activate service tab dynamically (e.g., #service-ai, #service-web, #services)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("ai") || hash.includes("automation")) {
+        setActive(0);
+        setIsPaused(true);
+      } else if (hash.includes("web")) {
+        setActive(1);
+        setIsPaused(true);
+      } else if (hash.includes("app") || hash.includes("mobile")) {
+        setActive(2);
+        setIsPaused(true);
+      } else if (hash.includes("ui") || hash.includes("ux") || hash.includes("design")) {
+        setActive(3);
+        setIsPaused(true);
+      } else if (hash.includes("cloud") || hash.includes("devops")) {
+        setActive(4);
+        setIsPaused(true);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   // Auto-cycle every 8 seconds (unless user manually selected a service)
   useEffect(() => {
     if (isPaused) return;
@@ -146,7 +173,7 @@ export const GrowthStory: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans">
+    <section id="services" className="w-full bg-white py-14 sm:py-20 border-t border-slate-100 font-sans scroll-mt-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header with Multi-Directional Entrance Animation */}
