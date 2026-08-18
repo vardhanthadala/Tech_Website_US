@@ -36,6 +36,7 @@ export default function ContactPage() {
     email?: string;
     phone?: string;
     message?: string;
+    submit?: string;
   }>({});
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -80,15 +81,49 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrors((prev) => ({ ...prev, submit: undefined }));
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "4aee4fe5-4139-4fd3-92e6-559689c2f574",
+          subject: `New Project Inquiry from ${formData.fullName} - Dexze Tech`,
+          from_name: formData.fullName,
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          submit: result.message || "Something went wrong. Please try again or email us directly.",
+        }));
+      }
+    } catch {
+      setErrors((prev) => ({
+        ...prev,
+        submit: "Failed to connect to the server. Please check your internet connection and try again.",
+      }));
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 800);
+    }
   };
 
   return (
@@ -309,6 +344,13 @@ export default function ContactPage() {
                         </p>
                       )}
                     </div>
+
+                    {/* Submission Error Banner */}
+                    {errors.submit && (
+                      <p className="text-xs text-rose-600 font-medium font-sans animate-fadeIn text-right">
+                        {errors.submit}
+                      </p>
+                    )}
 
                     {/* Submit Button aligned to right */}
                     <div className="flex justify-end pt-2">

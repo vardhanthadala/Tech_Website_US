@@ -51,7 +51,7 @@ export const aiAutomationCategories: Record<string, AiCategoryData> = {
     title: "Autonomous AI Agents",
     badge: "Autonomous AI Agents",
     headingBold: "Hire AI agents",
-    headingLight: "to resolve legal requests autonomously.",
+    headingLight: "to automate complex enterprise workflows autonomously.",
     heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop",
     heroImageAlt: "Real life humanoid AI robot assistant working on automated tasks",
     ctaText: "Book a demo",
