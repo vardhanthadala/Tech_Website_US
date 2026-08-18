@@ -116,17 +116,22 @@ export const Navbar: React.FC = () => {
     <>
       {/* ─── Floating Island Navbar ─── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out ${isScrolled ? "pt-3 px-4" : "pt-0 px-0"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out ${
+          isScrolled ? "pt-3 px-4" : "pt-0 px-0"
+        }`}
       >
         <div
-          className={`w-full transition-all duration-500 ease-out ${isScrolled
-            ? "max-w-[1200px] rounded-2xl bg-white/80 backdrop-blur-2xl border border-slate-200/70 shadow-lg shadow-black/[0.04]"
-            : "max-w-full bg-white/60 backdrop-blur-xl border-b border-slate-200/40"
-            }`}
+          className={`w-full transition-all duration-500 ease-out ${
+            isScrolled
+              ? "max-w-[1200px] rounded-2xl bg-white/80 backdrop-blur-2xl border border-slate-200/70 shadow-lg shadow-black/[0.04]"
+              : "max-w-full bg-transparent border-b border-transparent"
+          }`}
         >
-          <div className={`mx-auto flex items-center justify-between transition-all duration-500 ${isScrolled ? "px-5 h-[60px]" : "px-6 sm:px-8 lg:px-12 h-[72px]"
-            }`}>
+          <div
+            className={`mx-auto flex items-center justify-between transition-all duration-500 ${
+              isScrolled ? "px-5 h-[60px]" : "px-6 sm:px-8 lg:px-12 h-[72px]"
+            }`}
+          >
 
             {/* ─── Logo ─── */}
             <Link href="/" suppressHydrationWarning className="flex items-center gap-2.5 cursor-pointer group shrink-0">
@@ -143,15 +148,18 @@ export const Navbar: React.FC = () => {
 
             {/* ─── Desktop Center Links (lg+) ─── */}
             <div className="hidden lg:flex items-center">
-              <div className={`flex items-center rounded-full transition-all duration-300 ${isScrolled
-                ? "bg-slate-100/80 px-1.5 py-1 gap-0.5"
-                : "bg-slate-100/60 px-1.5 py-1 gap-0.5"
-                }`}>
+              <div
+                className={`flex items-center rounded-full transition-all duration-300 ${
+                  isScrolled
+                    ? "bg-slate-100/80 px-1.5 py-1 gap-0.5"
+                    : "bg-transparent px-1.5 py-1 gap-0.5"
+                }`}
+              >
 
                 {/* Home */}
                 <Link
                   href="/"
-                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all duration-200"
+                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/60 transition-all duration-200"
                 >
                   Home
                 </Link>
@@ -163,15 +171,17 @@ export const Navbar: React.FC = () => {
                   onMouseLeave={handleServicesLeave}
                 >
                   <button
-                    className={`px-4 py-1.5 rounded-full text-[13.5px] font-medium flex items-center gap-1 transition-all duration-200 cursor-pointer ${isServicesOpen
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-white/80"
-                      }`}
+                    className={`px-4 py-1.5 rounded-full text-[13.5px] font-medium flex items-center gap-1 transition-all duration-200 cursor-pointer ${
+                      isServicesOpen
+                        ? "bg-slate-900 text-white shadow-sm"
+                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/60"
+                    }`}
                   >
                     Services
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""
-                        }`}
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                        isServicesOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
 
@@ -255,7 +265,7 @@ export const Navbar: React.FC = () => {
                 {/* Projects */}
                 <Link
                   href="/projects"
-                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all duration-200"
+                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/60 transition-all duration-200"
                 >
                   Projects
                 </Link>
@@ -265,7 +275,7 @@ export const Navbar: React.FC = () => {
                   href="https://www.dexze.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all duration-200 flex items-center gap-1"
+                  className="px-4 py-1.5 rounded-full text-[13.5px] font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100/60 transition-all duration-200 flex items-center gap-1"
                 >
                   Creative
                   <ExternalLink className="w-3 h-3 opacity-40" />
